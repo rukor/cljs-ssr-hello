@@ -47059,10 +47059,9 @@ hello.app.page.reagent = {};
 hello.app.page.reagent.greeting_page = function(a, b) {
   return function(a) {
     return function(b, e) {
-      var f = cljs.core.seq_QMARK_.call(null, e) ? cljs.core.apply.call(null, cljs.core.hash_map, e) : e;
-      cljs.core.get.call(null, f, new cljs.core.Keyword(null, "router", "router", 1091916230));
-      return new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div", "div", 1057191632), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "span", "span", 1394872991), cljs.core.deref.call(null, a)], null), new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "a", "a", -2123407586), new cljs.core.PersistentArrayMap(null, 
-      1, [new cljs.core.Keyword(null, "href", "href", -793805698), "/"], null), "Click here to go back home"], null)], null);
+      var f = cljs.core.seq_QMARK_.call(null, e) ? cljs.core.apply.call(null, cljs.core.hash_map, e) : e, f = cljs.core.get.call(null, f, new cljs.core.Keyword(null, "router", "router", 1091916230));
+      return new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div", "div", 1057191632), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "span", "span", 1394872991), cljs.core.deref.call(null, a)], null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [com.firstlinq.ssr.view.reagent.link, f, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, 
+      "href", "href", -793805698), "/"], null), "Click here to go back home"], null)], null);
     };
   }(reagent.core.cursor.call(null, a, new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "greeting", "greeting", 462222107)], null)));
 };
@@ -53855,6 +53854,7 @@ hello.app.main.start = function() {
   com.firstlinq.ssr.state.hydrate.call(null, c, hello.app.state.app_state, hello.app.util.by_id.call(null, "app-state"));
   return hello.app.main.render_reagent_home.call(null, hello.app.state.app_state, b, a);
 };
+goog.exportSymbol("hello.app.main.start", hello.app.main.start);
 cljs.nodejscli = {};
 COMPILED && (goog.global = global);
 if (null != cljs.core._STAR_main_cli_fn_STAR_ && cljs.core.fn_QMARK_.call(null, cljs.core._STAR_main_cli_fn_STAR_)) {

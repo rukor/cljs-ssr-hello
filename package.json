@@ -1,0 +1,13 @@
+{
+  "dependencies" : {
+    "express" : "4.12.4",
+    "source-map-support" : "0.2.8",
+    "react" : "0.12.2",
+    "plates" : "0.4.11",
+    "st" : "0.5.4"
+  },
+  "version" : "0.1.0",
+  "description" : "FIXME: write this!",
+  "name" : "hello",
+  "private" : true
+}

@@ -27,7 +27,7 @@
         component (reagent-page/main-app opts)]
     (reagent/render [component state] (by-id "app"))))
 
-(defn start
+(defn ^{:export true} start
   "Entry point for application"
   []
   (enable-console-print!)

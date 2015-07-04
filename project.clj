@@ -3,7 +3,7 @@
   :url "http://example.com/FIXME"
 
   :clean-targets ^{:protect false}
-["resources/public/js" "target" "resources/server"
+["resources/public/js/app.js" "resources/public/js/out" "target" "resources/server"
  "resources/index.js" "resources/index.js.map"]
 
   :dependencies [[org.clojure/clojure "1.7.0"]
@@ -13,7 +13,7 @@
                  [org.omcljs/om "0.8.8"]
                  [reagent "0.5.0"]
                  [com.domkm/silk "0.0.4"]
-                 [com.firstlinq/cljs-ssr-node "0.0.1-SNAPSHOT"]]
+                 [com.firstlinq/cljs-ssr-node "0.1.0"]]
 
   :plugins [[lein-cljsbuild "1.0.6"]
             [lein-environ "1.0.0"]
@@ -31,7 +31,7 @@
    {:app    {:source-paths ["src/app"]
              :compiler     {:main          "hello.app.main"
                             :output-to     "resources/public/js/app.js"
-                            :output-dir    "resources/public/js"
+                            :output-dir    "resources/public/js/out"
                             :asset-path    "/js"
                             :pretty-print  true
                             :optimizations :none}}

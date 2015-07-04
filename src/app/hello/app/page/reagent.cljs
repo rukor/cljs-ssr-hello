@@ -2,14 +2,14 @@
   (:require [reagent.core :as reagent :refer [cursor atom]]
             [com.firstlinq.ssr.router :refer [navigate-to path-for]]
             [com.firstlinq.ssr.log :as log :include-macros true]
-            [com.firstlinq.ssr.view.reagent :refer []]))
+            [com.firstlinq.ssr.view.reagent :refer [link]]))
 
 (defn greeting-page [data opts]
   (let [greeting-cursor (cursor data [:greeting])]
     (fn [data {:keys [router]}]
       [:div
        [:span @greeting-cursor]
-       [:a {:href "/"} "Click here to go back home"]])))
+       [link router {:href "/"} "Click here to go back home"]])))
 
 (defn home-page [data opts]
   (let [username (atom "")]

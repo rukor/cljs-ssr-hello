@@ -3,6 +3,6 @@
 node_modules/
 resources/server
 resources/server
-resources/public/js
+resources/public/js/out
 *.jar
 *.class
