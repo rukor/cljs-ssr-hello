@@ -1,0 +1,7 @@
+{
+  "name": "cljs-ssr-node example",
+  "description": "A simple isomorphic app built using cljs-ssr-node and om/reagent",
+  "repository": "https://github.com/rukor/cljs-ssr-hello",
+  "logo": "https://node-js-sample.herokuapp.com/node.svg",
+  "keywords": ["node", "express", "cljs", "om", "reagent", "cljs-ssr-node"]
+}
