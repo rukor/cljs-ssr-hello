@@ -1,6 +1,33 @@
 # cljs-ssr-hello
 
-Simple isomorphic CLJS app running on NodeJS using OM/Reagent.
+Simple isomorphic CLJS app running on NodeJS. This simple app shows how to use cljs-ssr-node with either [OM](https://github.com/omcljs/om) or [Reagent](https://github.com/reagent-project/reagent).
+
+To use OM, simply change this [line](https://github.com/rukor/cljs-ssr-hello/blob/master/src/server/hello/server/core.cljs#L24) from: 
+
+```clojure
+                  :renderer reagent-renderer
+```
+
+to:
+
+```clojure
+                  :renderer om-renderer
+```
+
+and then change this [line](https://github.com/rukor/cljs-ssr-hello/blob/master/src/app/hello/app/main.cljs#L40) from:
+
+```clojure
+    (render-reagent-home app-state service router)))
+```
+
+to 
+
+```clojure
+    (render-om-home app-state service router)))
+```
+
+
+# Rendering using OM
 
 To run:
 
