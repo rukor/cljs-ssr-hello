@@ -27,7 +27,7 @@ to
 ```
 
 
-# Rendering using OM
+## Running and deploying
 
 To run:
 
