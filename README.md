@@ -1,14 +1,7 @@
-# hello
+# cljs-ssr-hello
 
-A Clojure library designed to ... well, that part is up to you.
+Simple isomorphic CLJS app running on NodeJS using OM/Reagent.
 
-## Usage
+# License
 
-FIXME
-
-## License
-
-Copyright © 2015 FIXME
-
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+EPL
