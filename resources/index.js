@@ -36209,6 +36209,9 @@ cljs.core.tagged_literal = function(a, b) {
   }
   return new cljs.core.TaggedLiteral(a, b);
 };
+var com = {firstlinq:{}};
+com.firstlinq.ssr = {};
+com.firstlinq.ssr.redirect_key = new cljs.core.Keyword("com.firstlinq.ssr", "redirect-uri", "com.firstlinq.ssr/redirect-uri", -1843196769);
 cljs.core.async = {};
 cljs.core.async.impl = {};
 cljs.core.async.impl.protocols = {};
@@ -40933,8 +40936,6 @@ cljs.core.async.partition_by.cljs$core$IFn$_invoke$arity$3 = function(a, b, c) {
   return c;
 };
 cljs.core.async.partition_by.cljs$lang$maxFixedArity = 3;
-var com = {firstlinq:{}};
-com.firstlinq.ssr = {};
 com.firstlinq.ssr.log = {};
 com.firstlinq.ssr.log._STAR_logging_enabled_STAR_ = !0;
 com.firstlinq.ssr.log.__GT_log_output = function(a) {
@@ -41458,6 +41459,2869 @@ cljs.core._add_method.call(null, com.firstlinq.ssr.api.handle_request, new cljs.
     };
   }(a), 16);
   return a;
+});
+com.firstlinq.ssr.routes = {};
+com.firstlinq.ssr.routes.append_return_uri = function(a, b) {
+  if (cljs.core.truth_(a)) {
+    var c = encodeURIComponent(b);
+    return cljs.core.not_EQ_.call(null, -1, a.indexOf("?")) ? [cljs.core.str(a), cljs.core.str("\x26redirect\x3d"), cljs.core.str(c)].join("") : [cljs.core.str(a), cljs.core.str("?redirect\x3d"), cljs.core.str(c)].join("");
+  }
+  return null;
+};
+com.firstlinq.ssr.routes.add_title_to_state = function(a, b) {
+  var c = cljs.core.fn_QMARK_.call(null, a) ? cljs.core.assoc_in.call(null, b, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "route", "route", 329891309), new cljs.core.Keyword(null, "title", "title", 636505583)], null), a.call(null, b)) : b;
+  return "string" === typeof a ? cljs.core.assoc_in.call(null, c, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "route", "route", 329891309), new cljs.core.Keyword(null, "title", "title", 636505583)], null), a) : c;
+};
+com.firstlinq.ssr.routes.create_route_handler = function(a) {
+  return function(b, c) {
+    var d = cljs.core.assoc.call(null, c, new cljs.core.Keyword(null, "query", "query", -1288509510), cljs.core.get_in.call(null, c, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword("domkm.silk", "url", "domkm.silk/url", 1456306613), new cljs.core.Keyword(null, "query", "query", -1288509510)], null))), e = "" + cljs.core.str((new cljs.core.Keyword("domkm.silk", "url", "domkm.silk/url", 1456306613)).cljs$core$IFn$_invoke$arity$1(d)), f = cljs.core.async.chan.call(null, 
+    1);
+    cljs.core.async.impl.dispatch.run.call(null, function(c, d, e) {
+      return function() {
+        var f = function() {
+          return function(a, b, c, d) {
+            return function() {
+              var b = null, c = function() {
+                var a = [null, null, null, null, null, null, null, null, null, null, null, null];
+                a[0] = b;
+                a[1] = 1;
+                return a;
+              }, d = function(b) {
+                for (;;) {
+                  var c;
+                  a: {
+                    try {
+                      for (;;) {
+                        var d = a.call(null, b);
+                        if (!cljs.core.keyword_identical_QMARK_.call(null, d, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
+                          c = d;
+                          break a;
+                        }
+                      }
+                    } catch (e) {
+                      if (e instanceof Object) {
+                        b[5] = e, cljs.core.async.impl.ioc_helpers.process_exception.call(null, b), c = new cljs.core.Keyword(null, "recur", "recur", -437573268);
+                      } else {
+                        throw e;
+                      }
+                    }
+                  }
+                  if (!cljs.core.keyword_identical_QMARK_.call(null, c, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
+                    return c;
+                  }
+                }
+              }, b = function(a) {
+                switch(arguments.length) {
+                  case 0:
+                    return c.call(this);
+                  case 1:
+                    return d.call(this, a);
+                }
+                throw Error("Invalid arity: " + arguments.length);
+              };
+              b.cljs$core$IFn$_invoke$arity$0 = c;
+              b.cljs$core$IFn$_invoke$arity$1 = d;
+              return b;
+            }();
+          }(function(c, d, e) {
+            return function(c) {
+              var f = c[1];
+              if (7 === f) {
+                var f = c[7], g = c[8], f = cljs.core.swap_BANG_.call(null, a, cljs.core.merge, g), h = cljs.core.PersistentVector.EMPTY_NODE, k = [new cljs.core.Keyword(null, "route", "route", 329891309), new cljs.core.Keyword(null, "title", "title", 636505583)], h = new cljs.core.PersistentVector(null, 2, 5, h, k, null), g = cljs.core.get_in.call(null, g, h);
+                c[7] = g;
+                c[9] = f;
+                cljs.core.truth_(g) ? c[1] = 9 : c[1] = 10;
+                return new cljs.core.Keyword(null, "recur", "recur", -437573268);
+              }
+              return 1 === f ? (f = c[10], f = cljs.core.deref.call(null, a), f = com.firstlinq.ssr.state.get_state.call(null, f, b, d, cljs.core.PersistentHashMap.EMPTY), c[10] = f, cljs.core.truth_(f) ? c[1] = 2 : c[1] = 3, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 4 === f ? (f = c[2], cljs.core.async.impl.ioc_helpers.return_chan.call(null, c, f)) : 6 === f ? (f = com.firstlinq.ssr.routes.append_return_uri.call(null, c[11], e), f = window.location = f, c[2] = f, c[1] = 8, new cljs.core.Keyword(null, 
+              "recur", "recur", -437573268)) : 3 === f ? (c[2] = null, c[1] = 4, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 2 === f ? (f = c[10], cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, c, 5, f)) : 11 === f ? (f = c[2], c[2] = f, c[1] = 8, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 9 === f ? (f = c[7], f = document.title = f, c[2] = f, c[1] = 11, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 5 === f ? (g = c[2], f = com.firstlinq.ssr.redirect_key.call(null, 
+              g), c[8] = g, c[11] = f, cljs.core.truth_(f) ? c[1] = 6 : c[1] = 7, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 10 === f ? (c[2] = null, c[1] = 11, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 8 === f ? (f = c[2], c[2] = f, c[1] = 4, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : null;
+            };
+          }(c, d, e), c, d, e);
+        }(), l = function() {
+          var a = f.call(null);
+          a[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c;
+          return a;
+        }();
+        return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, l);
+      };
+    }(f, d, e));
+    return f;
+  };
+};
+com.firstlinq.ssr.routes.reify_map = function(a, b, c, d, e) {
+  e = cljs.core.async.chan.call(null);
+  var f = cljs.core.async.chan.call(null, 1);
+  cljs.core.async.impl.dispatch.run.call(null, function(e, f) {
+    return function() {
+      var k = function() {
+        return function(a, b, c) {
+          return function() {
+            var b = null, c = function() {
+              var a = [null, null, null, null, null, null, null, null, null, null, null, null, null];
+              a[0] = b;
+              a[1] = 1;
+              return a;
+            }, d = function(b) {
+              for (;;) {
+                var c;
+                a: {
+                  try {
+                    for (;;) {
+                      var d = a.call(null, b);
+                      if (!cljs.core.keyword_identical_QMARK_.call(null, d, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
+                        c = d;
+                        break a;
+                      }
+                    }
+                  } catch (e) {
+                    if (e instanceof Object) {
+                      b[5] = e, cljs.core.async.impl.ioc_helpers.process_exception.call(null, b), c = new cljs.core.Keyword(null, "recur", "recur", -437573268);
+                    } else {
+                      throw e;
+                    }
+                  }
+                }
+                if (!cljs.core.keyword_identical_QMARK_.call(null, c, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
+                  return c;
+                }
+              }
+            }, b = function(a) {
+              switch(arguments.length) {
+                case 0:
+                  return c.call(this);
+                case 1:
+                  return d.call(this, a);
+              }
+              throw Error("Invalid arity: " + arguments.length);
+            };
+            b.cljs$core$IFn$_invoke$arity$0 = c;
+            b.cljs$core$IFn$_invoke$arity$1 = d;
+            return b;
+          }();
+        }(function(e, f) {
+          return function(e) {
+            var g = e[1];
+            if (7 === g) {
+              var h = e[7], g = e[2];
+              e[8] = g;
+              cljs.core.truth_(h) ? e[1] = 8 : e[1] = 9;
+              return new cljs.core.Keyword(null, "recur", "recur", -437573268);
+            }
+            if (1 === g) {
+              var g = [new cljs.core.Keyword(null, "route", "route", 329891309)], g = cljs.core.PersistentHashMap.fromArrays(g, [c]), k = cljs.core.merge.call(null, a, g), h = b;
+              e[9] = h;
+              e[10] = k;
+              e[2] = null;
+              e[1] = 2;
+              return new cljs.core.Keyword(null, "recur", "recur", -437573268);
+            }
+            return 4 === g ? (h = e[11], g = cljs.core.nth.call(null, h, 0, null), h = cljs.core.nth.call(null, h, 1, null), k = cljs.core.nth.call(null, h, 0, null), h = cljs.core.nth.call(null, h, 1, null), e[7] = h, e[12] = g, cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, e, 7, k)) : 6 === g ? (g = e[2], e[2] = g, e[1] = 3, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 3 === g ? (g = e[2], cljs.core.async.impl.ioc_helpers.return_chan.call(null, e, g)) : 2 === g ? (h = e[9], 
+            g = cljs.core.first.call(null, h), e[11] = g, cljs.core.truth_(g) ? e[1] = 4 : e[1] = 5, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 9 === g ? (g = e[8], g = (new cljs.core.Keyword(null, "body", "body", -2049205669)).cljs$core$IFn$_invoke$arity$1(g), e[2] = g, e[1] = 10, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 5 === g ? (k = e[10], g = com.firstlinq.ssr.routes.add_title_to_state.call(null, d, k), g = cljs.core.async.put_BANG_.call(null, f, g), e[2] = 
+            g, e[1] = 6, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 10 === g ? (h = e[9], k = e[10], g = e[12], g = cljs.core.assoc.call(null, k, g, e[2]), h = cljs.core.rest.call(null, h), e[9] = h, e[10] = g, e[2] = null, e[1] = 2, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 8 === g ? (h = e[7], g = e[8], g = (new cljs.core.Keyword(null, "body", "body", -2049205669)).cljs$core$IFn$_invoke$arity$1(g), g = h.call(null, g), e[2] = g, e[1] = 10, new cljs.core.Keyword(null, 
+            "recur", "recur", -437573268)) : null;
+          };
+        }(e, f), e, f);
+      }(), m = function() {
+        var a = k.call(null);
+        a[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = e;
+        return a;
+      }();
+      return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, m);
+    };
+  }(f, e));
+  return e;
+};
+com.cognitect = {};
+com.cognitect.transit = {};
+com.cognitect.transit.util = {};
+com.cognitect.transit.util.objectKeys = "undefined" != typeof Object.keys ? function(a) {
+  return Object.keys(a);
+} : function(a) {
+  return goog.object.getKeys(a);
+};
+com.cognitect.transit.util.isArray = "undefined" != typeof Array.isArray ? function(a) {
+  return Array.isArray(a);
+} : function(a) {
+  return "array" === goog.typeOf(a);
+};
+com.cognitect.transit.util.chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/\x3d";
+com.cognitect.transit.util.randInt = function(a) {
+  return Math.round(Math.random() * a);
+};
+com.cognitect.transit.util.randHex = function() {
+  return com.cognitect.transit.util.randInt(15).toString(16);
+};
+com.cognitect.transit.util.randomUUID = function() {
+  var a = (8 | 3 & com.cognitect.transit.util.randInt(14)).toString(16);
+  return com.cognitect.transit.util.randHex() + com.cognitect.transit.util.randHex() + com.cognitect.transit.util.randHex() + com.cognitect.transit.util.randHex() + com.cognitect.transit.util.randHex() + com.cognitect.transit.util.randHex() + com.cognitect.transit.util.randHex() + com.cognitect.transit.util.randHex() + "-" + com.cognitect.transit.util.randHex() + com.cognitect.transit.util.randHex() + com.cognitect.transit.util.randHex() + com.cognitect.transit.util.randHex() + "-4" + com.cognitect.transit.util.randHex() + 
+  com.cognitect.transit.util.randHex() + com.cognitect.transit.util.randHex() + "-" + a + com.cognitect.transit.util.randHex() + com.cognitect.transit.util.randHex() + com.cognitect.transit.util.randHex() + "-" + com.cognitect.transit.util.randHex() + com.cognitect.transit.util.randHex() + com.cognitect.transit.util.randHex() + com.cognitect.transit.util.randHex() + com.cognitect.transit.util.randHex() + com.cognitect.transit.util.randHex() + com.cognitect.transit.util.randHex() + com.cognitect.transit.util.randHex() + 
+  com.cognitect.transit.util.randHex() + com.cognitect.transit.util.randHex() + com.cognitect.transit.util.randHex() + com.cognitect.transit.util.randHex();
+};
+com.cognitect.transit.util.btoa = function(a) {
+  if ("undefined" != typeof btoa) {
+    return btoa(a);
+  }
+  a = String(a);
+  for (var b, c, d = 0, e = com.cognitect.transit.util.chars, f = "";a.charAt(d | 0) || (e = "\x3d", d % 1);f += e.charAt(63 & b >> 8 - d % 1 * 8)) {
+    c = a.charCodeAt(d += .75);
+    if (255 < c) {
+      throw Error("'btoa' failed: The string to be encoded contains characters outside of the Latin1 range.");
+    }
+    b = b << 8 | c;
+  }
+  return f;
+};
+com.cognitect.transit.util.atob = function(a) {
+  if ("undefined" != typeof atob) {
+    return atob(a);
+  }
+  a = String(a).replace(/=+$/, "");
+  if (1 == a.length % 4) {
+    throw Error("'atob' failed: The string to be decoded is not correctly encoded.");
+  }
+  for (var b = 0, c, d, e = 0, f = "";d = a.charAt(e++);~d && (c = b % 4 ? 64 * c + d : d, b++ % 4) ? f += String.fromCharCode(255 & c >> (-2 * b & 6)) : 0) {
+    d = com.cognitect.transit.util.chars.indexOf(d);
+  }
+  return f;
+};
+com.cognitect.transit.util.Uint8ToBase64 = function(a) {
+  for (var b = 0, c = a.length, d = "", e = null;b < c;) {
+    e = a.subarray(b, Math.min(b + 32768, c)), d += String.fromCharCode.apply(null, e), b += 32768;
+  }
+  return com.cognitect.transit.util.btoa(d);
+};
+com.cognitect.transit.util.Base64ToUint8 = function(a) {
+  a = com.cognitect.transit.util.atob(a);
+  for (var b = a.length, c = new Uint8Array(b), d = 0;d < b;d++) {
+    var e = a.charCodeAt(d);
+    c[d] = e;
+  }
+  return c;
+};
+com.cognitect.transit.eq = {};
+com.cognitect.transit.eq.hashCodeProperty = "transit$hashCode$";
+com.cognitect.transit.eq.hashCodeCounter = 1;
+com.cognitect.transit.eq.equals = function(a, b) {
+  if (null == a) {
+    return null == b;
+  }
+  if (a === b) {
+    return !0;
+  }
+  if ("object" === typeof a) {
+    if (com.cognitect.transit.util.isArray(a)) {
+      if (com.cognitect.transit.util.isArray(b) && a.length === b.length) {
+        for (var c = 0;c < a.length;c++) {
+          if (!com.cognitect.transit.eq.equals(a[c], b[c])) {
+            return !1;
+          }
+        }
+        return !0;
+      }
+      return !1;
+    }
+    if (a.com$cognitect$transit$equals) {
+      return a.com$cognitect$transit$equals(b);
+    }
+    if (null != b && "object" === typeof b) {
+      if (b.com$cognitect$transit$equals) {
+        return b.com$cognitect$transit$equals(a);
+      }
+      var c = 0, d = com.cognitect.transit.util.objectKeys(b).length, e;
+      for (e in a) {
+        if (a.hasOwnProperty(e) && (c++, !b.hasOwnProperty(e) || !com.cognitect.transit.eq.equals(a[e], b[e]))) {
+          return !1;
+        }
+      }
+      return c === d;
+    }
+  }
+  return !1;
+};
+com.cognitect.transit.eq.hashCombine = function(a, b) {
+  return a ^ b + 2654435769 + (a << 6) + (a >> 2);
+};
+com.cognitect.transit.eq.stringCodeCache = {};
+com.cognitect.transit.eq.stringCodeCacheSize = 0;
+com.cognitect.transit.eq.STR_CACHE_MAX = 256;
+com.cognitect.transit.eq.hashString = function(a) {
+  var b = com.cognitect.transit.eq.stringCodeCache[a];
+  if (null != b) {
+    return b;
+  }
+  for (var c = b = 0;c < a.length;++c) {
+    b = 31 * b + a.charCodeAt(c), b %= 4294967296;
+  }
+  com.cognitect.transit.eq.stringCodeCacheSize++;
+  com.cognitect.transit.eq.stringCodeCacheSize >= com.cognitect.transit.eq.STR_CACHE_MAX && (com.cognitect.transit.eq.stringCodeCache = {}, com.cognitect.transit.eq.stringCodeCacheSize = 1);
+  return com.cognitect.transit.eq.stringCodeCache[a] = b;
+};
+com.cognitect.transit.eq.hashMapLike = function(a) {
+  var b = 0;
+  if (null != a.forEach) {
+    a.forEach(function(a, c, d) {
+      b = (b + (com.cognitect.transit.eq.hashCode(c) ^ com.cognitect.transit.eq.hashCode(a))) % 4503599627370496;
+    });
+  } else {
+    for (var c = com.cognitect.transit.util.objectKeys(a), d = 0;d < c.length;d++) {
+      var e = c[d], f = a[e], b = (b + (com.cognitect.transit.eq.hashCode(e) ^ com.cognitect.transit.eq.hashCode(f))) % 4503599627370496
+    }
+  }
+  return b;
+};
+com.cognitect.transit.eq.hashArrayLike = function(a) {
+  var b = 0;
+  if (com.cognitect.transit.util.isArray(a)) {
+    for (var c = 0;c < a.length;c++) {
+      b = com.cognitect.transit.eq.hashCombine(b, com.cognitect.transit.eq.hashCode(a[c]));
+    }
+  } else {
+    a.forEach && a.forEach(function(a, c) {
+      b = com.cognitect.transit.eq.hashCombine(b, com.cognitect.transit.eq.hashCode(a));
+    });
+  }
+  return b;
+};
+com.cognitect.transit.eq.hashCode = function(a) {
+  if (null == a) {
+    return 0;
+  }
+  switch(typeof a) {
+    case "number":
+      return a;
+    case "boolean":
+      return !0 === a ? 1 : 0;
+    case "string":
+      return com.cognitect.transit.eq.hashString(a);
+    case "function":
+      var b = a[com.cognitect.transit.eq.hashCodeProperty];
+      b || (b = com.cognitect.transit.eq.hashCodeCounter, "undefined" != typeof Object.defineProperty ? Object.defineProperty(a, com.cognitect.transit.eq.hashCodeProperty, {value:b, enumerable:!1}) : a[com.cognitect.transit.eq.hashCodeProperty] = b, com.cognitect.transit.eq.hashCodeCounter++);
+      return b;
+    default:
+      return a instanceof Date ? a.valueOf() : com.cognitect.transit.util.isArray(a) ? com.cognitect.transit.eq.hashArrayLike(a) : a.com$cognitect$transit$hashCode ? a.com$cognitect$transit$hashCode() : com.cognitect.transit.eq.hashMapLike(a);
+  }
+};
+com.cognitect.transit.eq.extendToEQ = function(a, b) {
+  a.com$cognitect$transit$hashCode = b.hashCode;
+  a.com$cognitect$transit$equals = b.equals;
+  return a;
+};
+goog.math = {};
+goog.math.Long = function(a, b) {
+  this.low_ = a | 0;
+  this.high_ = b | 0;
+};
+goog.math.Long.IntCache_ = {};
+goog.math.Long.fromInt = function(a) {
+  if (-128 <= a && 128 > a) {
+    var b = goog.math.Long.IntCache_[a];
+    if (b) {
+      return b;
+    }
+  }
+  b = new goog.math.Long(a | 0, 0 > a ? -1 : 0);
+  -128 <= a && 128 > a && (goog.math.Long.IntCache_[a] = b);
+  return b;
+};
+goog.math.Long.fromNumber = function(a) {
+  return isNaN(a) || !isFinite(a) ? goog.math.Long.ZERO : a <= -goog.math.Long.TWO_PWR_63_DBL_ ? goog.math.Long.MIN_VALUE : a + 1 >= goog.math.Long.TWO_PWR_63_DBL_ ? goog.math.Long.MAX_VALUE : 0 > a ? goog.math.Long.fromNumber(-a).negate() : new goog.math.Long(a % goog.math.Long.TWO_PWR_32_DBL_ | 0, a / goog.math.Long.TWO_PWR_32_DBL_ | 0);
+};
+goog.math.Long.fromBits = function(a, b) {
+  return new goog.math.Long(a, b);
+};
+goog.math.Long.fromString = function(a, b) {
+  if (0 == a.length) {
+    throw Error("number format error: empty string");
+  }
+  var c = b || 10;
+  if (2 > c || 36 < c) {
+    throw Error("radix out of range: " + c);
+  }
+  if ("-" == a.charAt(0)) {
+    return goog.math.Long.fromString(a.substring(1), c).negate();
+  }
+  if (0 <= a.indexOf("-")) {
+    throw Error('number format error: interior "-" character: ' + a);
+  }
+  for (var d = goog.math.Long.fromNumber(Math.pow(c, 8)), e = goog.math.Long.ZERO, f = 0;f < a.length;f += 8) {
+    var g = Math.min(8, a.length - f), h = parseInt(a.substring(f, f + g), c);
+    8 > g ? (g = goog.math.Long.fromNumber(Math.pow(c, g)), e = e.multiply(g).add(goog.math.Long.fromNumber(h))) : (e = e.multiply(d), e = e.add(goog.math.Long.fromNumber(h)));
+  }
+  return e;
+};
+goog.math.Long.TWO_PWR_16_DBL_ = 65536;
+goog.math.Long.TWO_PWR_24_DBL_ = 16777216;
+goog.math.Long.TWO_PWR_32_DBL_ = goog.math.Long.TWO_PWR_16_DBL_ * goog.math.Long.TWO_PWR_16_DBL_;
+goog.math.Long.TWO_PWR_31_DBL_ = goog.math.Long.TWO_PWR_32_DBL_ / 2;
+goog.math.Long.TWO_PWR_48_DBL_ = goog.math.Long.TWO_PWR_32_DBL_ * goog.math.Long.TWO_PWR_16_DBL_;
+goog.math.Long.TWO_PWR_64_DBL_ = goog.math.Long.TWO_PWR_32_DBL_ * goog.math.Long.TWO_PWR_32_DBL_;
+goog.math.Long.TWO_PWR_63_DBL_ = goog.math.Long.TWO_PWR_64_DBL_ / 2;
+goog.math.Long.ZERO = goog.math.Long.fromInt(0);
+goog.math.Long.ONE = goog.math.Long.fromInt(1);
+goog.math.Long.NEG_ONE = goog.math.Long.fromInt(-1);
+goog.math.Long.MAX_VALUE = goog.math.Long.fromBits(-1, 2147483647);
+goog.math.Long.MIN_VALUE = goog.math.Long.fromBits(0, -2147483648);
+goog.math.Long.TWO_PWR_24_ = goog.math.Long.fromInt(16777216);
+goog.math.Long.prototype.toInt = function() {
+  return this.low_;
+};
+goog.math.Long.prototype.toNumber = function() {
+  return this.high_ * goog.math.Long.TWO_PWR_32_DBL_ + this.getLowBitsUnsigned();
+};
+goog.math.Long.prototype.toString = function(a) {
+  a = a || 10;
+  if (2 > a || 36 < a) {
+    throw Error("radix out of range: " + a);
+  }
+  if (this.isZero()) {
+    return "0";
+  }
+  if (this.isNegative()) {
+    if (this.equals(goog.math.Long.MIN_VALUE)) {
+      var b = goog.math.Long.fromNumber(a), c = this.div(b), b = c.multiply(b).subtract(this);
+      return c.toString(a) + b.toInt().toString(a);
+    }
+    return "-" + this.negate().toString(a);
+  }
+  for (var c = goog.math.Long.fromNumber(Math.pow(a, 6)), b = this, d = "";;) {
+    var e = b.div(c), f = b.subtract(e.multiply(c)).toInt().toString(a), b = e;
+    if (b.isZero()) {
+      return f + d;
+    }
+    for (;6 > f.length;) {
+      f = "0" + f;
+    }
+    d = "" + f + d;
+  }
+};
+goog.math.Long.prototype.getHighBits = function() {
+  return this.high_;
+};
+goog.math.Long.prototype.getLowBits = function() {
+  return this.low_;
+};
+goog.math.Long.prototype.getLowBitsUnsigned = function() {
+  return 0 <= this.low_ ? this.low_ : goog.math.Long.TWO_PWR_32_DBL_ + this.low_;
+};
+goog.math.Long.prototype.getNumBitsAbs = function() {
+  if (this.isNegative()) {
+    return this.equals(goog.math.Long.MIN_VALUE) ? 64 : this.negate().getNumBitsAbs();
+  }
+  for (var a = 0 != this.high_ ? this.high_ : this.low_, b = 31;0 < b && 0 == (a & 1 << b);b--) {
+  }
+  return 0 != this.high_ ? b + 33 : b + 1;
+};
+goog.math.Long.prototype.isZero = function() {
+  return 0 == this.high_ && 0 == this.low_;
+};
+goog.math.Long.prototype.isNegative = function() {
+  return 0 > this.high_;
+};
+goog.math.Long.prototype.isOdd = function() {
+  return 1 == (this.low_ & 1);
+};
+goog.math.Long.prototype.equals = function(a) {
+  return this.high_ == a.high_ && this.low_ == a.low_;
+};
+goog.math.Long.prototype.notEquals = function(a) {
+  return this.high_ != a.high_ || this.low_ != a.low_;
+};
+goog.math.Long.prototype.lessThan = function(a) {
+  return 0 > this.compare(a);
+};
+goog.math.Long.prototype.lessThanOrEqual = function(a) {
+  return 0 >= this.compare(a);
+};
+goog.math.Long.prototype.greaterThan = function(a) {
+  return 0 < this.compare(a);
+};
+goog.math.Long.prototype.greaterThanOrEqual = function(a) {
+  return 0 <= this.compare(a);
+};
+goog.math.Long.prototype.compare = function(a) {
+  if (this.equals(a)) {
+    return 0;
+  }
+  var b = this.isNegative(), c = a.isNegative();
+  return b && !c ? -1 : !b && c ? 1 : this.subtract(a).isNegative() ? -1 : 1;
+};
+goog.math.Long.prototype.negate = function() {
+  return this.equals(goog.math.Long.MIN_VALUE) ? goog.math.Long.MIN_VALUE : this.not().add(goog.math.Long.ONE);
+};
+goog.math.Long.prototype.add = function(a) {
+  var b = this.high_ >>> 16, c = this.high_ & 65535, d = this.low_ >>> 16, e = a.high_ >>> 16, f = a.high_ & 65535, g = a.low_ >>> 16, h;
+  h = 0 + ((this.low_ & 65535) + (a.low_ & 65535));
+  a = 0 + (h >>> 16);
+  a += d + g;
+  d = 0 + (a >>> 16);
+  d += c + f;
+  c = 0 + (d >>> 16);
+  c = c + (b + e) & 65535;
+  return goog.math.Long.fromBits((a & 65535) << 16 | h & 65535, c << 16 | d & 65535);
+};
+goog.math.Long.prototype.subtract = function(a) {
+  return this.add(a.negate());
+};
+goog.math.Long.prototype.multiply = function(a) {
+  if (this.isZero() || a.isZero()) {
+    return goog.math.Long.ZERO;
+  }
+  if (this.equals(goog.math.Long.MIN_VALUE)) {
+    return a.isOdd() ? goog.math.Long.MIN_VALUE : goog.math.Long.ZERO;
+  }
+  if (a.equals(goog.math.Long.MIN_VALUE)) {
+    return this.isOdd() ? goog.math.Long.MIN_VALUE : goog.math.Long.ZERO;
+  }
+  if (this.isNegative()) {
+    return a.isNegative() ? this.negate().multiply(a.negate()) : this.negate().multiply(a).negate();
+  }
+  if (a.isNegative()) {
+    return this.multiply(a.negate()).negate();
+  }
+  if (this.lessThan(goog.math.Long.TWO_PWR_24_) && a.lessThan(goog.math.Long.TWO_PWR_24_)) {
+    return goog.math.Long.fromNumber(this.toNumber() * a.toNumber());
+  }
+  var b = this.high_ >>> 16, c = this.high_ & 65535, d = this.low_ >>> 16, e = this.low_ & 65535, f = a.high_ >>> 16, g = a.high_ & 65535, h = a.low_ >>> 16;
+  a = a.low_ & 65535;
+  var k, m, l, n;
+  n = 0 + e * a;
+  l = 0 + (n >>> 16);
+  l += d * a;
+  m = 0 + (l >>> 16);
+  l = (l & 65535) + e * h;
+  m += l >>> 16;
+  l &= 65535;
+  m += c * a;
+  k = 0 + (m >>> 16);
+  m = (m & 65535) + d * h;
+  k += m >>> 16;
+  m &= 65535;
+  m += e * g;
+  k += m >>> 16;
+  m &= 65535;
+  k = k + (b * a + c * h + d * g + e * f) & 65535;
+  return goog.math.Long.fromBits(l << 16 | n & 65535, k << 16 | m);
+};
+goog.math.Long.prototype.div = function(a) {
+  if (a.isZero()) {
+    throw Error("division by zero");
+  }
+  if (this.isZero()) {
+    return goog.math.Long.ZERO;
+  }
+  if (this.equals(goog.math.Long.MIN_VALUE)) {
+    if (a.equals(goog.math.Long.ONE) || a.equals(goog.math.Long.NEG_ONE)) {
+      return goog.math.Long.MIN_VALUE;
+    }
+    if (a.equals(goog.math.Long.MIN_VALUE)) {
+      return goog.math.Long.ONE;
+    }
+    var b = this.shiftRight(1).div(a).shiftLeft(1);
+    if (b.equals(goog.math.Long.ZERO)) {
+      return a.isNegative() ? goog.math.Long.ONE : goog.math.Long.NEG_ONE;
+    }
+    var c = this.subtract(a.multiply(b));
+    return b.add(c.div(a));
+  }
+  if (a.equals(goog.math.Long.MIN_VALUE)) {
+    return goog.math.Long.ZERO;
+  }
+  if (this.isNegative()) {
+    return a.isNegative() ? this.negate().div(a.negate()) : this.negate().div(a).negate();
+  }
+  if (a.isNegative()) {
+    return this.div(a.negate()).negate();
+  }
+  for (var d = goog.math.Long.ZERO, c = this;c.greaterThanOrEqual(a);) {
+    for (var b = Math.max(1, Math.floor(c.toNumber() / a.toNumber())), e = Math.ceil(Math.log(b) / Math.LN2), e = 48 >= e ? 1 : Math.pow(2, e - 48), f = goog.math.Long.fromNumber(b), g = f.multiply(a);g.isNegative() || g.greaterThan(c);) {
+      b -= e, f = goog.math.Long.fromNumber(b), g = f.multiply(a);
+    }
+    f.isZero() && (f = goog.math.Long.ONE);
+    d = d.add(f);
+    c = c.subtract(g);
+  }
+  return d;
+};
+goog.math.Long.prototype.modulo = function(a) {
+  return this.subtract(this.div(a).multiply(a));
+};
+goog.math.Long.prototype.not = function() {
+  return goog.math.Long.fromBits(~this.low_, ~this.high_);
+};
+goog.math.Long.prototype.and = function(a) {
+  return goog.math.Long.fromBits(this.low_ & a.low_, this.high_ & a.high_);
+};
+goog.math.Long.prototype.or = function(a) {
+  return goog.math.Long.fromBits(this.low_ | a.low_, this.high_ | a.high_);
+};
+goog.math.Long.prototype.xor = function(a) {
+  return goog.math.Long.fromBits(this.low_ ^ a.low_, this.high_ ^ a.high_);
+};
+goog.math.Long.prototype.shiftLeft = function(a) {
+  a &= 63;
+  if (0 == a) {
+    return this;
+  }
+  var b = this.low_;
+  return 32 > a ? goog.math.Long.fromBits(b << a, this.high_ << a | b >>> 32 - a) : goog.math.Long.fromBits(0, b << a - 32);
+};
+goog.math.Long.prototype.shiftRight = function(a) {
+  a &= 63;
+  if (0 == a) {
+    return this;
+  }
+  var b = this.high_;
+  return 32 > a ? goog.math.Long.fromBits(this.low_ >>> a | b << 32 - a, b >> a) : goog.math.Long.fromBits(b >> a - 32, 0 <= b ? 0 : -1);
+};
+goog.math.Long.prototype.shiftRightUnsigned = function(a) {
+  a &= 63;
+  if (0 == a) {
+    return this;
+  }
+  var b = this.high_;
+  return 32 > a ? goog.math.Long.fromBits(this.low_ >>> a | b << 32 - a, b >>> a) : 32 == a ? goog.math.Long.fromBits(b, 0) : goog.math.Long.fromBits(b >>> a - 32, 0);
+};
+com.cognitect.transit.types = {};
+com.cognitect.transit.types.TaggedValue = function(a, b) {
+  this.tag = a;
+  this.rep = b;
+  this.hashCode = -1;
+};
+com.cognitect.transit.types.TaggedValue.prototype.toString = function() {
+  return "[TaggedValue: " + this.tag + ", " + this.rep + "]";
+};
+com.cognitect.transit.types.TaggedValue.prototype.equiv = function(a) {
+  return com.cognitect.transit.eq.equals(this, a);
+};
+com.cognitect.transit.types.TaggedValue.prototype.equiv = com.cognitect.transit.types.TaggedValue.prototype.equiv;
+com.cognitect.transit.types.TaggedValue.prototype.com$cognitect$transit$equals = function(a) {
+  return a instanceof com.cognitect.transit.types.TaggedValue ? this.tag === a.tag && com.cognitect.transit.eq.equals(this.rep, a.rep) : !1;
+};
+com.cognitect.transit.types.TaggedValue.prototype.com$cognitect$transit$hashCode = function() {
+  -1 === this.hashCode && (this.hashCode = com.cognitect.transit.eq.hashCombine(com.cognitect.transit.eq.hashCode(this.tag), com.cognitect.transit.eq.hashCode(this.rep)));
+  return this.hashCode;
+};
+com.cognitect.transit.types.taggedValue = function(a, b) {
+  return new com.cognitect.transit.types.TaggedValue(a, b);
+};
+com.cognitect.transit.types.isTaggedValue = function(a) {
+  return a instanceof com.cognitect.transit.types.TaggedValue;
+};
+com.cognitect.transit.types.nullValue = function() {
+  return null;
+};
+com.cognitect.transit.types.boolValue = function(a) {
+  return "t" === a;
+};
+com.cognitect.transit.types.MAX_INT = goog.math.Long.fromString("9007199254740992");
+com.cognitect.transit.types.MIN_INT = goog.math.Long.fromString("-9007199254740992");
+com.cognitect.transit.types.intValue = function(a) {
+  if ("number" === typeof a || a instanceof goog.math.Long) {
+    return a;
+  }
+  a = goog.math.Long.fromString(a, 10);
+  return a.greaterThan(com.cognitect.transit.types.MAX_INT) || a.lessThan(com.cognitect.transit.types.MIN_INT) ? a : a.toNumber();
+};
+goog.math.Long.prototype.equiv = function(a) {
+  return com.cognitect.transit.eq.equals(this, a);
+};
+goog.math.Long.prototype.equiv = goog.math.Long.prototype.equiv;
+goog.math.Long.prototype.com$cognitect$transit$equals = function(a) {
+  return a instanceof goog.math.Long && this.equals(a);
+};
+goog.math.Long.prototype.com$cognitect$transit$hashCode = function() {
+  return this.toInt();
+};
+com.cognitect.transit.types.isInteger = function(a) {
+  return a instanceof goog.math.Long ? !0 : "number" === typeof a && !isNaN(a) && Infinity !== a && parseFloat(a) === parseInt(a);
+};
+com.cognitect.transit.types.floatValue = function(a) {
+  return parseFloat(a);
+};
+com.cognitect.transit.types.bigInteger = function(a) {
+  return com.cognitect.transit.types.taggedValue("n", a);
+};
+com.cognitect.transit.types.isBigInteger = function(a) {
+  return a instanceof com.cognitect.transit.types.TaggedValue && "n" === a.tag;
+};
+com.cognitect.transit.types.bigDecimalValue = function(a) {
+  return com.cognitect.transit.types.taggedValue("f", a);
+};
+com.cognitect.transit.types.isBigDecimal = function(a) {
+  return a instanceof com.cognitect.transit.types.TaggedValue && "f" === a.tag;
+};
+com.cognitect.transit.types.charValue = function(a) {
+  return a;
+};
+com.cognitect.transit.types.Keyword = function(a) {
+  this.name = a;
+  this.hashCode = -1;
+};
+com.cognitect.transit.types.Keyword.prototype.toString = function() {
+  return ":" + this.name;
+};
+com.cognitect.transit.types.Keyword.prototype.equiv = function(a) {
+  return com.cognitect.transit.eq.equals(this, a);
+};
+com.cognitect.transit.types.Keyword.prototype.equiv = com.cognitect.transit.types.Keyword.prototype.equiv;
+com.cognitect.transit.types.Keyword.prototype.com$cognitect$transit$equals = function(a) {
+  return a instanceof com.cognitect.transit.types.Keyword && this.name == a.name;
+};
+com.cognitect.transit.types.Keyword.prototype.com$cognitect$transit$hashCode = function() {
+  -1 === this.hashCode && (this.hashCode = com.cognitect.transit.eq.hashCode(this.name));
+  return this.hashCode;
+};
+com.cognitect.transit.types.keyword = function(a) {
+  return new com.cognitect.transit.types.Keyword(a);
+};
+com.cognitect.transit.types.isKeyword = function(a) {
+  return a instanceof com.cognitect.transit.types.Keyword;
+};
+com.cognitect.transit.types.Symbol = function(a) {
+  this.name = a;
+  this.hashCode = -1;
+};
+com.cognitect.transit.types.Symbol.prototype.toString = function() {
+  return "[Symbol: " + this.name + "]";
+};
+com.cognitect.transit.types.Symbol.prototype.equiv = function(a) {
+  return com.cognitect.transit.eq.equals(this, a);
+};
+com.cognitect.transit.types.Symbol.prototype.equiv = com.cognitect.transit.types.Symbol.prototype.equiv;
+com.cognitect.transit.types.Symbol.prototype.com$cognitect$transit$equals = function(a) {
+  return a instanceof com.cognitect.transit.types.Symbol && this.name == a.name;
+};
+com.cognitect.transit.types.Symbol.prototype.com$cognitect$transit$hashCode = function() {
+  -1 === this.hashCode && (this.hashCode = com.cognitect.transit.eq.hashCode(this.name));
+  return this.hashCode;
+};
+com.cognitect.transit.types.symbol = function(a) {
+  return new com.cognitect.transit.types.Symbol(a);
+};
+com.cognitect.transit.types.isSymbol = function(a) {
+  return a instanceof com.cognitect.transit.types.Symbol;
+};
+com.cognitect.transit.types.hexFor = function(a, b, c) {
+  var d = "";
+  c = c || b + 1;
+  for (var e = 8 * (7 - b), f = goog.math.Long.fromInt(255).shiftLeft(e);b < c;b++, e -= 8, f = f.shiftRightUnsigned(8)) {
+    var g = a.and(f).shiftRightUnsigned(e).toString(16);
+    1 == g.length && (g = "0" + g);
+    d += g;
+  }
+  return d;
+};
+com.cognitect.transit.types.UUID = function(a, b) {
+  this.high = a;
+  this.low = b;
+  this.hashCode = -1;
+};
+com.cognitect.transit.types.UUID.prototype.getLeastSignificantBits = function() {
+  return this.low;
+};
+com.cognitect.transit.types.UUID.prototype.getMostSignificantBits = function() {
+  return this.high;
+};
+com.cognitect.transit.types.UUID.prototype.toString = function(a) {
+  var b = this.high, c = this.low;
+  a = "" + (com.cognitect.transit.types.hexFor(b, 0, 4) + "-");
+  a += com.cognitect.transit.types.hexFor(b, 4, 6) + "-";
+  a += com.cognitect.transit.types.hexFor(b, 6, 8) + "-";
+  a += com.cognitect.transit.types.hexFor(c, 0, 2) + "-";
+  return a += com.cognitect.transit.types.hexFor(c, 2, 8);
+};
+com.cognitect.transit.types.UUID.prototype.equiv = function(a) {
+  return com.cognitect.transit.eq.equals(this, a);
+};
+com.cognitect.transit.types.UUID.prototype.equiv = com.cognitect.transit.types.UUID.prototype.equiv;
+com.cognitect.transit.types.UUID.prototype.com$cognitect$transit$equals = function(a) {
+  return a instanceof com.cognitect.transit.types.UUID && this.high.equals(a.high) && this.low.equals(a.low);
+};
+com.cognitect.transit.types.UUID.prototype.com$cognitect$transit$hashCode = function() {
+  -1 === this.hashCode && (this.hashCode = com.cognitect.transit.eq.hashCode(this.toString()));
+  return this.hashCode;
+};
+com.cognitect.transit.types.UUIDfromString = function(a) {
+  a = a.replace(/-/g, "");
+  for (var b = null, c = null, d = c = 0, e = 24, f = 0, f = c = 0, e = 24;8 > f;f += 2, e -= 8) {
+    c |= parseInt(a.substring(f, f + 2), 16) << e;
+  }
+  d = 0;
+  f = 8;
+  for (e = 24;16 > f;f += 2, e -= 8) {
+    d |= parseInt(a.substring(f, f + 2), 16) << e;
+  }
+  b = goog.math.Long.fromBits(d, c);
+  c = 0;
+  f = 16;
+  for (e = 24;24 > f;f += 2, e -= 8) {
+    c |= parseInt(a.substring(f, f + 2), 16) << e;
+  }
+  d = 0;
+  for (e = f = 24;32 > f;f += 2, e -= 8) {
+    d |= parseInt(a.substring(f, f + 2), 16) << e;
+  }
+  c = goog.math.Long.fromBits(d, c);
+  return new com.cognitect.transit.types.UUID(b, c);
+};
+com.cognitect.transit.types.uuid = function(a) {
+  return com.cognitect.transit.types.UUIDfromString(a);
+};
+com.cognitect.transit.types.isUUID = function(a) {
+  return a instanceof com.cognitect.transit.types.UUID;
+};
+com.cognitect.transit.types.date = function(a) {
+  a = "number" === typeof a ? a : parseInt(a, 10);
+  return new Date(a);
+};
+com.cognitect.transit.types.verboseDate = function(a) {
+  return new Date(a);
+};
+Date.prototype.com$cognitect$transit$equals = function(a) {
+  return a instanceof Date ? this.valueOf() === a.valueOf() : !1;
+};
+Date.prototype.com$cognitect$transit$hashCode = function() {
+  return this.valueOf();
+};
+com.cognitect.transit.types.binary = function(a, b) {
+  return b && !1 === b.preferBuffers || "undefined" == typeof Buffer ? "undefined" != typeof Uint8Array ? com.cognitect.transit.util.Base64ToUint8(a) : com.cognitect.transit.types.taggedValue("b", a) : new Buffer(a, "base64");
+};
+com.cognitect.transit.types.isBinary = function(a) {
+  return "undefined" != typeof Buffer && a instanceof Buffer ? !0 : "undefined" != typeof Uint8Array && a instanceof Uint8Array ? !0 : a instanceof com.cognitect.transit.types.TaggedValue && "b" === a.tag;
+};
+com.cognitect.transit.types.uri = function(a) {
+  return com.cognitect.transit.types.taggedValue("r", a);
+};
+com.cognitect.transit.types.isURI = function(a) {
+  return a instanceof com.cognitect.transit.types.TaggedValue && "r" === a.tag;
+};
+com.cognitect.transit.types.KEYS = 0;
+com.cognitect.transit.types.VALUES = 1;
+com.cognitect.transit.types.ENTRIES = 2;
+com.cognitect.transit.types.TransitArrayMapIterator = function(a, b) {
+  this.entries = a;
+  this.type = b || com.cognitect.transit.types.KEYS;
+  this.idx = 0;
+};
+com.cognitect.transit.types.TransitArrayMapIterator.prototype.next = function(a, b) {
+  if (this.idx < this.entries.length) {
+    var c = null, c = this.type === com.cognitect.transit.types.KEYS ? this.entries[this.idx] : this.type === com.cognitect.transit.types.VALUES ? this.entries[this.idx + 1] : [this.entries[this.idx], this.entries[this.idx + 1]], c = {value:c, done:!1};
+    this.idx += 2;
+    return c;
+  }
+  return {value:null, done:!0};
+};
+com.cognitect.transit.types.TransitArrayMapIterator.prototype.next = com.cognitect.transit.types.TransitArrayMapIterator.prototype.next;
+com.cognitect.transit.types.TransitMapIterator = function(a, b) {
+  this.map = a;
+  this.type = b || com.cognitect.transit.types.KEYS;
+  this.keys = this.map.getKeys();
+  this.idx = 0;
+  this.bucket = null;
+  this.bucketIdx = 0;
+};
+com.cognitect.transit.types.TransitMapIterator.prototype.next = function() {
+  if (this.idx < this.map.size) {
+    null != this.bucket && this.bucketIdx < this.bucket.length || (this.bucket = this.map.map[this.keys[this.idx]], this.bucketIdx = 0);
+    var a = null, a = this.type === com.cognitect.transit.types.KEYS ? this.bucket[this.bucketIdx] : this.type === com.cognitect.transit.types.VALUES ? this.bucket[this.bucketIdx + 1] : [this.bucket[this.bucketIdx], this.bucket[this.bucketIdx + 1]], a = {value:a, done:!1};
+    this.idx++;
+    this.bucketIdx += 2;
+    return a;
+  }
+  return {value:null, done:!0};
+};
+com.cognitect.transit.types.TransitMapIterator.prototype.next = com.cognitect.transit.types.TransitMapIterator.prototype.next;
+com.cognitect.transit.types.mapEquals = function(a, b) {
+  if ((b instanceof com.cognitect.transit.types.TransitMap || b instanceof com.cognitect.transit.types.TransitArrayMap) && a.size === b.size) {
+    for (var c in a.map) {
+      for (var d = a.map[c], e = 0;e < d.length;e += 2) {
+        if (!com.cognitect.transit.eq.equals(d[e + 1], b.get(d[e]))) {
+          return !1;
+        }
+      }
+    }
+    return !0;
+  }
+  if (null != b && "object" === typeof b && (c = com.cognitect.transit.util.objectKeys(b), d = c.length, a.size === d)) {
+    for (e = 0;e < d;e++) {
+      var f = c[e];
+      if (!a.has(f) || !com.cognitect.transit.eq.equals(b[f], a.get(f))) {
+        return !1;
+      }
+    }
+    return !0;
+  }
+  return !1;
+};
+com.cognitect.transit.types.SMALL_ARRAY_MAP_THRESHOLD = 8;
+com.cognitect.transit.types.ARRAY_MAP_THRESHOLD = 32;
+com.cognitect.transit.types.ARRAY_MAP_ACCESS_THRESHOLD = 32;
+com.cognitect.transit.types.TransitArrayMap = function(a) {
+  this._entries = a;
+  this.backingMap = null;
+  this.hashCode = -1;
+  this.size = a.length / 2;
+  this.accesses = 0;
+};
+com.cognitect.transit.types.TransitArrayMap.prototype.toString = function() {
+  return "[TransitArrayMap]";
+};
+com.cognitect.transit.types.TransitArrayMap.prototype.convert = function() {
+  if (this.backingMap) {
+    throw Error("Invalid operation, already converted");
+  }
+  if (this.size < com.cognitect.transit.types.SMALL_ARRAY_MAP_THRESHOLD) {
+    return !1;
+  }
+  this.accesses++;
+  return this.accesses > com.cognitect.transit.types.ARRAY_MAP_ACCESS_THRESHOLD ? (this.backingMap = com.cognitect.transit.types.map(this._entries, !1, !0), this._entries = [], !0) : !1;
+};
+com.cognitect.transit.types.TransitArrayMap.prototype.clear = function() {
+  this.hashCode = -1;
+  this.backingMap ? this.backingMap.clear() : this._entries = [];
+  this.size = 0;
+};
+com.cognitect.transit.types.TransitArrayMap.prototype.clear = com.cognitect.transit.types.TransitArrayMap.prototype.clear;
+com.cognitect.transit.types.TransitArrayMap.prototype.keys = function() {
+  return this.backingMap ? this.backingMap.keys() : new com.cognitect.transit.types.TransitArrayMapIterator(this._entries, com.cognitect.transit.types.KEYS);
+};
+com.cognitect.transit.types.TransitArrayMap.prototype.keys = com.cognitect.transit.types.TransitArrayMap.prototype.keys;
+com.cognitect.transit.types.TransitArrayMap.prototype.keySet = function() {
+  if (this.backingMap) {
+    return this.backingMap.keySet();
+  }
+  for (var a = [], b = 0, c = 0;c < this._entries.length;b++, c += 2) {
+    a[b] = this._entries[c];
+  }
+  return a;
+};
+com.cognitect.transit.types.TransitArrayMap.prototype.keySet = com.cognitect.transit.types.TransitArrayMap.prototype.keySet;
+com.cognitect.transit.types.TransitArrayMap.prototype.entries = function() {
+  return this.backingMap ? this.backingMap.entries() : new com.cognitect.transit.types.TransitArrayMapIterator(this._entries, com.cognitect.transit.types.ENTRIES);
+};
+com.cognitect.transit.types.TransitArrayMap.prototype.entries = com.cognitect.transit.types.TransitArrayMap.prototype.entries;
+com.cognitect.transit.types.TransitArrayMap.prototype.values = function() {
+  return this.backingMap ? this.backingMap.values() : new com.cognitect.transit.types.TransitArrayMapIterator(this._entries, com.cognitect.transit.types.VALUES);
+};
+com.cognitect.transit.types.TransitArrayMap.prototype.values = com.cognitect.transit.types.TransitArrayMap.prototype.values;
+com.cognitect.transit.types.TransitArrayMap.prototype.forEach = function(a) {
+  if (this.backingMap) {
+    this.backingMap.forEach(a);
+  } else {
+    for (var b = 0;b < this._entries.length;b += 2) {
+      a(this._entries[b + 1], this._entries[b]);
+    }
+  }
+};
+com.cognitect.transit.types.TransitArrayMap.prototype.forEach = com.cognitect.transit.types.TransitArrayMap.prototype.forEach;
+com.cognitect.transit.types.TransitArrayMap.prototype.get = function(a, b) {
+  if (this.backingMap) {
+    return this.backingMap.get(a);
+  }
+  if (this.convert()) {
+    return this.get(a);
+  }
+  for (var c = 0;c < this._entries.length;c += 2) {
+    if (com.cognitect.transit.eq.equals(this._entries[c], a)) {
+      return this._entries[c + 1];
+    }
+  }
+  return b;
+};
+com.cognitect.transit.types.TransitArrayMap.prototype.get = com.cognitect.transit.types.TransitArrayMap.prototype.get;
+com.cognitect.transit.types.TransitArrayMap.prototype.has = function(a) {
+  if (this.backingMap) {
+    return this.backingMap.has(a);
+  }
+  if (this.convert()) {
+    return this.has(a);
+  }
+  for (var b = 0;b < this._entries.length;b += 2) {
+    if (com.cognitect.transit.eq.equals(this._entries[b], a)) {
+      return !0;
+    }
+  }
+  return !1;
+};
+com.cognitect.transit.types.TransitArrayMap.prototype.has = com.cognitect.transit.types.TransitArrayMap.prototype.has;
+com.cognitect.transit.types.TransitArrayMap.prototype.set = function(a, b) {
+  this.hashCode = -1;
+  if (this.backingMap) {
+    this.backingMap.set(a, b), this.size = this.backingMap.size;
+  } else {
+    for (var c = 0;c < this._entries.length;c += 2) {
+      if (com.cognitect.transit.eq.equals(this._entries[c], a)) {
+        this._entries[c + 1] = b;
+        return;
+      }
+    }
+    this._entries.push(a);
+    this._entries.push(b);
+    this.size++;
+    this.size > com.cognitect.transit.types.ARRAY_MAP_THRESHOLD && (this.backingMap = com.cognitect.transit.types.map(this._entries, !1, !0), this._entries = null);
+  }
+};
+com.cognitect.transit.types.TransitArrayMap.prototype.set = com.cognitect.transit.types.TransitArrayMap.prototype.set;
+com.cognitect.transit.types.TransitArrayMap.prototype["delete"] = function(a) {
+  this.hashCode = -1;
+  if (this.backingMap) {
+    this.backingMap["delete"](a), this.size = this.backingMap.size;
+  } else {
+    for (var b = 0;b < this._entries.length;b += 2) {
+      if (com.cognitect.transit.eq.equals(this._entries[b], a)) {
+        this._entries.splice(b, 2);
+        this.size--;
+        break;
+      }
+    }
+  }
+};
+com.cognitect.transit.types.TransitArrayMap.prototype.com$cognitect$transit$hashCode = function() {
+  if (this.backingMap) {
+    return this.backingMap.com$cognitect$transit$hashCode();
+  }
+  -1 === this.hashCode && (this.hashCode = com.cognitect.transit.eq.hashMapLike(this));
+  return this.hashCode;
+};
+com.cognitect.transit.types.TransitArrayMap.prototype.com$cognitect$transit$equals = function(a) {
+  return this.backingMap ? com.cognitect.transit.types.mapEquals(this.backingMap, a) : com.cognitect.transit.types.mapEquals(this, a);
+};
+com.cognitect.transit.types.TransitMap = function(a, b, c) {
+  this.map = b || {};
+  this._keys = a || [];
+  this.size = c || 0;
+  this.hashCode = -1;
+};
+com.cognitect.transit.types.TransitMap.prototype.toString = function() {
+  return "[TransitMap]";
+};
+com.cognitect.transit.types.TransitMap.prototype.clear = function() {
+  this.hashCode = -1;
+  this.map = {};
+  this._keys = [];
+  this.size = 0;
+};
+com.cognitect.transit.types.TransitMap.prototype.clear = com.cognitect.transit.types.TransitMap.prototype.clear;
+com.cognitect.transit.types.TransitMap.prototype.getKeys = function() {
+  return null != this._keys ? this._keys : com.cognitect.transit.util.objectKeys(this.map);
+};
+com.cognitect.transit.types.TransitMap.prototype["delete"] = function(a) {
+  this.hashCode = -1;
+  this._keys = null;
+  for (var b = com.cognitect.transit.eq.hashCode(a), c = this.map[b], d = 0;d < c.length;d += 2) {
+    if (com.cognitect.transit.eq.equals(a, c[d])) {
+      c.splice(d, 2);
+      0 === c.length && delete this.map[b];
+      this.size--;
+      break;
+    }
+  }
+};
+com.cognitect.transit.types.TransitMap.prototype.entries = function() {
+  return new com.cognitect.transit.types.TransitMapIterator(this, com.cognitect.transit.types.ENTRIES);
+};
+com.cognitect.transit.types.TransitMap.prototype.entries = com.cognitect.transit.types.TransitMap.prototype.entries;
+com.cognitect.transit.types.TransitMap.prototype.forEach = function(a) {
+  for (var b = this.getKeys(), c = 0;c < b.length;c++) {
+    for (var d = this.map[b[c]], e = 0;e < d.length;e += 2) {
+      a(d[e + 1], d[e], this);
+    }
+  }
+};
+com.cognitect.transit.types.TransitMap.prototype.forEach = com.cognitect.transit.types.TransitMap.prototype.forEach;
+com.cognitect.transit.types.TransitMap.prototype.get = function(a, b) {
+  var c = com.cognitect.transit.eq.hashCode(a), c = this.map[c];
+  if (null != c) {
+    for (var d = 0;d < c.length;d += 2) {
+      if (com.cognitect.transit.eq.equals(a, c[d])) {
+        return c[d + 1];
+      }
+    }
+  } else {
+    return b;
+  }
+};
+com.cognitect.transit.types.TransitMap.prototype.get = com.cognitect.transit.types.TransitMap.prototype.get;
+com.cognitect.transit.types.TransitMap.prototype.has = function(a) {
+  var b = com.cognitect.transit.eq.hashCode(a), b = this.map[b];
+  if (null != b) {
+    for (var c = 0;c < b.length;c += 2) {
+      if (com.cognitect.transit.eq.equals(a, b[c])) {
+        return !0;
+      }
+    }
+  }
+  return !1;
+};
+com.cognitect.transit.types.TransitMap.prototype.has = com.cognitect.transit.types.TransitMap.prototype.has;
+com.cognitect.transit.types.TransitMap.prototype.keys = function() {
+  return new com.cognitect.transit.types.TransitMapIterator(this, com.cognitect.transit.types.KEYS);
+};
+com.cognitect.transit.types.TransitMap.prototype.keys = com.cognitect.transit.types.TransitMap.prototype.keys;
+com.cognitect.transit.types.TransitMap.prototype.keySet = function() {
+  for (var a = this.getKeys(), b = [], c = 0;c < a.length;c++) {
+    for (var d = this.map[a[c]], e = 0;e < d.length;e += 2) {
+      b.push(d[e]);
+    }
+  }
+  return b;
+};
+com.cognitect.transit.types.TransitMap.prototype.keySet = com.cognitect.transit.types.TransitMap.prototype.keySet;
+com.cognitect.transit.types.TransitMap.prototype.set = function(a, b) {
+  this.hashCode = -1;
+  var c = com.cognitect.transit.eq.hashCode(a), d = this.map[c];
+  if (null == d) {
+    this._keys && this._keys.push(c), this.map[c] = [a, b], this.size++;
+  } else {
+    for (var c = !0, e = 0;e < d.length;e += 2) {
+      if (com.cognitect.transit.eq.equals(b, d[e])) {
+        c = !1;
+        d[e] = b;
+        break;
+      }
+    }
+    c && (d.push(a), d.push(b), this.size++);
+  }
+};
+com.cognitect.transit.types.TransitMap.prototype.set = com.cognitect.transit.types.TransitMap.prototype.set;
+com.cognitect.transit.types.TransitMap.prototype.values = function() {
+  return new com.cognitect.transit.types.TransitMapIterator(this, com.cognitect.transit.types.VALUES);
+};
+com.cognitect.transit.types.TransitMap.prototype.values = com.cognitect.transit.types.TransitMap.prototype.values;
+com.cognitect.transit.types.TransitMap.prototype.com$cognitect$transit$hashCode = function() {
+  -1 === this.hashCode && (this.hashCode = com.cognitect.transit.eq.hashMapLike(this));
+  return this.hashCode;
+};
+com.cognitect.transit.types.TransitMap.prototype.com$cognitect$transit$equals = function(a) {
+  return com.cognitect.transit.types.mapEquals(this, a);
+};
+com.cognitect.transit.types.map = function(a, b, c) {
+  a = a || [];
+  b = !1 === b ? b : !0;
+  if ((!0 !== c || !c) && a.length <= 2 * com.cognitect.transit.types.ARRAY_MAP_THRESHOLD) {
+    if (b) {
+      var d = a;
+      a = [];
+      for (b = 0;b < d.length;b += 2) {
+        var e = !1;
+        for (c = 0;c < a.length;c += 2) {
+          if (com.cognitect.transit.eq.equals(a[c], d[b])) {
+            a[c + 1] = d[b + 1];
+            e = !0;
+            break;
+          }
+        }
+        e || (a.push(d[b]), a.push(d[b + 1]));
+      }
+    }
+    return new com.cognitect.transit.types.TransitArrayMap(a);
+  }
+  var d = {}, e = [], f = 0;
+  for (b = 0;b < a.length;b += 2) {
+    c = com.cognitect.transit.eq.hashCode(a[b]);
+    var g = d[c];
+    if (null == g) {
+      e.push(c), d[c] = [a[b], a[b + 1]], f++;
+    } else {
+      var h = !0;
+      for (c = 0;c < g.length;c += 2) {
+        if (com.cognitect.transit.eq.equals(g[c], a[b])) {
+          g[c + 1] = a[b + 1];
+          h = !1;
+          break;
+        }
+      }
+      h && (g.push(a[b]), g.push(a[b + 1]), f++);
+    }
+  }
+  return new com.cognitect.transit.types.TransitMap(e, d, f);
+};
+com.cognitect.transit.types.isArrayMap = function(a) {
+  return a instanceof com.cognitect.transit.types.TransitArrayMap;
+};
+com.cognitect.transit.types.isMap = function(a) {
+  return a instanceof com.cognitect.transit.types.TransitArrayMap || a instanceof com.cognitect.transit.types.TransitMap;
+};
+com.cognitect.transit.types.TransitSet = function(a) {
+  this.map = a;
+  this.size = a.size;
+};
+com.cognitect.transit.types.TransitSet.prototype.toString = function() {
+  return "[TransitSet]";
+};
+com.cognitect.transit.types.TransitSet.prototype.add = function(a) {
+  this.map.set(a, a);
+  this.size = this.map.size;
+};
+com.cognitect.transit.types.TransitSet.prototype.add = com.cognitect.transit.types.TransitSet.prototype.add;
+com.cognitect.transit.types.TransitSet.prototype.clear = function() {
+  this.map = new com.cognitect.transit.types.TransitMap;
+  this.size = 0;
+};
+com.cognitect.transit.types.TransitSet.prototype.clear = com.cognitect.transit.types.TransitSet.prototype.clear;
+com.cognitect.transit.types.TransitSet.prototype["delete"] = function(a) {
+  this.map["delete"](a);
+  this.size = this.map.size;
+};
+com.cognitect.transit.types.TransitSet.prototype.entries = function() {
+  return this.map.entries();
+};
+com.cognitect.transit.types.TransitSet.prototype.entries = com.cognitect.transit.types.TransitSet.prototype.entries;
+com.cognitect.transit.types.TransitSet.prototype.forEach = function(a, b) {
+  var c = this;
+  this.map.forEach(function(b, e, f) {
+    a(e, c);
+  });
+};
+com.cognitect.transit.types.TransitSet.prototype.forEach = com.cognitect.transit.types.TransitSet.prototype.forEach;
+com.cognitect.transit.types.TransitSet.prototype.has = function(a) {
+  return this.map.has(a);
+};
+com.cognitect.transit.types.TransitSet.prototype.has = com.cognitect.transit.types.TransitSet.prototype.has;
+com.cognitect.transit.types.TransitSet.prototype.keys = function() {
+  return this.map.keys();
+};
+com.cognitect.transit.types.TransitSet.prototype.keys = com.cognitect.transit.types.TransitSet.prototype.keys;
+com.cognitect.transit.types.TransitSet.prototype.keySet = function() {
+  return this.map.keySet();
+};
+com.cognitect.transit.types.TransitSet.prototype.keySet = com.cognitect.transit.types.TransitSet.prototype.keySet;
+com.cognitect.transit.types.TransitSet.prototype.values = function() {
+  return this.map.values();
+};
+com.cognitect.transit.types.TransitSet.prototype.values = com.cognitect.transit.types.TransitSet.prototype.values;
+com.cognitect.transit.types.TransitSet.prototype.com$cognitect$transit$equals = function(a) {
+  if (a instanceof com.cognitect.transit.types.TransitSet) {
+    if (this.size === a.size) {
+      return com.cognitect.transit.eq.equals(this.map, a.map);
+    }
+  } else {
+    return !1;
+  }
+};
+com.cognitect.transit.types.TransitSet.prototype.com$cognitect$transit$hashCode = function(a) {
+  return com.cognitect.transit.eq.hashCode(this.map);
+};
+com.cognitect.transit.types.set = function(a) {
+  a = a || [];
+  for (var b = {}, c = [], d = 0, e = 0;e < a.length;e++) {
+    var f = com.cognitect.transit.eq.hashCode(a[e]), g = b[f];
+    if (null == g) {
+      c.push(f), b[f] = [a[e], a[e]], d++;
+    } else {
+      for (var f = !0, h = 0;h < g.length;h += 2) {
+        if (com.cognitect.transit.eq.equals(g[h], a[e])) {
+          f = !1;
+          break;
+        }
+      }
+      f && (g.push(a[e]), g.push(a[e]), d++);
+    }
+  }
+  return new com.cognitect.transit.types.TransitSet(new com.cognitect.transit.types.TransitMap(c, b, d));
+};
+com.cognitect.transit.types.isSet = function(a) {
+  return a instanceof com.cognitect.transit.types.TransitSet;
+};
+com.cognitect.transit.types.quoted = function(a) {
+  return com.cognitect.transit.types.taggedValue("'", a);
+};
+com.cognitect.transit.types.isQuoted = function(a) {
+  return a instanceof com.cognitect.transit.types.TaggedValue && "'" === a.tag;
+};
+com.cognitect.transit.types.list = function(a) {
+  return com.cognitect.transit.types.taggedValue("list", a);
+};
+com.cognitect.transit.types.isList = function(a) {
+  return a instanceof com.cognitect.transit.types.List && "list" === a.tag;
+};
+com.cognitect.transit.types.link = function(a) {
+  return com.cognitect.transit.types.taggedValue("link", a);
+};
+com.cognitect.transit.types.isLink = function(a) {
+  return a instanceof com.cognitect.transit.types.TaggedValue && "link" === a.tag;
+};
+com.cognitect.transit.types.specialDouble = function(a) {
+  switch(a) {
+    case "-INF":
+      return -Infinity;
+    case "INF":
+      return Infinity;
+    case "NaN":
+      return NaN;
+    default:
+      throw Error("Invalid special double value " + a);;
+  }
+};
+com.cognitect.transit.delimiters = {};
+com.cognitect.transit.delimiters.ESC = "~";
+com.cognitect.transit.delimiters.TAG = "#";
+com.cognitect.transit.delimiters.SUB = "^";
+com.cognitect.transit.delimiters.RES = "`";
+com.cognitect.transit.delimiters.ESC_TAG = "~#";
+com.cognitect.transit.caching = {};
+com.cognitect.transit.caching.MIN_SIZE_CACHEABLE = 3;
+com.cognitect.transit.caching.BASE_CHAR_IDX = 48;
+com.cognitect.transit.caching.CACHE_CODE_DIGITS = 44;
+com.cognitect.transit.caching.MAX_CACHE_ENTRIES = com.cognitect.transit.caching.CACHE_CODE_DIGITS * com.cognitect.transit.caching.CACHE_CODE_DIGITS;
+com.cognitect.transit.caching.MAX_CACHE_SIZE = 4096;
+com.cognitect.transit.caching.isCacheable = function(a, b) {
+  if (a.length > com.cognitect.transit.caching.MIN_SIZE_CACHEABLE) {
+    if (b) {
+      return !0;
+    }
+    var c = a.charAt(0), d = a.charAt(1);
+    return c === com.cognitect.transit.delimiters.ESC ? ":" === d || "$" === d || "#" === d : !1;
+  }
+  return !1;
+};
+com.cognitect.transit.caching.idxToCode = function(a) {
+  var b = Math.floor(a / com.cognitect.transit.caching.CACHE_CODE_DIGITS);
+  a = String.fromCharCode(a % com.cognitect.transit.caching.CACHE_CODE_DIGITS + com.cognitect.transit.caching.BASE_CHAR_IDX);
+  return 0 === b ? com.cognitect.transit.delimiters.SUB + a : com.cognitect.transit.delimiters.SUB + String.fromCharCode(b + com.cognitect.transit.caching.BASE_CHAR_IDX) + a;
+};
+com.cognitect.transit.caching.WriteCache = function() {
+  this.cacheSize = this.gen = this.idx = 0;
+  this.cache = {};
+};
+com.cognitect.transit.caching.WriteCache.prototype.write = function(a, b) {
+  if (com.cognitect.transit.caching.isCacheable(a, b)) {
+    this.cacheSize === com.cognitect.transit.caching.MAX_CACHE_SIZE ? (this.clear(), this.gen = 0, this.cache = {}) : this.idx === com.cognitect.transit.caching.MAX_CACHE_ENTRIES && this.clear();
+    var c = this.cache[a];
+    return null == c ? (this.cache[a] = [com.cognitect.transit.caching.idxToCode(this.idx), this.gen], this.idx++, a) : c[1] != this.gen ? (c[1] = this.gen, c[0] = com.cognitect.transit.caching.idxToCode(this.idx), this.idx++, a) : c[0];
+  }
+  return a;
+};
+com.cognitect.transit.caching.WriteCache.prototype.clear = function() {
+  this.idx = 0;
+  this.gen++;
+};
+com.cognitect.transit.caching.writeCache = function() {
+  return new com.cognitect.transit.caching.WriteCache;
+};
+com.cognitect.transit.caching.isCacheCode = function(a) {
+  return a.charAt(0) === com.cognitect.transit.delimiters.SUB && " " !== a.charAt(1);
+};
+com.cognitect.transit.caching.codeToIdx = function(a) {
+  if (2 === a.length) {
+    return a.charCodeAt(1) - com.cognitect.transit.caching.BASE_CHAR_IDX;
+  }
+  var b = (a.charCodeAt(1) - com.cognitect.transit.caching.BASE_CHAR_IDX) * com.cognitect.transit.caching.CACHE_CODE_DIGITS;
+  a = a.charCodeAt(2) - com.cognitect.transit.caching.BASE_CHAR_IDX;
+  return b + a;
+};
+com.cognitect.transit.caching.ReadCache = function() {
+  this.idx = 0;
+  this.cache = [];
+};
+com.cognitect.transit.caching.ReadCache.prototype.write = function(a, b) {
+  this.idx == com.cognitect.transit.caching.MAX_CACHE_ENTRIES && (this.idx = 0);
+  this.cache[this.idx] = a;
+  this.idx++;
+  return a;
+};
+com.cognitect.transit.caching.ReadCache.prototype.read = function(a, b) {
+  return this.cache[com.cognitect.transit.caching.codeToIdx(a)];
+};
+com.cognitect.transit.caching.ReadCache.prototype.clear = function() {
+  this.idx = 0;
+};
+com.cognitect.transit.caching.readCache = function() {
+  return new com.cognitect.transit.caching.ReadCache;
+};
+com.cognitect.transit.impl = {};
+com.cognitect.transit.impl.decoder = {};
+com.cognitect.transit.impl.decoder.Tag = function(a) {
+  this.str = a;
+};
+com.cognitect.transit.impl.decoder.tag = function(a) {
+  return new com.cognitect.transit.impl.decoder.Tag(a);
+};
+com.cognitect.transit.impl.decoder.isTag = function(a) {
+  return a && a instanceof com.cognitect.transit.impl.decoder.Tag;
+};
+com.cognitect.transit.impl.decoder.isGroundHandler = function(a) {
+  switch(a) {
+    case "_":
+    ;
+    case "s":
+    ;
+    case "?":
+    ;
+    case "i":
+    ;
+    case "d":
+    ;
+    case "b":
+    ;
+    case "'":
+    ;
+    case "array":
+    ;
+    case "map":
+      return !0;
+  }
+  return !1;
+};
+com.cognitect.transit.impl.decoder.Decoder = function(a) {
+  this.options = a || {};
+  this.handlers = {};
+  for (var b in this.defaults.handlers) {
+    this.handlers[b] = this.defaults.handlers[b];
+  }
+  for (b in this.options.handlers) {
+    if (com.cognitect.transit.impl.decoder.isGroundHandler(b)) {
+      throw Error('Cannot override handler for ground type "' + b + '"');
+    }
+    this.handlers[b] = this.options.handlers[b];
+  }
+  this.preferStrings = null != this.options.preferStrings ? this.options.preferStrings : this.defaults.preferStrings;
+  this.preferBuffers = null != this.options.preferBuffers ? this.options.preferBuffers : this.defaults.preferBuffers;
+  this.defaultHandler = this.options.defaultHandler || this.defaults.defaultHandler;
+  this.mapBuilder = this.options.mapBuilder;
+  this.arrayBuilder = this.options.arrayBuilder;
+};
+com.cognitect.transit.impl.decoder.Decoder.prototype.defaults = {handlers:{_:function(a, b) {
+  return com.cognitect.transit.types.nullValue();
+}, "?":function(a, b) {
+  return com.cognitect.transit.types.boolValue(a);
+}, b:function(a, b) {
+  return com.cognitect.transit.types.binary(a, b);
+}, i:function(a, b) {
+  return com.cognitect.transit.types.intValue(a);
+}, n:function(a, b) {
+  return com.cognitect.transit.types.bigInteger(a);
+}, d:function(a, b) {
+  return com.cognitect.transit.types.floatValue(a);
+}, f:function(a, b) {
+  return com.cognitect.transit.types.bigDecimalValue(a);
+}, c:function(a, b) {
+  return com.cognitect.transit.types.charValue(a);
+}, ":":function(a, b) {
+  return com.cognitect.transit.types.keyword(a);
+}, $:function(a, b) {
+  return com.cognitect.transit.types.symbol(a);
+}, r:function(a, b) {
+  return com.cognitect.transit.types.uri(a);
+}, z:function(a, b) {
+  return com.cognitect.transit.types.specialDouble(a);
+}, "'":function(a, b) {
+  return a;
+}, m:function(a, b) {
+  return com.cognitect.transit.types.date(a);
+}, t:function(a, b) {
+  return com.cognitect.transit.types.verboseDate(a);
+}, u:function(a, b) {
+  return com.cognitect.transit.types.uuid(a);
+}, set:function(a, b) {
+  return com.cognitect.transit.types.set(a);
+}, list:function(a, b) {
+  return com.cognitect.transit.types.list(a);
+}, link:function(a, b) {
+  return com.cognitect.transit.types.link(a);
+}, cmap:function(a, b) {
+  return com.cognitect.transit.types.map(a, !1);
+}}, defaultHandler:function(a, b) {
+  return com.cognitect.transit.types.taggedValue(a, b);
+}, preferStrings:!0, preferBuffers:!0};
+com.cognitect.transit.impl.decoder.Decoder.prototype.decode = function(a, b, c, d) {
+  if (null == a) {
+    return null;
+  }
+  switch(typeof a) {
+    case "string":
+      return this.decodeString(a, b, c, d);
+    case "object":
+      return com.cognitect.transit.util.isArray(a) ? "^ " === a[0] ? this.decodeArrayHash(a, b, c, d) : this.decodeArray(a, b, c, d) : this.decodeHash(a, b, c, d);
+  }
+  return a;
+};
+com.cognitect.transit.impl.decoder.Decoder.prototype.decode = com.cognitect.transit.impl.decoder.Decoder.prototype.decode;
+com.cognitect.transit.impl.decoder.Decoder.prototype.decodeString = function(a, b, c, d) {
+  return com.cognitect.transit.caching.isCacheable(a, c) ? (a = this.parseString(a, b, !1), b && b.write(a, c), a) : com.cognitect.transit.caching.isCacheCode(a) ? b.read(a, c) : this.parseString(a, b, c);
+};
+com.cognitect.transit.impl.decoder.Decoder.prototype.decodeHash = function(a, b, c, d) {
+  c = com.cognitect.transit.util.objectKeys(a);
+  var e = c[0];
+  d = 1 == c.length ? this.decode(e, b, !1, !1) : null;
+  if (com.cognitect.transit.impl.decoder.isTag(d)) {
+    return a = a[e], c = this.handlers[d.str], null != c ? c(this.decode(a, b, !1, !0), this) : com.cognitect.transit.types.taggedValue(d.str, this.decode(a, b, !1, !1));
+  }
+  if (this.mapBuilder) {
+    if (c.length < 2 * com.cognitect.transit.types.SMALL_ARRAY_MAP_THRESHOLD && this.mapBuilder.fromArray) {
+      var f = [];
+      for (d = 0;d < c.length;d++) {
+        e = c[d], f.push(this.decode(e, b, !0, !1)), f.push(this.decode(a[e], b, !1, !1));
+      }
+      return this.mapBuilder.fromArray(f, a);
+    }
+    f = this.mapBuilder.init(a);
+    for (d = 0;d < c.length;d++) {
+      e = c[d], f = this.mapBuilder.add(f, this.decode(e, b, !0, !1), this.decode(a[e], b, !1, !1), a);
+    }
+    return this.mapBuilder.finalize(f, a);
+  }
+  f = [];
+  for (d = 0;d < c.length;d++) {
+    e = c[d], f.push(this.decode(e, b, !0, !1)), f.push(this.decode(a[e], b, !1, !1));
+  }
+  return com.cognitect.transit.types.map(f, !1);
+};
+com.cognitect.transit.impl.decoder.Decoder.prototype.decodeArrayHash = function(a, b, c, d) {
+  if (this.mapBuilder) {
+    if (a.length < 2 * com.cognitect.transit.types.SMALL_ARRAY_MAP_THRESHOLD + 1 && this.mapBuilder.fromArray) {
+      d = [];
+      for (c = 1;c < a.length;c += 2) {
+        d.push(this.decode(a[c], b, !0, !1)), d.push(this.decode(a[c + 1], b, !1, !1));
+      }
+      return this.mapBuilder.fromArray(d, a);
+    }
+    d = this.mapBuilder.init(a);
+    for (c = 1;c < a.length;c += 2) {
+      d = this.mapBuilder.add(d, this.decode(a[c], b, !0, !1), this.decode(a[c + 1], b, !1, !1), a);
+    }
+    return this.mapBuilder.finalize(d, a);
+  }
+  d = [];
+  for (c = 1;c < a.length;c += 2) {
+    d.push(this.decode(a[c], b, !0, !1)), d.push(this.decode(a[c + 1], b, !1, !1));
+  }
+  return com.cognitect.transit.types.map(d, !1);
+};
+com.cognitect.transit.impl.decoder.Decoder.prototype.decodeArray = function(a, b, c, d) {
+  if (d) {
+    var e = [];
+    for (d = 0;d < a.length;d++) {
+      e.push(this.decode(a[d], b, c, !1));
+    }
+    return e;
+  }
+  e = b && b.idx;
+  if (2 === a.length && "string" === typeof a[0] && (d = this.decode(a[0], b, !1, !1), com.cognitect.transit.impl.decoder.isTag(d))) {
+    return a = a[1], e = this.handlers[d.str], null != e ? e = e(this.decode(a, b, c, !0), this) : com.cognitect.transit.types.taggedValue(d.str, this.decode(a, b, c, !1));
+  }
+  b && e != b.idx && (b.idx = e);
+  if (this.arrayBuilder) {
+    if (32 >= a.length && this.arrayBuilder.fromArray) {
+      e = [];
+      for (d = 0;d < a.length;d++) {
+        e.push(this.decode(a[d], b, c, !1));
+      }
+      return this.arrayBuilder.fromArray(e, a);
+    }
+    e = this.arrayBuilder.init();
+    for (d = 0;d < a.length;d++) {
+      e = this.arrayBuilder.add(e, this.decode(a[d], b, c, !1), a);
+    }
+    return this.arrayBuilder.finalize(e, a);
+  }
+  e = [];
+  for (d = 0;d < a.length;d++) {
+    e.push(this.decode(a[d], b, c, !1));
+  }
+  return e;
+};
+com.cognitect.transit.impl.decoder.Decoder.prototype.parseString = function(a, b, c) {
+  if (a.charAt(0) === com.cognitect.transit.delimiters.ESC) {
+    b = a.charAt(1);
+    if (b === com.cognitect.transit.delimiters.ESC || b === com.cognitect.transit.delimiters.SUB || b === com.cognitect.transit.delimiters.RES) {
+      return a.substring(1);
+    }
+    if (b === com.cognitect.transit.delimiters.TAG) {
+      return com.cognitect.transit.impl.decoder.tag(a.substring(2));
+    }
+    c = this.handlers[b];
+    return null == c ? this.defaultHandler(b, a.substring(2)) : c(a.substring(2), this);
+  }
+  return a;
+};
+com.cognitect.transit.impl.decoder.decoder = function(a) {
+  return new com.cognitect.transit.impl.decoder.Decoder(a);
+};
+com.cognitect.transit.impl.reader = {};
+com.cognitect.transit.impl.reader.JSONUnmarshaller = function(a) {
+  this.decoder = new com.cognitect.transit.impl.decoder.Decoder(a);
+};
+com.cognitect.transit.impl.reader.JSONUnmarshaller.prototype.unmarshal = function(a, b) {
+  return this.decoder.decode(JSON.parse(a), b);
+};
+com.cognitect.transit.impl.reader.Reader = function(a, b) {
+  this.unmarshaller = a;
+  this.options = b || {};
+  this.cache = this.options.cache ? this.options.cache : new com.cognitect.transit.caching.ReadCache;
+};
+com.cognitect.transit.impl.reader.Reader.prototype.read = function(a) {
+  a = this.unmarshaller.unmarshal(a, this.cache);
+  this.cache.clear();
+  return a;
+};
+com.cognitect.transit.impl.reader.Reader.prototype.read = com.cognitect.transit.impl.reader.Reader.prototype.read;
+com.cognitect.transit.handlers = {};
+com.cognitect.transit.handlers.ctorGuid = 0;
+com.cognitect.transit.handlers.ctorGuidProperty = "transit$guid$" + com.cognitect.transit.util.randomUUID();
+com.cognitect.transit.handlers.typeTag = function(a) {
+  if (null == a) {
+    return "null";
+  }
+  if (a === String) {
+    return "string";
+  }
+  if (a === Boolean) {
+    return "boolean";
+  }
+  if (a === Number) {
+    return "number";
+  }
+  if (a === Array) {
+    return "array";
+  }
+  if (a === Object) {
+    return "map";
+  }
+  var b = a[com.cognitect.transit.handlers.ctorGuidProperty];
+  null == b && ("undefined" != typeof Object.defineProperty ? (b = ++com.cognitect.transit.handlers.ctorGuid, Object.defineProperty(a, com.cognitect.transit.handlers.ctorGuidProperty, {value:b, enumerable:!1})) : a[com.cognitect.transit.handlers.ctorGuidProperty] = b = ++com.cognitect.transit.handlers.ctorGuid);
+  return b;
+};
+com.cognitect.transit.handlers.constructor = function(a) {
+  return null == a ? null : a.constructor;
+};
+com.cognitect.transit.handlers.padZeros = function(a, b) {
+  for (var c = a.toString(), d = c.length;d < b;d++) {
+    c = "0" + c;
+  }
+  return c;
+};
+com.cognitect.transit.handlers.stringableKeys = function(a) {
+  a = com.cognitect.transit.util.objectKeys(a);
+  for (var b = 0;b < a.length;b++) {
+  }
+  return !0;
+};
+com.cognitect.transit.handlers.NilHandler = function() {
+};
+com.cognitect.transit.handlers.NilHandler.prototype.tag = function(a) {
+  return "_";
+};
+com.cognitect.transit.handlers.NilHandler.prototype.rep = function(a) {
+  return null;
+};
+com.cognitect.transit.handlers.NilHandler.prototype.stringRep = function(a) {
+  return "null";
+};
+com.cognitect.transit.handlers.StringHandler = function() {
+};
+com.cognitect.transit.handlers.StringHandler.prototype.tag = function(a) {
+  return "s";
+};
+com.cognitect.transit.handlers.StringHandler.prototype.rep = function(a) {
+  return a;
+};
+com.cognitect.transit.handlers.StringHandler.prototype.stringRep = function(a) {
+  return a;
+};
+com.cognitect.transit.handlers.NumberHandler = function() {
+};
+com.cognitect.transit.handlers.NumberHandler.prototype.tag = function(a) {
+  return "i";
+};
+com.cognitect.transit.handlers.NumberHandler.prototype.rep = function(a) {
+  return a;
+};
+com.cognitect.transit.handlers.NumberHandler.prototype.stringRep = function(a) {
+  return a.toString();
+};
+com.cognitect.transit.handlers.IntegerHandler = function() {
+};
+com.cognitect.transit.handlers.IntegerHandler.prototype.tag = function(a) {
+  return "i";
+};
+com.cognitect.transit.handlers.IntegerHandler.prototype.rep = function(a) {
+  return a.toString();
+};
+com.cognitect.transit.handlers.IntegerHandler.prototype.stringRep = function(a) {
+  return a.toString();
+};
+com.cognitect.transit.handlers.BooleanHandler = function() {
+};
+com.cognitect.transit.handlers.BooleanHandler.prototype.tag = function(a) {
+  return "?";
+};
+com.cognitect.transit.handlers.BooleanHandler.prototype.rep = function(a) {
+  return a;
+};
+com.cognitect.transit.handlers.BooleanHandler.prototype.stringRep = function(a) {
+  return a.toString();
+};
+com.cognitect.transit.handlers.ArrayHandler = function() {
+};
+com.cognitect.transit.handlers.ArrayHandler.prototype.tag = function(a) {
+  return "array";
+};
+com.cognitect.transit.handlers.ArrayHandler.prototype.rep = function(a) {
+  return a;
+};
+com.cognitect.transit.handlers.ArrayHandler.prototype.stringRep = function(a) {
+  return null;
+};
+com.cognitect.transit.handlers.MapHandler = function() {
+};
+com.cognitect.transit.handlers.MapHandler.prototype.tag = function(a) {
+  return "map";
+};
+com.cognitect.transit.handlers.MapHandler.prototype.rep = function(a) {
+  return a;
+};
+com.cognitect.transit.handlers.MapHandler.prototype.stringRep = function(a) {
+  return null;
+};
+com.cognitect.transit.handlers.VerboseDateHandler = function() {
+};
+com.cognitect.transit.handlers.VerboseDateHandler.prototype.tag = function(a) {
+  return "t";
+};
+com.cognitect.transit.handlers.VerboseDateHandler.prototype.rep = function(a) {
+  return a.getUTCFullYear() + "-" + com.cognitect.transit.handlers.padZeros(a.getUTCMonth() + 1, 2) + "-" + com.cognitect.transit.handlers.padZeros(a.getUTCDate(), 2) + "T" + com.cognitect.transit.handlers.padZeros(a.getUTCHours(), 2) + ":" + com.cognitect.transit.handlers.padZeros(a.getUTCMinutes(), 2) + ":" + com.cognitect.transit.handlers.padZeros(a.getUTCSeconds(), 2) + "." + com.cognitect.transit.handlers.padZeros(a.getUTCMilliseconds(), 3) + "Z";
+};
+com.cognitect.transit.handlers.VerboseDateHandler.prototype.stringRep = function(a, b) {
+  return b.rep(a);
+};
+com.cognitect.transit.handlers.DateHandler = function() {
+};
+com.cognitect.transit.handlers.DateHandler.prototype.tag = function(a) {
+  return "m";
+};
+com.cognitect.transit.handlers.DateHandler.prototype.rep = function(a) {
+  return a.valueOf();
+};
+com.cognitect.transit.handlers.DateHandler.prototype.stringRep = function(a) {
+  return a.valueOf().toString();
+};
+com.cognitect.transit.handlers.DateHandler.prototype.getVerboseHandler = function(a) {
+  return new com.cognitect.transit.handlers.VerboseDateHandler;
+};
+com.cognitect.transit.handlers.UUIDHandler = function() {
+};
+com.cognitect.transit.handlers.UUIDHandler.prototype.tag = function(a) {
+  return "u";
+};
+com.cognitect.transit.handlers.UUIDHandler.prototype.rep = function(a) {
+  return a.toString();
+};
+com.cognitect.transit.handlers.UUIDHandler.prototype.stringRep = function(a) {
+  return a.toString();
+};
+com.cognitect.transit.handlers.KeywordHandler = function() {
+};
+com.cognitect.transit.handlers.KeywordHandler.prototype.tag = function(a) {
+  return ":";
+};
+com.cognitect.transit.handlers.KeywordHandler.prototype.rep = function(a) {
+  return a.name;
+};
+com.cognitect.transit.handlers.KeywordHandler.prototype.stringRep = function(a, b) {
+  return b.rep(a);
+};
+com.cognitect.transit.handlers.SymbolHandler = function() {
+};
+com.cognitect.transit.handlers.SymbolHandler.prototype.tag = function(a) {
+  return "$";
+};
+com.cognitect.transit.handlers.SymbolHandler.prototype.rep = function(a) {
+  return a.name;
+};
+com.cognitect.transit.handlers.SymbolHandler.prototype.stringRep = function(a, b) {
+  return b.rep(a);
+};
+com.cognitect.transit.handlers.TaggedHandler = function() {
+};
+com.cognitect.transit.handlers.TaggedHandler.prototype.tag = function(a) {
+  return a.tag;
+};
+com.cognitect.transit.handlers.TaggedHandler.prototype.rep = function(a) {
+  return a.rep;
+};
+com.cognitect.transit.handlers.TaggedHandler.prototype.stringRep = function(a, b) {
+  return null;
+};
+com.cognitect.transit.handlers.TransitSetHandler = function() {
+};
+com.cognitect.transit.handlers.TransitSetHandler.prototype.tag = function(a) {
+  return "set";
+};
+com.cognitect.transit.handlers.TransitSetHandler.prototype.rep = function(a) {
+  var b = [];
+  a.forEach(function(a, d) {
+    b.push(a);
+  });
+  return com.cognitect.transit.types.taggedValue("array", b);
+};
+com.cognitect.transit.handlers.TransitSetHandler.prototype.stringRep = function(a, b) {
+  return null;
+};
+com.cognitect.transit.handlers.TransitArrayMapHandler = function() {
+};
+com.cognitect.transit.handlers.TransitArrayMapHandler.prototype.tag = function(a) {
+  return "map";
+};
+com.cognitect.transit.handlers.TransitArrayMapHandler.prototype.rep = function(a) {
+  return a;
+};
+com.cognitect.transit.handlers.TransitArrayMapHandler.prototype.stringRep = function(a, b) {
+  return null;
+};
+com.cognitect.transit.handlers.TransitMapHandler = function() {
+};
+com.cognitect.transit.handlers.TransitMapHandler.prototype.tag = function(a) {
+  return "map";
+};
+com.cognitect.transit.handlers.TransitMapHandler.prototype.rep = function(a) {
+  return a;
+};
+com.cognitect.transit.handlers.TransitMapHandler.prototype.stringRep = function(a, b) {
+  return null;
+};
+com.cognitect.transit.handlers.BufferHandler = function() {
+};
+com.cognitect.transit.handlers.BufferHandler.prototype.tag = function(a) {
+  return "b";
+};
+com.cognitect.transit.handlers.BufferHandler.prototype.rep = function(a) {
+  return a.toString("base64");
+};
+com.cognitect.transit.handlers.BufferHandler.prototype.stringRep = function(a, b) {
+  return null;
+};
+com.cognitect.transit.handlers.Uint8ArrayHandler = function() {
+};
+com.cognitect.transit.handlers.Uint8ArrayHandler.prototype.tag = function(a) {
+  return "b";
+};
+com.cognitect.transit.handlers.Uint8ArrayHandler.prototype.rep = function(a) {
+  return com.cognitect.transit.util.Uint8ToBase64(a);
+};
+com.cognitect.transit.handlers.Uint8ArrayHandler.prototype.stringRep = function(a, b) {
+  return null;
+};
+com.cognitect.transit.handlers.defaultHandlers = function(a) {
+  a.set(null, new com.cognitect.transit.handlers.NilHandler);
+  a.set(String, new com.cognitect.transit.handlers.StringHandler);
+  a.set(Number, new com.cognitect.transit.handlers.NumberHandler);
+  a.set(goog.math.Long, new com.cognitect.transit.handlers.IntegerHandler);
+  a.set(Boolean, new com.cognitect.transit.handlers.BooleanHandler);
+  a.set(Array, new com.cognitect.transit.handlers.ArrayHandler);
+  a.set(Object, new com.cognitect.transit.handlers.MapHandler);
+  a.set(Date, new com.cognitect.transit.handlers.DateHandler);
+  a.set(com.cognitect.transit.types.UUID, new com.cognitect.transit.handlers.UUIDHandler);
+  a.set(com.cognitect.transit.types.Keyword, new com.cognitect.transit.handlers.KeywordHandler);
+  a.set(com.cognitect.transit.types.Symbol, new com.cognitect.transit.handlers.SymbolHandler);
+  a.set(com.cognitect.transit.types.TaggedValue, new com.cognitect.transit.handlers.TaggedHandler);
+  a.set(com.cognitect.transit.types.TransitSet, new com.cognitect.transit.handlers.TransitSetHandler);
+  a.set(com.cognitect.transit.types.TransitArrayMap, new com.cognitect.transit.handlers.TransitArrayMapHandler);
+  a.set(com.cognitect.transit.types.TransitMap, new com.cognitect.transit.handlers.TransitMapHandler);
+  "undefined" != typeof Buffer && a.set(Buffer, new com.cognitect.transit.handlers.BufferHandler);
+  "undefined" != typeof Uint8Array && a.set(Uint8Array, new com.cognitect.transit.handlers.Uint8ArrayHandler);
+  return a;
+};
+com.cognitect.transit.handlers.Handlers = function() {
+  this.handlers = {};
+  com.cognitect.transit.handlers.defaultHandlers(this);
+};
+com.cognitect.transit.handlers.Handlers.prototype.get = function(a) {
+  var b = null, b = "string" === typeof a ? this.handlers[a] : this.handlers[com.cognitect.transit.handlers.typeTag(a)];
+  return null != b ? b : this.handlers["default"];
+};
+com.cognitect.transit.handlers.Handlers.prototype.get = com.cognitect.transit.handlers.Handlers.prototype.get;
+com.cognitect.transit.handlers.validTag = function(a) {
+  switch(a) {
+    case "null":
+    ;
+    case "string":
+    ;
+    case "boolean":
+    ;
+    case "number":
+    ;
+    case "array":
+    ;
+    case "map":
+      return !1;
+  }
+  return !0;
+};
+com.cognitect.transit.handlers.Handlers.prototype.set = function(a, b) {
+  "string" === typeof a && com.cognitect.transit.handlers.validTag(a) ? this.handlers[a] = b : this.handlers[com.cognitect.transit.handlers.typeTag(a)] = b;
+};
+com.cognitect.transit.impl.writer = {};
+com.cognitect.transit.impl.writer.escape = function(a) {
+  if (0 < a.length) {
+    var b = a.charAt(0);
+    return b === com.cognitect.transit.delimiters.ESC || b === com.cognitect.transit.delimiters.SUB || b === com.cognitect.transit.delimiters.RES ? com.cognitect.transit.delimiters.ESC + a : a;
+  }
+  return a;
+};
+com.cognitect.transit.impl.writer.JSONMarshaller = function(a) {
+  this.opts = a || {};
+  this.preferStrings = null != this.opts.preferStrings ? this.opts.preferStrings : !0;
+  this.objectBuilder = this.opts.objectBuilder || null;
+  this.handlers = new com.cognitect.transit.handlers.Handlers;
+  if (a = this.opts.handlers) {
+    if (com.cognitect.transit.util.isArray(a) || !a.forEach) {
+      throw Error('transit writer "handlers" option must be a map');
+    }
+    var b = this;
+    a.forEach(function(a, d) {
+      b.handlers.set(d, a);
+    });
+  }
+  this.handlerForForeign = this.opts.handlerForForeign;
+  this.unpack = this.opts.unpack || function(a) {
+    return com.cognitect.transit.types.isArrayMap(a) && null === a.backingMap ? a._entries : !1;
+  };
+  this.verbose = this.opts && this.opts.verbose || !1;
+};
+com.cognitect.transit.impl.writer.JSONMarshaller.prototype.handler = function(a) {
+  var b = this.handlers.get(com.cognitect.transit.handlers.constructor(a));
+  return null != b ? b : (a = a && a.transitTag) ? this.handlers.get(a) : null;
+};
+com.cognitect.transit.impl.writer.JSONMarshaller.prototype.registerHandler = function(a, b) {
+  this.handlers.set(a, b);
+};
+com.cognitect.transit.impl.writer.JSONMarshaller.prototype.emitNil = function(a, b) {
+  return a ? this.emitString(com.cognitect.transit.delimiters.ESC, "_", "", a, b) : null;
+};
+com.cognitect.transit.impl.writer.JSONMarshaller.prototype.emitString = function(a, b, c, d, e) {
+  a = a + b + c;
+  return e ? e.write(a, d) : a;
+};
+com.cognitect.transit.impl.writer.JSONMarshaller.prototype.emitBoolean = function(a, b, c) {
+  return b ? this.emitString(com.cognitect.transit.delimiters.ESC, "?", a.toString()[0], b, c) : a;
+};
+com.cognitect.transit.impl.writer.JSONMarshaller.prototype.emitInteger = function(a, b, c) {
+  return Infinity === a ? this.emitString(com.cognitect.transit.delimiters.ESC, "z", "INF", b, c) : -Infinity === a ? this.emitString(com.cognitect.transit.delimiters.ESC, "z", "-INF", b, c) : isNaN(a) ? this.emitString(com.cognitect.transit.delimiters.ESC, "z", "NaN", b, c) : b || "string" === typeof a || a instanceof goog.math.Long ? this.emitString(com.cognitect.transit.delimiters.ESC, "i", a.toString(), b, c) : a;
+};
+com.cognitect.transit.impl.writer.JSONMarshaller.prototype.emitDouble = function(a, b, c) {
+  return b ? this.emitString(a.ESC, "d", a, b, c) : a;
+};
+com.cognitect.transit.impl.writer.JSONMarshaller.prototype.emitBinary = function(a, b, c) {
+  return this.emitString(com.cognitect.transit.delimiters.ESC, "b", a, b, c);
+};
+com.cognitect.transit.impl.writer.JSONMarshaller.prototype.emitQuoted = function(a, b, c) {
+  if (a.verbose) {
+    a = {};
+    var d = this.emitString(com.cognitect.transit.delimiters.ESC_TAG, "'", "", !0, c);
+    a[d] = com.cognitect.transit.impl.writer.marshal(this, b, !1, c);
+    return a;
+  }
+  return [this.emitString(com.cognitect.transit.delimiters.ESC_TAG, "'", "", !0, c), com.cognitect.transit.impl.writer.marshal(this, b, !1, c)];
+};
+com.cognitect.transit.impl.writer.emitObjects = function(a, b, c) {
+  var d = [];
+  if (com.cognitect.transit.util.isArray(b)) {
+    for (var e = 0;e < b.length;e++) {
+      d.push(com.cognitect.transit.impl.writer.marshal(a, b[e], !1, c));
+    }
+  } else {
+    b.forEach(function(b, e) {
+      d.push(com.cognitect.transit.impl.writer.marshal(a, b, !1, c));
+    });
+  }
+  return d;
+};
+com.cognitect.transit.impl.writer.emitArray = function(a, b, c, d) {
+  return com.cognitect.transit.impl.writer.emitObjects(a, b, d);
+};
+com.cognitect.transit.impl.writer.isStringableKey = function(a, b) {
+  if ("string" !== typeof b) {
+    var c = a.handler(b);
+    return c && 1 === c.tag(b).length;
+  }
+  return !0;
+};
+com.cognitect.transit.impl.writer.stringableKeys = function(a, b) {
+  var c = a.unpack(b), d = !0;
+  if (c) {
+    for (var e = 0;e < c.length && (d = com.cognitect.transit.impl.writer.isStringableKey(a, c[e]), d);e += 2) {
+    }
+    return d;
+  }
+  if (b.keys && (c = b.keys(), e = null, c.next)) {
+    for (e = c.next();!e.done;) {
+      d = com.cognitect.transit.impl.writer.isStringableKey(a, e.value);
+      if (!d) {
+        break;
+      }
+      e = c.next();
+    }
+    return d;
+  }
+  if (b.forEach) {
+    return b.forEach(function(b, c) {
+      d = d && com.cognitect.transit.impl.writer.isStringableKey(a, c);
+    }), d;
+  }
+  throw Error("Cannot walk keys of object type " + com.cognitect.transit.handlers.constructor(b).name);
+};
+com.cognitect.transit.impl.writer.isForeignObject = function(a) {
+  if (a.constructor.transit$isObject) {
+    return !0;
+  }
+  var b = a.constructor.toString(), b = b.substr(9), b = b.substr(0, b.indexOf("(")), b = "Object" == b;
+  "undefined" != typeof Object.defineProperty ? Object.defineProperty(a.constructor, "transit$isObject", {value:b, enumerable:!1}) : a.constructor.transit$isObject = b;
+  return b;
+};
+com.cognitect.transit.impl.writer.emitMap = function(a, b, c, d) {
+  if (b.constructor === Object || null != b.forEach || a.handlerForForeign && com.cognitect.transit.impl.writer.isForeignObject(b)) {
+    if (a.verbose) {
+      if (null != b.forEach) {
+        if (com.cognitect.transit.impl.writer.stringableKeys(a, b)) {
+          var e = {};
+          b.forEach(function(b, c) {
+            e[com.cognitect.transit.impl.writer.marshal(a, c, !0, !1)] = com.cognitect.transit.impl.writer.marshal(a, b, !1, d);
+          });
+        } else {
+          var f = a.unpack(b), g = [], h = a.emitString(com.cognitect.transit.delimiters.ESC_TAG, "cmap", "", !0, d);
+          if (f) {
+            for (c = 0;c < f.length;c += 2) {
+              g.push(com.cognitect.transit.impl.writer.marshal(a, f[c], !0, !1)), g.push(com.cognitect.transit.impl.writer.marshal(a, f[c + 1], !1, d));
+            }
+          } else {
+            b.forEach(function(b, c) {
+              g.push(com.cognitect.transit.impl.writer.marshal(a, c, !0, !1));
+              g.push(com.cognitect.transit.impl.writer.marshal(a, b, !1, d));
+            });
+          }
+          e = {};
+          e[h] = g;
+        }
+      } else {
+        for (e = {}, f = com.cognitect.transit.util.objectKeys(b), c = 0;c < f.length;c++) {
+          e[com.cognitect.transit.impl.writer.marshal(a, f[c], !0, !1)] = com.cognitect.transit.impl.writer.marshal(a, b[f[c]], !1, d);
+        }
+      }
+      return e;
+    }
+    if (null != b.forEach) {
+      if (com.cognitect.transit.impl.writer.stringableKeys(a, b)) {
+        f = a.unpack(b);
+        e = ["^ "];
+        if (f) {
+          for (c = 0;c < f.length;c += 2) {
+            e.push(com.cognitect.transit.impl.writer.marshal(a, f[c], !0, d)), e.push(com.cognitect.transit.impl.writer.marshal(a, f[c + 1], !1, d));
+          }
+        } else {
+          b.forEach(function(b, c) {
+            e.push(com.cognitect.transit.impl.writer.marshal(a, c, !0, d));
+            e.push(com.cognitect.transit.impl.writer.marshal(a, b, !1, d));
+          });
+        }
+        return e;
+      }
+      f = a.unpack(b);
+      g = [];
+      h = a.emitString(com.cognitect.transit.delimiters.ESC_TAG, "cmap", "", !0, d);
+      if (f) {
+        for (c = 0;c < f.length;c += 2) {
+          g.push(com.cognitect.transit.impl.writer.marshal(a, f[c], !0, d)), g.push(com.cognitect.transit.impl.writer.marshal(a, f[c + 1], !1, d));
+        }
+      } else {
+        b.forEach(function(b, c) {
+          g.push(com.cognitect.transit.impl.writer.marshal(a, c, !0, d));
+          g.push(com.cognitect.transit.impl.writer.marshal(a, b, !1, d));
+        });
+      }
+      return [h, g];
+    }
+    e = ["^ "];
+    f = com.cognitect.transit.util.objectKeys(b);
+    for (c = 0;c < f.length;c++) {
+      e.push(com.cognitect.transit.impl.writer.marshal(a, f[c], !0, d)), e.push(com.cognitect.transit.impl.writer.marshal(a, b[f[c]], !1, d));
+    }
+    return e;
+  }
+  if (null != a.objectBuilder) {
+    return a.objectBuilder(b, function(b) {
+      return com.cognitect.transit.impl.writer.marshal(a, b, !0, d);
+    }, function(b) {
+      return com.cognitect.transit.impl.writer.marshal(a, b, !1, d);
+    });
+  }
+  c = com.cognitect.transit.handlers.constructor(b).name;
+  f = Error("Cannot write " + c);
+  f.data = {obj:b, type:c};
+  throw f;
+};
+com.cognitect.transit.impl.writer.emitTaggedMap = function(a, b, c, d, e) {
+  return a.verbose ? (d = {}, d[a.emitString(com.cognitect.transit.delimiters.ESC_TAG, b, "", !0, e)] = com.cognitect.transit.impl.writer.marshal(a, c, !1, e), d) : [a.emitString(com.cognitect.transit.delimiters.ESC_TAG, b, "", !0, e), com.cognitect.transit.impl.writer.marshal(a, c, !1, e)];
+};
+com.cognitect.transit.impl.writer.emitEncoded = function(a, b, c, d, e, f, g) {
+  if (1 === c.length) {
+    if ("string" === typeof d) {
+      return a.emitString(com.cognitect.transit.delimiters.ESC, c, d, f, g);
+    }
+    if (f || a.preferStrings) {
+      (d = a.verbose && b.getVerboseHandler()) ? (c = d.tag(e), d = d.stringRep(e, d)) : d = b.stringRep(e, b);
+      if (null !== d) {
+        return a.emitString(com.cognitect.transit.delimiters.ESC, c, d, f, g);
+      }
+      a = Error('Tag "' + c + '" cannot be encoded as string');
+      a.data = {tag:c, rep:d, obj:e};
+      throw a;
+    }
+  }
+  return com.cognitect.transit.impl.writer.emitTaggedMap(a, c, d, f, g);
+};
+com.cognitect.transit.impl.writer.marshal = function(a, b, c, d) {
+  var e = a.handler(b) || (a.handlerForForeign ? a.handlerForForeign(b, a.handlers) : null), f = e ? e.tag(b) : null, g = e ? e.rep(b) : null;
+  if (null != e && null != f) {
+    switch(f) {
+      case "_":
+        return a.emitNil(c, d);
+      case "s":
+        return a.emitString("", "", com.cognitect.transit.impl.writer.escape(g), c, d);
+      case "?":
+        return a.emitBoolean(g, c, d);
+      case "i":
+        return a.emitInteger(g, c, d);
+      case "d":
+        return a.emitDouble(g, c, d);
+      case "b":
+        return a.emitBinary(g, c, d);
+      case "'":
+        return a.emitQuoted(a, g, d);
+      case "array":
+        return com.cognitect.transit.impl.writer.emitArray(a, g, c, d);
+      case "map":
+        return com.cognitect.transit.impl.writer.emitMap(a, g, c, d);
+      default:
+        return com.cognitect.transit.impl.writer.emitEncoded(a, e, f, g, b, c, d);
+    }
+  } else {
+    throw a = com.cognitect.transit.handlers.constructor(b).name, c = Error("Cannot write " + a), c.data = {obj:b, type:a}, c;
+  }
+};
+com.cognitect.transit.impl.writer.maybeQuoted = function(a, b) {
+  var c = a.handler(b) || (a.handlerForForeign ? a.handlerForForeign(b, a.handlers) : null);
+  if (null != c) {
+    return 1 === c.tag(b).length ? com.cognitect.transit.types.quoted(b) : b;
+  }
+  var c = com.cognitect.transit.handlers.constructor(b).name, d = Error("Cannot write " + c);
+  d.data = {obj:b, type:c};
+  throw d;
+};
+com.cognitect.transit.impl.writer.marshalTop = function(a, b, c, d) {
+  return JSON.stringify(com.cognitect.transit.impl.writer.marshal(a, com.cognitect.transit.impl.writer.maybeQuoted(a, b), c, d));
+};
+com.cognitect.transit.impl.writer.Writer = function(a, b) {
+  this._marshaller = a;
+  this.options = b || {};
+  this.cache = !1 === this.options.cache ? null : this.options.cache ? this.options.cache : new com.cognitect.transit.caching.WriteCache;
+};
+com.cognitect.transit.impl.writer.Writer.prototype.marshaller = function() {
+  return this._marshaller;
+};
+com.cognitect.transit.impl.writer.Writer.prototype.marshaller = com.cognitect.transit.impl.writer.Writer.prototype.marshaller;
+com.cognitect.transit.impl.writer.Writer.prototype.write = function(a, b) {
+  var c = null, c = b || {}, d = c.asMapKey || !1, e = this._marshaller.verbose ? !1 : this.cache, c = !1 === c.marshalTop ? com.cognitect.transit.impl.writer.marshal(this._marshaller, a, d, e) : com.cognitect.transit.impl.writer.marshalTop(this._marshaller, a, d, e);
+  null != this.cache && this.cache.clear();
+  return c;
+};
+com.cognitect.transit.impl.writer.Writer.prototype.write = com.cognitect.transit.impl.writer.Writer.prototype.write;
+com.cognitect.transit.impl.writer.Writer.prototype.register = function(a, b) {
+  this._marshaller.registerHandler(a, b);
+};
+com.cognitect.transit.impl.writer.Writer.prototype.register = com.cognitect.transit.impl.writer.Writer.prototype.register;
+var TRANSIT_DEV = !0, TRANSIT_NODE_TARGET = !1, TRANSIT_BROWSER_TARGET = !1, TRANSIT_BROWSER_AMD_TARGET = !1;
+com.cognitect.transit.reader = function(a, b) {
+  if ("json" === a || "json-verbose" === a || null == a) {
+    var c = new com.cognitect.transit.impl.reader.JSONUnmarshaller(b);
+    return new com.cognitect.transit.impl.reader.Reader(c, b);
+  }
+  throw Error("Cannot create reader of type " + a);
+};
+com.cognitect.transit.writer = function(a, b) {
+  if ("json" === a || "json-verbose" === a || null == a) {
+    "json-verbose" === a && (null == b && (b = {}), b.verbose = !0);
+    var c = new com.cognitect.transit.impl.writer.JSONMarshaller(b);
+    return new com.cognitect.transit.impl.writer.Writer(c, b);
+  }
+  c = Error('Type must be "json"');
+  c.data = {type:a};
+  throw c;
+};
+com.cognitect.transit.makeWriteHandler = function(a) {
+  var b = function() {
+  };
+  b.prototype.tag = a.tag;
+  b.prototype.rep = a.rep;
+  b.prototype.stringRep = a.stringRep;
+  b.prototype.getVerboseHandler = a.getVerboseHandler;
+  return new b;
+};
+com.cognitect.transit.makeBuilder = function(a) {
+  var b = function() {
+  };
+  b.prototype.init = a.init;
+  b.prototype.add = a.add;
+  b.prototype.finalize = a.finalize;
+  b.prototype.fromArray = a.fromArray;
+  return new b;
+};
+com.cognitect.transit.date = com.cognitect.transit.types.date;
+com.cognitect.transit.integer = com.cognitect.transit.types.intValue;
+com.cognitect.transit.isInteger = com.cognitect.transit.types.isInteger;
+com.cognitect.transit.uuid = com.cognitect.transit.types.uuid;
+com.cognitect.transit.isUUID = com.cognitect.transit.types.isUUID;
+com.cognitect.transit.bigInt = com.cognitect.transit.types.bigInteger;
+com.cognitect.transit.isBigInt = com.cognitect.transit.types.isBigInteger;
+com.cognitect.transit.bigDec = com.cognitect.transit.types.bigDecimalValue;
+com.cognitect.transit.isBigDec = com.cognitect.transit.types.isBigDecimal;
+com.cognitect.transit.keyword = com.cognitect.transit.types.keyword;
+com.cognitect.transit.isKeyword = com.cognitect.transit.types.isKeyword;
+com.cognitect.transit.symbol = com.cognitect.transit.types.symbol;
+com.cognitect.transit.isSymbol = com.cognitect.transit.types.isSymbol;
+com.cognitect.transit.binary = com.cognitect.transit.types.binary;
+com.cognitect.transit.isBinary = com.cognitect.transit.types.isBinary;
+com.cognitect.transit.uri = com.cognitect.transit.types.uri;
+com.cognitect.transit.isURI = com.cognitect.transit.types.isURI;
+com.cognitect.transit.map = com.cognitect.transit.types.map;
+com.cognitect.transit.isMap = com.cognitect.transit.types.isMap;
+com.cognitect.transit.set = com.cognitect.transit.types.set;
+com.cognitect.transit.isSet = com.cognitect.transit.types.isSet;
+com.cognitect.transit.list = com.cognitect.transit.types.list;
+com.cognitect.transit.isList = com.cognitect.transit.types.isList;
+com.cognitect.transit.quoted = com.cognitect.transit.types.quoted;
+com.cognitect.transit.isQuoted = com.cognitect.transit.types.isQuoted;
+com.cognitect.transit.tagged = com.cognitect.transit.types.taggedValue;
+com.cognitect.transit.isTaggedValue = com.cognitect.transit.types.isTaggedValue;
+com.cognitect.transit.link = com.cognitect.transit.types.link;
+com.cognitect.transit.isLink = com.cognitect.transit.types.isLink;
+com.cognitect.transit.hash = com.cognitect.transit.eq.hashCode;
+com.cognitect.transit.hashMapLike = com.cognitect.transit.eq.hashMapLike;
+com.cognitect.transit.hashMapLike = com.cognitect.transit.eq.hashArrayLike;
+com.cognitect.transit.equals = com.cognitect.transit.eq.equals;
+com.cognitect.transit.extendToEQ = com.cognitect.transit.eq.extendToEQ;
+com.cognitect.transit.mapToObject = function(a) {
+  var b = {};
+  a.forEach(function(a, d) {
+    if ("string" !== typeof d) {
+      throw Error("Cannot convert map with non-string keys");
+    }
+    b[d] = a;
+  });
+  return b;
+};
+com.cognitect.transit.decoder = com.cognitect.transit.impl.decoder.decoder;
+com.cognitect.transit.readCache = com.cognitect.transit.caching.readCache;
+com.cognitect.transit.writeCache = com.cognitect.transit.caching.writeCache;
+com.cognitect.transit.UUIDfromString = com.cognitect.transit.types.UUIDfromString;
+com.cognitect.transit.randomUUID = com.cognitect.transit.types.randomUUID;
+com.cognitect.transit.stringableKeys = com.cognitect.transit.impl.writer.stringableKeys;
+TRANSIT_BROWSER_TARGET && (goog.exportSymbol("transit.reader", com.cognitect.transit.reader), goog.exportSymbol("transit.writer", com.cognitect.transit.writer), goog.exportSymbol("transit.makeBuilder", com.cognitect.transit.makeBuilder), goog.exportSymbol("transit.makeWriteHandler", com.cognitect.transit.makeWriteHandler), goog.exportSymbol("transit.date", com.cognitect.transit.types.date), goog.exportSymbol("transit.integer", com.cognitect.transit.types.intValue), goog.exportSymbol("transit.isInteger", 
+com.cognitect.transit.types.isInteger), goog.exportSymbol("transit.uuid", com.cognitect.transit.types.uuid), goog.exportSymbol("transit.isUUID", com.cognitect.transit.types.isUUID), goog.exportSymbol("transit.bigInt", com.cognitect.transit.types.bigInteger), goog.exportSymbol("transit.isBigInt", com.cognitect.transit.types.isBigInteger), goog.exportSymbol("transit.bigDec", com.cognitect.transit.types.bigDecimalValue), goog.exportSymbol("transit.isBigDec", com.cognitect.transit.types.isBigDecimal), 
+goog.exportSymbol("transit.keyword", com.cognitect.transit.types.keyword), goog.exportSymbol("transit.isKeyword", com.cognitect.transit.types.isKeyword), goog.exportSymbol("transit.symbol", com.cognitect.transit.types.symbol), goog.exportSymbol("transit.isSymbol", com.cognitect.transit.types.isSymbol), goog.exportSymbol("transit.binary", com.cognitect.transit.types.binary), goog.exportSymbol("transit.isBinary", com.cognitect.transit.types.isBinary), goog.exportSymbol("transit.uri", com.cognitect.transit.types.uri), 
+goog.exportSymbol("transit.isURI", com.cognitect.transit.types.isURI), goog.exportSymbol("transit.map", com.cognitect.transit.types.map), goog.exportSymbol("transit.isMap", com.cognitect.transit.types.isMap), goog.exportSymbol("transit.set", com.cognitect.transit.types.set), goog.exportSymbol("transit.isSet", com.cognitect.transit.types.isSet), goog.exportSymbol("transit.list", com.cognitect.transit.types.list), goog.exportSymbol("transit.isList", com.cognitect.transit.types.isList), goog.exportSymbol("transit.quoted", 
+com.cognitect.transit.types.quoted), goog.exportSymbol("transit.isQuoted", com.cognitect.transit.types.isQuoted), goog.exportSymbol("transit.tagged", com.cognitect.transit.types.taggedValue), goog.exportSymbol("transit.isTaggedValue", com.cognitect.transit.types.isTaggedValue), goog.exportSymbol("transit.link", com.cognitect.transit.types.link), goog.exportSymbol("transit.isLink", com.cognitect.transit.types.isLink), goog.exportSymbol("transit.hash", com.cognitect.transit.eq.hashCode), goog.exportSymbol("transit.hashMapLike", 
+com.cognitect.transit.eq.hashMapLike), goog.exportSymbol("transit.hashArrayLike", com.cognitect.transit.eq.hashArrayLike), goog.exportSymbol("transit.equals", com.cognitect.transit.eq.equals), goog.exportSymbol("transit.extendToEQ", com.cognitect.transit.eq.extendToEQ), goog.exportSymbol("transit.mapToObject", com.cognitect.transit.mapToObject), goog.exportSymbol("transit.decoder", com.cognitect.transit.impl.decoder.decoder), goog.exportSymbol("transit.UUIDfromString", com.cognitect.transit.types.UUIDfromString), 
+goog.exportSymbol("transit.randomUUID", com.cognitect.transit.types.randomUUID), goog.exportSymbol("transit.stringableKeys", com.cognitect.transit.impl.writer.stringableKeys), goog.exportSymbol("transit.readCache", com.cognitect.transit.caching.readCache), goog.exportSymbol("transit.writeCache", com.cognitect.transit.caching.writeCache));
+TRANSIT_NODE_TARGET && (module.exports = {reader:com.cognitect.transit.reader, writer:com.cognitect.transit.writer, makeBuilder:com.cognitect.transit.makeBuilder, makeWriteHandler:com.cognitect.transit.makeWriteHandler, date:com.cognitect.transit.types.date, integer:com.cognitect.transit.types.intValue, isInteger:com.cognitect.transit.types.isInteger, uuid:com.cognitect.transit.types.uuid, isUUID:com.cognitect.transit.types.isUUID, bigInt:com.cognitect.transit.types.bigInteger, isBigInt:com.cognitect.transit.types.isBigInteger, 
+bigDec:com.cognitect.transit.types.bigDecimalValue, isBigDec:com.cognitect.transit.types.isBigDecimal, keyword:com.cognitect.transit.types.keyword, isKeyword:com.cognitect.transit.types.isKeyword, symbol:com.cognitect.transit.types.symbol, isSymbol:com.cognitect.transit.types.isSymbol, binary:com.cognitect.transit.types.binary, isBinary:com.cognitect.transit.types.isBinary, uri:com.cognitect.transit.types.uri, isURI:com.cognitect.transit.types.isURI, map:com.cognitect.transit.types.map, isMap:com.cognitect.transit.types.isMap, 
+set:com.cognitect.transit.types.set, isSet:com.cognitect.transit.types.isSet, list:com.cognitect.transit.types.list, isList:com.cognitect.transit.types.isList, quoted:com.cognitect.transit.types.quoted, isQuoted:com.cognitect.transit.types.isQuoted, tagged:com.cognitect.transit.types.taggedValue, isTaggedValue:com.cognitect.transit.types.isTaggedValue, link:com.cognitect.transit.types.link, isLink:com.cognitect.transit.types.isLink, hash:com.cognitect.transit.eq.hashCode, hashArrayLike:com.cognitect.transit.eq.hashArrayLike, 
+hashMapLike:com.cognitect.transit.eq.hashMapLike, equals:com.cognitect.transit.eq.equals, extendToEQ:com.cognitect.transit.eq.extendToEQ, mapToObject:com.cognitect.transit.mapToObject, decoder:com.cognitect.transit.impl.decoder.decoder, UUIDfromString:com.cognitect.transit.types.UUIDfromString, randomUUID:com.cognitect.transit.types.randomUUID, stringableKeys:com.cognitect.transit.impl.writer.stringableKeys, readCache:com.cognitect.transit.caching.readCache, writeCache:com.cognitect.transit.caching.writeCache});
+var cognitect = {transit:{}};
+cljs.core.UUID.prototype.cljs$core$IEquiv$ = !0;
+cljs.core.UUID.prototype.cljs$core$IEquiv$_equiv$arity$2 = function(a, b) {
+  return b instanceof cljs.core.UUID ? this.uuid === b.uuid : b instanceof com.cognitect.transit.types.UUID ? this.uuid === b.toString() : !1;
+};
+cljs.core.UUID.prototype.cljs$core$IComparable$ = !0;
+cljs.core.UUID.prototype.cljs$core$IComparable$_compare$arity$2 = function(a, b) {
+  if (b instanceof cljs.core.UUID || b instanceof com.cognitect.transit.types.UUID) {
+    return cljs.core.compare.call(null, this.toString(), b.toString());
+  }
+  throw Error([cljs.core.str("Cannot compare "), cljs.core.str(this), cljs.core.str(" to "), cljs.core.str(b)].join(""));
+};
+com.cognitect.transit.types.UUID.prototype.cljs$core$IComparable$ = !0;
+com.cognitect.transit.types.UUID.prototype.cljs$core$IComparable$_compare$arity$2 = function(a, b) {
+  if (b instanceof cljs.core.UUID || b instanceof com.cognitect.transit.types.UUID) {
+    return cljs.core.compare.call(null, this.toString(), b.toString());
+  }
+  throw Error([cljs.core.str("Cannot compare "), cljs.core.str(this), cljs.core.str(" to "), cljs.core.str(b)].join(""));
+};
+goog.math.Long.prototype.cljs$core$IEquiv$ = !0;
+goog.math.Long.prototype.cljs$core$IEquiv$_equiv$arity$2 = function(a, b) {
+  return this.equiv(b);
+};
+com.cognitect.transit.types.UUID.prototype.cljs$core$IEquiv$ = !0;
+com.cognitect.transit.types.UUID.prototype.cljs$core$IEquiv$_equiv$arity$2 = function(a, b) {
+  return b instanceof cljs.core.UUID ? cljs.core._equiv.call(null, b, this) : this.equiv(b);
+};
+com.cognitect.transit.types.TaggedValue.prototype.cljs$core$IEquiv$ = !0;
+com.cognitect.transit.types.TaggedValue.prototype.cljs$core$IEquiv$_equiv$arity$2 = function(a, b) {
+  return this.equiv(b);
+};
+goog.math.Long.prototype.cljs$core$IHash$ = !0;
+goog.math.Long.prototype.cljs$core$IHash$_hash$arity$1 = function(a) {
+  return com.cognitect.transit.eq.hashCode.call(null, this);
+};
+com.cognitect.transit.types.UUID.prototype.cljs$core$IHash$ = !0;
+com.cognitect.transit.types.UUID.prototype.cljs$core$IHash$_hash$arity$1 = function(a) {
+  return com.cognitect.transit.eq.hashCode.call(null, this);
+};
+com.cognitect.transit.types.TaggedValue.prototype.cljs$core$IHash$ = !0;
+com.cognitect.transit.types.TaggedValue.prototype.cljs$core$IHash$_hash$arity$1 = function(a) {
+  return com.cognitect.transit.eq.hashCode.call(null, this);
+};
+com.cognitect.transit.types.UUID.prototype.cljs$core$IPrintWithWriter$ = !0;
+com.cognitect.transit.types.UUID.prototype.cljs$core$IPrintWithWriter$_pr_writer$arity$3 = function(a, b, c) {
+  return cljs.core._write.call(null, b, [cljs.core.str('#uuid "'), cljs.core.str(this.toString()), cljs.core.str('"')].join(""));
+};
+cognitect.transit.opts_merge = function(a, b) {
+  for (var c = cljs.core.seq.call(null, cljs.core.js_keys.call(null, b)), d = null, e = 0, f = 0;;) {
+    if (f < e) {
+      var g = cljs.core._nth.call(null, d, f);
+      a[g] = b[g];
+      f += 1;
+    } else {
+      if (c = cljs.core.seq.call(null, c)) {
+        d = c, cljs.core.chunked_seq_QMARK_.call(null, d) ? (c = cljs.core.chunk_first.call(null, d), f = cljs.core.chunk_rest.call(null, d), d = c, e = cljs.core.count.call(null, c), c = f) : (c = cljs.core.first.call(null, d), a[c] = b[c], c = cljs.core.next.call(null, d), d = null, e = 0), f = 0;
+      } else {
+        break;
+      }
+    }
+  }
+  return a;
+};
+cognitect.transit.MapBuilder = function() {
+};
+cognitect.transit.MapBuilder.prototype.init = function(a) {
+  return cljs.core.transient$.call(null, cljs.core.PersistentArrayMap.EMPTY);
+};
+cognitect.transit.MapBuilder.prototype.add = function(a, b, c, d) {
+  return cljs.core.assoc_BANG_.call(null, a, b, c);
+};
+cognitect.transit.MapBuilder.prototype.finalize = function(a, b) {
+  return cljs.core.persistent_BANG_.call(null, a);
+};
+cognitect.transit.MapBuilder.prototype.fromArray = function(a, b) {
+  return cljs.core.PersistentArrayMap.fromArray.call(null, a, !0, !0);
+};
+cognitect.transit.MapBuilder.getBasis = function() {
+  return cljs.core.PersistentVector.EMPTY;
+};
+cognitect.transit.MapBuilder.cljs$lang$type = !0;
+cognitect.transit.MapBuilder.cljs$lang$ctorStr = "cognitect.transit/MapBuilder";
+cognitect.transit.MapBuilder.cljs$lang$ctorPrWriter = function(a, b, c) {
+  return cljs.core._write.call(null, b, "cognitect.transit/MapBuilder");
+};
+cognitect.transit.__GT_MapBuilder = function() {
+  return new cognitect.transit.MapBuilder;
+};
+cognitect.transit.VectorBuilder = function() {
+};
+cognitect.transit.VectorBuilder.prototype.init = function(a) {
+  return cljs.core.transient$.call(null, cljs.core.PersistentVector.EMPTY);
+};
+cognitect.transit.VectorBuilder.prototype.add = function(a, b, c) {
+  return cljs.core.conj_BANG_.call(null, a, b);
+};
+cognitect.transit.VectorBuilder.prototype.finalize = function(a, b) {
+  return cljs.core.persistent_BANG_.call(null, a);
+};
+cognitect.transit.VectorBuilder.prototype.fromArray = function(a, b) {
+  return cljs.core.PersistentVector.fromArray.call(null, a, !0);
+};
+cognitect.transit.VectorBuilder.getBasis = function() {
+  return cljs.core.PersistentVector.EMPTY;
+};
+cognitect.transit.VectorBuilder.cljs$lang$type = !0;
+cognitect.transit.VectorBuilder.cljs$lang$ctorStr = "cognitect.transit/VectorBuilder";
+cognitect.transit.VectorBuilder.cljs$lang$ctorPrWriter = function(a, b, c) {
+  return cljs.core._write.call(null, b, "cognitect.transit/VectorBuilder");
+};
+cognitect.transit.__GT_VectorBuilder = function() {
+  return new cognitect.transit.VectorBuilder;
+};
+cognitect.transit.reader = function() {
+  switch(arguments.length) {
+    case 1:
+      return cognitect.transit.reader.cljs$core$IFn$_invoke$arity$1(arguments[0]);
+    case 2:
+      return cognitect.transit.reader.cljs$core$IFn$_invoke$arity$2(arguments[0], arguments[1]);
+    default:
+      throw Error([cljs.core.str("Invalid arity: "), cljs.core.str(arguments.length)].join(""));;
+  }
+};
+cognitect.transit.reader.cljs$core$IFn$_invoke$arity$1 = function(a) {
+  return cognitect.transit.reader.call(null, a, null);
+};
+cognitect.transit.reader.cljs$core$IFn$_invoke$arity$2 = function(a, b) {
+  return com.cognitect.transit.reader.call(null, cljs.core.name.call(null, a), cognitect.transit.opts_merge.call(null, {handlers:cljs.core.clj__GT_js.call(null, cljs.core.merge.call(null, new cljs.core.PersistentArrayMap(null, 5, ["$", function(a) {
+    return cljs.core.symbol.call(null, a);
+  }, ":", function(a) {
+    return cljs.core.keyword.call(null, a);
+  }, "set", function(a) {
+    return cljs.core.into.call(null, cljs.core.PersistentHashSet.EMPTY, a);
+  }, "list", function(a) {
+    return cljs.core.into.call(null, cljs.core.List.EMPTY, a.reverse());
+  }, "cmap", function(a) {
+    for (var b = 0, e = cljs.core.transient$.call(null, cljs.core.PersistentArrayMap.EMPTY);;) {
+      if (b < a.length) {
+        var f = b + 2, e = cljs.core.assoc_BANG_.call(null, e, a[b], a[b + 1]), b = f
+      } else {
+        return cljs.core.persistent_BANG_.call(null, e);
+      }
+    }
+  }], null), (new cljs.core.Keyword(null, "handlers", "handlers", 79528781)).cljs$core$IFn$_invoke$arity$1(b))), mapBuilder:new cognitect.transit.MapBuilder, arrayBuilder:new cognitect.transit.VectorBuilder, prefersStrings:!1}, cljs.core.clj__GT_js.call(null, cljs.core.dissoc.call(null, b, new cljs.core.Keyword(null, "handlers", "handlers", 79528781)))));
+};
+cognitect.transit.reader.cljs$lang$maxFixedArity = 2;
+cognitect.transit.read = function(a, b) {
+  return a.read(b);
+};
+cognitect.transit.KeywordHandler = function() {
+};
+cognitect.transit.KeywordHandler.prototype.tag = function(a) {
+  return ":";
+};
+cognitect.transit.KeywordHandler.prototype.rep = function(a) {
+  return a.fqn;
+};
+cognitect.transit.KeywordHandler.prototype.stringRep = function(a) {
+  return a.fqn;
+};
+cognitect.transit.KeywordHandler.getBasis = function() {
+  return cljs.core.PersistentVector.EMPTY;
+};
+cognitect.transit.KeywordHandler.cljs$lang$type = !0;
+cognitect.transit.KeywordHandler.cljs$lang$ctorStr = "cognitect.transit/KeywordHandler";
+cognitect.transit.KeywordHandler.cljs$lang$ctorPrWriter = function(a, b, c) {
+  return cljs.core._write.call(null, b, "cognitect.transit/KeywordHandler");
+};
+cognitect.transit.__GT_KeywordHandler = function() {
+  return new cognitect.transit.KeywordHandler;
+};
+cognitect.transit.SymbolHandler = function() {
+};
+cognitect.transit.SymbolHandler.prototype.tag = function(a) {
+  return "$";
+};
+cognitect.transit.SymbolHandler.prototype.rep = function(a) {
+  return a.str;
+};
+cognitect.transit.SymbolHandler.prototype.stringRep = function(a) {
+  return a.str;
+};
+cognitect.transit.SymbolHandler.getBasis = function() {
+  return cljs.core.PersistentVector.EMPTY;
+};
+cognitect.transit.SymbolHandler.cljs$lang$type = !0;
+cognitect.transit.SymbolHandler.cljs$lang$ctorStr = "cognitect.transit/SymbolHandler";
+cognitect.transit.SymbolHandler.cljs$lang$ctorPrWriter = function(a, b, c) {
+  return cljs.core._write.call(null, b, "cognitect.transit/SymbolHandler");
+};
+cognitect.transit.__GT_SymbolHandler = function() {
+  return new cognitect.transit.SymbolHandler;
+};
+cognitect.transit.ListHandler = function() {
+};
+cognitect.transit.ListHandler.prototype.tag = function(a) {
+  return "list";
+};
+cognitect.transit.ListHandler.prototype.rep = function(a) {
+  var b = [];
+  a = cljs.core.seq.call(null, a);
+  for (var c = null, d = 0, e = 0;;) {
+    if (e < d) {
+      var f = cljs.core._nth.call(null, c, e);
+      b.push(f);
+      e += 1;
+    } else {
+      if (a = cljs.core.seq.call(null, a)) {
+        c = a, cljs.core.chunked_seq_QMARK_.call(null, c) ? (a = cljs.core.chunk_first.call(null, c), e = cljs.core.chunk_rest.call(null, c), c = a, d = cljs.core.count.call(null, a), a = e) : (a = cljs.core.first.call(null, c), b.push(a), a = cljs.core.next.call(null, c), c = null, d = 0), e = 0;
+      } else {
+        break;
+      }
+    }
+  }
+  return com.cognitect.transit.tagged.call(null, "array", b);
+};
+cognitect.transit.ListHandler.prototype.stringRep = function(a) {
+  return null;
+};
+cognitect.transit.ListHandler.getBasis = function() {
+  return cljs.core.PersistentVector.EMPTY;
+};
+cognitect.transit.ListHandler.cljs$lang$type = !0;
+cognitect.transit.ListHandler.cljs$lang$ctorStr = "cognitect.transit/ListHandler";
+cognitect.transit.ListHandler.cljs$lang$ctorPrWriter = function(a, b, c) {
+  return cljs.core._write.call(null, b, "cognitect.transit/ListHandler");
+};
+cognitect.transit.__GT_ListHandler = function() {
+  return new cognitect.transit.ListHandler;
+};
+cognitect.transit.MapHandler = function() {
+};
+cognitect.transit.MapHandler.prototype.tag = function(a) {
+  return "map";
+};
+cognitect.transit.MapHandler.prototype.rep = function(a) {
+  return a;
+};
+cognitect.transit.MapHandler.prototype.stringRep = function(a) {
+  return null;
+};
+cognitect.transit.MapHandler.getBasis = function() {
+  return cljs.core.PersistentVector.EMPTY;
+};
+cognitect.transit.MapHandler.cljs$lang$type = !0;
+cognitect.transit.MapHandler.cljs$lang$ctorStr = "cognitect.transit/MapHandler";
+cognitect.transit.MapHandler.cljs$lang$ctorPrWriter = function(a, b, c) {
+  return cljs.core._write.call(null, b, "cognitect.transit/MapHandler");
+};
+cognitect.transit.__GT_MapHandler = function() {
+  return new cognitect.transit.MapHandler;
+};
+cognitect.transit.SetHandler = function() {
+};
+cognitect.transit.SetHandler.prototype.tag = function(a) {
+  return "set";
+};
+cognitect.transit.SetHandler.prototype.rep = function(a) {
+  var b = [];
+  a = cljs.core.seq.call(null, a);
+  for (var c = null, d = 0, e = 0;;) {
+    if (e < d) {
+      var f = cljs.core._nth.call(null, c, e);
+      b.push(f);
+      e += 1;
+    } else {
+      if (a = cljs.core.seq.call(null, a)) {
+        c = a, cljs.core.chunked_seq_QMARK_.call(null, c) ? (a = cljs.core.chunk_first.call(null, c), e = cljs.core.chunk_rest.call(null, c), c = a, d = cljs.core.count.call(null, a), a = e) : (a = cljs.core.first.call(null, c), b.push(a), a = cljs.core.next.call(null, c), c = null, d = 0), e = 0;
+      } else {
+        break;
+      }
+    }
+  }
+  return com.cognitect.transit.tagged.call(null, "array", b);
+};
+cognitect.transit.SetHandler.prototype.stringRep = function() {
+  return null;
+};
+cognitect.transit.SetHandler.getBasis = function() {
+  return cljs.core.PersistentVector.EMPTY;
+};
+cognitect.transit.SetHandler.cljs$lang$type = !0;
+cognitect.transit.SetHandler.cljs$lang$ctorStr = "cognitect.transit/SetHandler";
+cognitect.transit.SetHandler.cljs$lang$ctorPrWriter = function(a, b, c) {
+  return cljs.core._write.call(null, b, "cognitect.transit/SetHandler");
+};
+cognitect.transit.__GT_SetHandler = function() {
+  return new cognitect.transit.SetHandler;
+};
+cognitect.transit.VectorHandler = function() {
+};
+cognitect.transit.VectorHandler.prototype.tag = function(a) {
+  return "array";
+};
+cognitect.transit.VectorHandler.prototype.rep = function(a) {
+  var b = [];
+  a = cljs.core.seq.call(null, a);
+  for (var c = null, d = 0, e = 0;;) {
+    if (e < d) {
+      var f = cljs.core._nth.call(null, c, e);
+      b.push(f);
+      e += 1;
+    } else {
+      if (a = cljs.core.seq.call(null, a)) {
+        c = a, cljs.core.chunked_seq_QMARK_.call(null, c) ? (a = cljs.core.chunk_first.call(null, c), e = cljs.core.chunk_rest.call(null, c), c = a, d = cljs.core.count.call(null, a), a = e) : (a = cljs.core.first.call(null, c), b.push(a), a = cljs.core.next.call(null, c), c = null, d = 0), e = 0;
+      } else {
+        break;
+      }
+    }
+  }
+  return b;
+};
+cognitect.transit.VectorHandler.prototype.stringRep = function(a) {
+  return null;
+};
+cognitect.transit.VectorHandler.getBasis = function() {
+  return cljs.core.PersistentVector.EMPTY;
+};
+cognitect.transit.VectorHandler.cljs$lang$type = !0;
+cognitect.transit.VectorHandler.cljs$lang$ctorStr = "cognitect.transit/VectorHandler";
+cognitect.transit.VectorHandler.cljs$lang$ctorPrWriter = function(a, b, c) {
+  return cljs.core._write.call(null, b, "cognitect.transit/VectorHandler");
+};
+cognitect.transit.__GT_VectorHandler = function() {
+  return new cognitect.transit.VectorHandler;
+};
+cognitect.transit.UUIDHandler = function() {
+};
+cognitect.transit.UUIDHandler.prototype.tag = function(a) {
+  return "u";
+};
+cognitect.transit.UUIDHandler.prototype.rep = function(a) {
+  return a.uuid;
+};
+cognitect.transit.UUIDHandler.prototype.stringRep = function(a) {
+  return this.rep(a);
+};
+cognitect.transit.UUIDHandler.getBasis = function() {
+  return cljs.core.PersistentVector.EMPTY;
+};
+cognitect.transit.UUIDHandler.cljs$lang$type = !0;
+cognitect.transit.UUIDHandler.cljs$lang$ctorStr = "cognitect.transit/UUIDHandler";
+cognitect.transit.UUIDHandler.cljs$lang$ctorPrWriter = function(a, b, c) {
+  return cljs.core._write.call(null, b, "cognitect.transit/UUIDHandler");
+};
+cognitect.transit.__GT_UUIDHandler = function() {
+  return new cognitect.transit.UUIDHandler;
+};
+cognitect.transit.writer = function() {
+  switch(arguments.length) {
+    case 1:
+      return cognitect.transit.writer.cljs$core$IFn$_invoke$arity$1(arguments[0]);
+    case 2:
+      return cognitect.transit.writer.cljs$core$IFn$_invoke$arity$2(arguments[0], arguments[1]);
+    default:
+      throw Error([cljs.core.str("Invalid arity: "), cljs.core.str(arguments.length)].join(""));;
+  }
+};
+cognitect.transit.writer.cljs$core$IFn$_invoke$arity$1 = function(a) {
+  return cognitect.transit.writer.call(null, a, null);
+};
+cognitect.transit.writer.cljs$core$IFn$_invoke$arity$2 = function(a, b) {
+  var c = new cognitect.transit.KeywordHandler, d = new cognitect.transit.SymbolHandler, e = new cognitect.transit.ListHandler, f = new cognitect.transit.MapHandler, g = new cognitect.transit.SetHandler, h = new cognitect.transit.VectorHandler, k = new cognitect.transit.UUIDHandler, m = cljs.core.merge.call(null, cljs.core.PersistentHashMap.fromArrays([cljs.core.PersistentHashMap, cljs.core.Cons, cljs.core.PersistentArrayMap, cljs.core.NodeSeq, cljs.core.PersistentQueue, cljs.core.IndexedSeq, cljs.core.Keyword, 
+  cljs.core.EmptyList, cljs.core.LazySeq, cljs.core.Subvec, cljs.core.PersistentQueueSeq, cljs.core.ArrayNodeSeq, cljs.core.ValSeq, cljs.core.PersistentArrayMapSeq, cljs.core.PersistentVector, cljs.core.List, cljs.core.RSeq, cljs.core.PersistentHashSet, cljs.core.PersistentTreeMap, cljs.core.KeySeq, cljs.core.ChunkedSeq, cljs.core.PersistentTreeSet, cljs.core.ChunkedCons, cljs.core.Symbol, cljs.core.UUID, cljs.core.Range, cljs.core.PersistentTreeMapSeq], [f, e, f, e, e, e, c, e, e, h, e, e, e, e, 
+  h, e, e, g, f, e, e, g, e, d, k, e, e]), (new cljs.core.Keyword(null, "handlers", "handlers", 79528781)).cljs$core$IFn$_invoke$arity$1(b));
+  return com.cognitect.transit.writer.call(null, cljs.core.name.call(null, a), cognitect.transit.opts_merge.call(null, {objectBuilder:function(a, b, c, d, e, f, g, h) {
+    return function(k, m, B) {
+      return cljs.core.reduce_kv.call(null, function(a, b, c, d, e, f, g, h) {
+        return function(a, b, c) {
+          a.push(m.call(null, b), B.call(null, c));
+          return a;
+        };
+      }(a, b, c, d, e, f, g, h), ["^ "], k);
+    };
+  }(c, d, e, f, g, h, k, m), handlers:function() {
+    var a = cljs.core.clone.call(null, m);
+    a.forEach = function(a, b, c, d, e, f, g, h, k) {
+      return function(a) {
+        for (var b = cljs.core.seq.call(null, this), c = null, d = 0, e = 0;;) {
+          if (e < d) {
+            var f = cljs.core._nth.call(null, c, e), g = cljs.core.nth.call(null, f, 0, null), f = cljs.core.nth.call(null, f, 1, null);
+            a.call(null, f, g);
+            e += 1;
+          } else {
+            if (b = cljs.core.seq.call(null, b)) {
+              cljs.core.chunked_seq_QMARK_.call(null, b) ? (c = cljs.core.chunk_first.call(null, b), b = cljs.core.chunk_rest.call(null, b), g = c, d = cljs.core.count.call(null, c), c = g) : (c = cljs.core.first.call(null, b), g = cljs.core.nth.call(null, c, 0, null), f = cljs.core.nth.call(null, c, 1, null), a.call(null, f, g), b = cljs.core.next.call(null, b), c = null, d = 0), e = 0;
+            } else {
+              return null;
+            }
+          }
+        }
+      };
+    }(a, c, d, e, f, g, h, k, m);
+    return a;
+  }(), unpack:function(a, b, c, d, e, f, g, h) {
+    return function(a) {
+      return a instanceof cljs.core.PersistentArrayMap ? a.arr : !1;
+    };
+  }(c, d, e, f, g, h, k, m)}, cljs.core.clj__GT_js.call(null, cljs.core.dissoc.call(null, b, new cljs.core.Keyword(null, "handlers", "handlers", 79528781)))));
+};
+cognitect.transit.writer.cljs$lang$maxFixedArity = 2;
+cognitect.transit.write = function(a, b) {
+  return a.write(b);
+};
+cognitect.transit.read_handler = function(a) {
+  return a;
+};
+cognitect.transit.write_handler = function() {
+  switch(arguments.length) {
+    case 2:
+      return cognitect.transit.write_handler.cljs$core$IFn$_invoke$arity$2(arguments[0], arguments[1]);
+    case 3:
+      return cognitect.transit.write_handler.cljs$core$IFn$_invoke$arity$3(arguments[0], arguments[1], arguments[2]);
+    case 4:
+      return cognitect.transit.write_handler.cljs$core$IFn$_invoke$arity$4(arguments[0], arguments[1], arguments[2], arguments[3]);
+    default:
+      throw Error([cljs.core.str("Invalid arity: "), cljs.core.str(arguments.length)].join(""));;
+  }
+};
+cognitect.transit.write_handler.cljs$core$IFn$_invoke$arity$2 = function(a, b) {
+  return cognitect.transit.write_handler.call(null, a, b, null, null);
+};
+cognitect.transit.write_handler.cljs$core$IFn$_invoke$arity$3 = function(a, b, c) {
+  return cognitect.transit.write_handler.call(null, a, b, c, null);
+};
+cognitect.transit.write_handler.cljs$core$IFn$_invoke$arity$4 = function(a, b, c, d) {
+  "undefined" === typeof cognitect.transit.t16699 && (cognitect.transit.t16699 = function(a, b, c, d, k) {
+    this.tag_fn = a;
+    this.rep_fn = b;
+    this.str_rep_fn = c;
+    this.verbose_handler_fn = d;
+    this.meta16700 = k;
+    this.cljs$lang$protocol_mask$partition0$ = 393216;
+    this.cljs$lang$protocol_mask$partition1$ = 0;
+  }, cognitect.transit.t16699.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(a, b) {
+    return new cognitect.transit.t16699(this.tag_fn, this.rep_fn, this.str_rep_fn, this.verbose_handler_fn, b);
+  }, cognitect.transit.t16699.prototype.cljs$core$IMeta$_meta$arity$1 = function(a) {
+    return this.meta16700;
+  }, cognitect.transit.t16699.prototype.tag = function(a) {
+    return this.tag_fn.call(null, a);
+  }, cognitect.transit.t16699.prototype.rep = function(a) {
+    return this.rep_fn.call(null, a);
+  }, cognitect.transit.t16699.prototype.stringRep = function(a) {
+    return cljs.core.truth_(this.str_rep_fn) ? this.str_rep_fn.call(null, a) : null;
+  }, cognitect.transit.t16699.prototype.getVerboseHandler = function() {
+    return cljs.core.truth_(this.verbose_handler_fn) ? this.verbose_handler_fn.call(null) : null;
+  }, cognitect.transit.t16699.getBasis = function() {
+    return new cljs.core.PersistentVector(null, 5, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Symbol(null, "tag-fn", "tag-fn", 242055482, null), new cljs.core.Symbol(null, "rep-fn", "rep-fn", -1724891035, null), new cljs.core.Symbol(null, "str-rep-fn", "str-rep-fn", -1179615016, null), new cljs.core.Symbol(null, "verbose-handler-fn", "verbose-handler-fn", 547340594, null), new cljs.core.Symbol(null, "meta16700", "meta16700", 2071190036, null)], null);
+  }, cognitect.transit.t16699.cljs$lang$type = !0, cognitect.transit.t16699.cljs$lang$ctorStr = "cognitect.transit/t16699", cognitect.transit.t16699.cljs$lang$ctorPrWriter = function(a, b, c) {
+    return cljs.core._write.call(null, b, "cognitect.transit/t16699");
+  }, cognitect.transit.__GT_t16699 = function(a, b, c, d, k) {
+    return new cognitect.transit.t16699(a, b, c, d, k);
+  });
+  return new cognitect.transit.t16699(a, b, c, d, cljs.core.PersistentArrayMap.EMPTY);
+};
+cognitect.transit.write_handler.cljs$lang$maxFixedArity = 4;
+cognitect.transit.tagged_value = function(a, b) {
+  return com.cognitect.transit.types.taggedValue.call(null, a, b);
+};
+cognitect.transit.tagged_value_QMARK_ = function(a) {
+  return com.cognitect.transit.types.isTaggedValue.call(null, a);
+};
+cognitect.transit.integer = function(a) {
+  return com.cognitect.transit.types.intValue.call(null, a);
+};
+cognitect.transit.integer_QMARK_ = function(a) {
+  return com.cognitect.transit.types.isInteger.call(null, a);
+};
+cognitect.transit.bigint = function(a) {
+  return com.cognitect.transit.types.bigInteger.call(null, a);
+};
+cognitect.transit.bigint_QMARK_ = function(a) {
+  return com.cognitect.transit.types.isBigInteger.call(null, a);
+};
+cognitect.transit.bigdec = function(a) {
+  return com.cognitect.transit.types.bigDecimalValue.call(null, a);
+};
+cognitect.transit.bigdec_QMARK_ = function(a) {
+  return com.cognitect.transit.types.isBigDecimal.call(null, a);
+};
+cognitect.transit.uri = function(a) {
+  return com.cognitect.transit.types.uri.call(null, a);
+};
+cognitect.transit.uri_QMARK_ = function(a) {
+  return com.cognitect.transit.types.isURI.call(null, a);
+};
+cognitect.transit.uuid = function(a) {
+  return com.cognitect.transit.types.uuid.call(null, a);
+};
+cognitect.transit.uuid_QMARK_ = function(a) {
+  return com.cognitect.transit.types.isUUID.call(null, a);
+};
+cognitect.transit.binary = function(a) {
+  return com.cognitect.transit.types.binary.call(null, a);
+};
+cognitect.transit.binary_QMARK_ = function(a) {
+  return com.cognitect.transit.types.isBinary.call(null, a);
+};
+cognitect.transit.quoted = function(a) {
+  return com.cognitect.transit.types.quoted.call(null, a);
+};
+cognitect.transit.quoted_QMARK_ = function(a) {
+  return com.cognitect.transit.types.isQuoted.call(null, a);
+};
+cognitect.transit.link = function(a) {
+  return com.cognitect.transit.types.link.call(null, a);
+};
+cognitect.transit.link_QMARK_ = function(a) {
+  return com.cognitect.transit.types.isLink.call(null, a);
+};
+com.firstlinq.ssr.state = {};
+"undefined" === typeof com.firstlinq.ssr.state.get_state && (com.firstlinq.ssr.state.get_state = function() {
+  var a = cljs.core.atom.call(null, cljs.core.PersistentArrayMap.EMPTY), b = cljs.core.atom.call(null, cljs.core.PersistentArrayMap.EMPTY), c = cljs.core.atom.call(null, cljs.core.PersistentArrayMap.EMPTY), d = cljs.core.atom.call(null, cljs.core.PersistentArrayMap.EMPTY), e = cljs.core.get.call(null, cljs.core.PersistentArrayMap.EMPTY, new cljs.core.Keyword(null, "hierarchy", "hierarchy", -1053470341), cljs.core.get_global_hierarchy.call(null));
+  return new cljs.core.MultiFn(cljs.core.symbol.call(null, "com.firstlinq.ssr.state", "get-state"), function(a, b, c, d, e) {
+    return function(a, b, c, d) {
+      return b;
+    };
+  }(a, b, c, d, e), new cljs.core.Keyword(null, "default", "default", -1987822328), e, a, b, c, d);
+}());
+com.firstlinq.ssr.state.Serialiser = function() {
+  return {};
+}();
+com.firstlinq.ssr.state.__GT_string = function(a, b) {
+  if (a ? a.com$firstlinq$ssr$state$Serialiser$__GT_string$arity$2 : a) {
+    return a.com$firstlinq$ssr$state$Serialiser$__GT_string$arity$2(a, b);
+  }
+  var c;
+  c = com.firstlinq.ssr.state.__GT_string[goog.typeOf(null == a ? null : a)];
+  if (!c && (c = com.firstlinq.ssr.state.__GT_string._, !c)) {
+    throw cljs.core.missing_protocol.call(null, "Serialiser.-\x3estring", a);
+  }
+  return c.call(null, a, b);
+};
+com.firstlinq.ssr.state.__GT_state = function(a, b) {
+  if (a ? a.com$firstlinq$ssr$state$Serialiser$__GT_state$arity$2 : a) {
+    return a.com$firstlinq$ssr$state$Serialiser$__GT_state$arity$2(a, b);
+  }
+  var c;
+  c = com.firstlinq.ssr.state.__GT_state[goog.typeOf(null == a ? null : a)];
+  if (!c && (c = com.firstlinq.ssr.state.__GT_state._, !c)) {
+    throw cljs.core.missing_protocol.call(null, "Serialiser.-\x3estate", a);
+  }
+  return c.call(null, a, b);
+};
+com.firstlinq.ssr.state.transit_serialiser = function com$firstlinq$ssr$state$transit_serialiser() {
+  "undefined" === typeof com.firstlinq.ssr.state.t16558 && (com.firstlinq.ssr.state.t16558 = function(b, c) {
+    this.transit_serialiser = b;
+    this.meta16559 = c;
+    this.cljs$lang$protocol_mask$partition0$ = 393216;
+    this.cljs$lang$protocol_mask$partition1$ = 0;
+  }, com.firstlinq.ssr.state.t16558.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, c) {
+    return new com.firstlinq.ssr.state.t16558(this.transit_serialiser, c);
+  }, com.firstlinq.ssr.state.t16558.prototype.cljs$core$IMeta$_meta$arity$1 = function(b) {
+    return this.meta16559;
+  }, com.firstlinq.ssr.state.t16558.prototype.com$firstlinq$ssr$state$Serialiser$ = !0, com.firstlinq.ssr.state.t16558.prototype.com$firstlinq$ssr$state$Serialiser$__GT_string$arity$2 = function(b, c) {
+    var d = cognitect.transit.writer.call(null, new cljs.core.Keyword(null, "json", "json", 1279968570));
+    return cognitect.transit.write.call(null, d, c);
+  }, com.firstlinq.ssr.state.t16558.prototype.com$firstlinq$ssr$state$Serialiser$__GT_state$arity$2 = function(b, c) {
+    var d = cognitect.transit.reader.call(null, new cljs.core.Keyword(null, "json", "json", 1279968570));
+    return cognitect.transit.read.call(null, d, c);
+  }, com.firstlinq.ssr.state.t16558.getBasis = function() {
+    return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Symbol(null, "transit-serialiser", "transit-serialiser", 1144217568, null), new cljs.core.Symbol(null, "meta16559", "meta16559", -586435446, null)], null);
+  }, com.firstlinq.ssr.state.t16558.cljs$lang$type = !0, com.firstlinq.ssr.state.t16558.cljs$lang$ctorStr = "com.firstlinq.ssr.state/t16558", com.firstlinq.ssr.state.t16558.cljs$lang$ctorPrWriter = function(b, c, d) {
+    return cljs.core._write.call(null, c, "com.firstlinq.ssr.state/t16558");
+  }, com.firstlinq.ssr.state.__GT_t16558 = function(b, c) {
+    return new com.firstlinq.ssr.state.t16558(b, c);
+  });
+  return new com.firstlinq.ssr.state.t16558(com$firstlinq$ssr$state$transit_serialiser, cljs.core.PersistentArrayMap.EMPTY);
+};
+com.firstlinq.ssr.state.hydrate = function(a, b, c) {
+  return cljs.core.empty_QMARK_.call(null, cljs.core.deref.call(null, b)) ? cljs.core.reset_BANG_.call(null, b, com.firstlinq.ssr.state.__GT_state.call(null, a, c.textContent)) : null;
+};
+hello.app.routes = {};
+hello.app.routes.app_routes = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "home", "home", -74557309), new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.PersistentVector.EMPTY], null)], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "hello", 
+"hello", -245025397), new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, ["greeting", new cljs.core.Keyword(null, "username", "username", 1605666410)], null)], null)], null)], null);
+cljs.core._add_method.call(null, com.firstlinq.ssr.state.get_state, new cljs.core.Keyword(null, "home", "home", -74557309), function(a, b, c, d) {
+  cljs.core.seq_QMARK_.call(null, c) && cljs.core.apply.call(null, cljs.core.hash_map, c);
+  b = (new cljs.core.Keyword(null, "redirect?", "redirect?", -1229259098)).cljs$core$IFn$_invoke$arity$1(null);
+  b = cljs.core.truth_(b) ? b.call(null, a) : null;
+  a = cljs.core.truth_(b) ? cljs.core.assoc.call(null, a, com.firstlinq.ssr.redirect_key, b) : a;
+  b = (cljs.core.not.call(null, b), cljs.core.PersistentArrayMap.EMPTY);
+  c = new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "params", "params", 710516235), c, new cljs.core.Keyword(null, "id", "id", -1388402092), new cljs.core.Keyword(null, "home", "home", -74557309)], null);
+  return com.firstlinq.ssr.routes.reify_map.call(null, a, b, c, "Home Page", null);
+});
+cljs.core._add_method.call(null, com.firstlinq.ssr.state.get_state, new cljs.core.Keyword(null, "hello", "hello", -245025397), function(a, b, c, d) {
+  b = cljs.core.seq_QMARK_.call(null, c) ? cljs.core.apply.call(null, cljs.core.hash_map, c) : c;
+  d = cljs.core.get.call(null, b, new cljs.core.Keyword(null, "username", "username", 1605666410));
+  var e;
+  b = (new cljs.core.Keyword(null, "redirect?", "redirect?", -1229259098)).cljs$core$IFn$_invoke$arity$1(null);
+  e = cljs.core.truth_(b) ? b.call(null, a) : null;
+  b = cljs.core.truth_(e) ? cljs.core.assoc.call(null, a, com.firstlinq.ssr.redirect_key, e) : a;
+  a = cljs.core.not.call(null, e) ? new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "greeting", "greeting", 462222107), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [com.firstlinq.ssr.api.handle_request.call(null, a, new cljs.core.Keyword(null, "say-hello", "say-hello", -1427060073), d), null], null)], null) : cljs.core.PersistentArrayMap.EMPTY;
+  c = new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "params", "params", 710516235), c, new cljs.core.Keyword(null, "id", "id", -1388402092), new cljs.core.Keyword(null, "hello", "hello", -245025397)], null);
+  return com.firstlinq.ssr.routes.reify_map.call(null, b, a, c, "Greeting Page", null);
 });
 goog.labs.userAgent.platform = {};
 goog.labs.userAgent.platform.isAndroid = function() {
@@ -42198,7 +45062,6 @@ goog.dom.safe.openInWindow = function(a, b, c, d, e) {
   a = a instanceof goog.html.SafeUrl ? a : goog.html.SafeUrl.sanitize(a);
   return (b || window).open(goog.html.SafeUrl.unwrap(a), c ? goog.string.Const.unwrap(c) : "", d, e);
 };
-goog.math = {};
 goog.math.randomInt = function(a) {
   return Math.floor(Math.random() * a);
 };
@@ -47096,1430 +49959,6 @@ hello.app.page.reagent.main_app = function(a) {
     return new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [c, b, a], null);
   };
 };
-com.cognitect = {};
-com.cognitect.transit = {};
-com.cognitect.transit.util = {};
-com.cognitect.transit.util.objectKeys = "undefined" != typeof Object.keys ? function(a) {
-  return Object.keys(a);
-} : function(a) {
-  return goog.object.getKeys(a);
-};
-com.cognitect.transit.util.isArray = "undefined" != typeof Array.isArray ? function(a) {
-  return Array.isArray(a);
-} : function(a) {
-  return "array" === goog.typeOf(a);
-};
-com.cognitect.transit.util.chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/\x3d";
-com.cognitect.transit.util.randInt = function(a) {
-  return Math.round(Math.random() * a);
-};
-com.cognitect.transit.util.randHex = function() {
-  return com.cognitect.transit.util.randInt(15).toString(16);
-};
-com.cognitect.transit.util.randomUUID = function() {
-  var a = (8 | 3 & com.cognitect.transit.util.randInt(14)).toString(16);
-  return com.cognitect.transit.util.randHex() + com.cognitect.transit.util.randHex() + com.cognitect.transit.util.randHex() + com.cognitect.transit.util.randHex() + com.cognitect.transit.util.randHex() + com.cognitect.transit.util.randHex() + com.cognitect.transit.util.randHex() + com.cognitect.transit.util.randHex() + "-" + com.cognitect.transit.util.randHex() + com.cognitect.transit.util.randHex() + com.cognitect.transit.util.randHex() + com.cognitect.transit.util.randHex() + "-4" + com.cognitect.transit.util.randHex() + 
-  com.cognitect.transit.util.randHex() + com.cognitect.transit.util.randHex() + "-" + a + com.cognitect.transit.util.randHex() + com.cognitect.transit.util.randHex() + com.cognitect.transit.util.randHex() + "-" + com.cognitect.transit.util.randHex() + com.cognitect.transit.util.randHex() + com.cognitect.transit.util.randHex() + com.cognitect.transit.util.randHex() + com.cognitect.transit.util.randHex() + com.cognitect.transit.util.randHex() + com.cognitect.transit.util.randHex() + com.cognitect.transit.util.randHex() + 
-  com.cognitect.transit.util.randHex() + com.cognitect.transit.util.randHex() + com.cognitect.transit.util.randHex() + com.cognitect.transit.util.randHex();
-};
-com.cognitect.transit.util.btoa = function(a) {
-  if ("undefined" != typeof btoa) {
-    return btoa(a);
-  }
-  a = String(a);
-  for (var b, c, d = 0, e = com.cognitect.transit.util.chars, f = "";a.charAt(d | 0) || (e = "\x3d", d % 1);f += e.charAt(63 & b >> 8 - d % 1 * 8)) {
-    c = a.charCodeAt(d += .75);
-    if (255 < c) {
-      throw Error("'btoa' failed: The string to be encoded contains characters outside of the Latin1 range.");
-    }
-    b = b << 8 | c;
-  }
-  return f;
-};
-com.cognitect.transit.util.atob = function(a) {
-  if ("undefined" != typeof atob) {
-    return atob(a);
-  }
-  a = String(a).replace(/=+$/, "");
-  if (1 == a.length % 4) {
-    throw Error("'atob' failed: The string to be decoded is not correctly encoded.");
-  }
-  for (var b = 0, c, d, e = 0, f = "";d = a.charAt(e++);~d && (c = b % 4 ? 64 * c + d : d, b++ % 4) ? f += String.fromCharCode(255 & c >> (-2 * b & 6)) : 0) {
-    d = com.cognitect.transit.util.chars.indexOf(d);
-  }
-  return f;
-};
-com.cognitect.transit.util.Uint8ToBase64 = function(a) {
-  for (var b = 0, c = a.length, d = "", e = null;b < c;) {
-    e = a.subarray(b, Math.min(b + 32768, c)), d += String.fromCharCode.apply(null, e), b += 32768;
-  }
-  return com.cognitect.transit.util.btoa(d);
-};
-com.cognitect.transit.util.Base64ToUint8 = function(a) {
-  a = com.cognitect.transit.util.atob(a);
-  for (var b = a.length, c = new Uint8Array(b), d = 0;d < b;d++) {
-    var e = a.charCodeAt(d);
-    c[d] = e;
-  }
-  return c;
-};
-com.cognitect.transit.delimiters = {};
-com.cognitect.transit.delimiters.ESC = "~";
-com.cognitect.transit.delimiters.TAG = "#";
-com.cognitect.transit.delimiters.SUB = "^";
-com.cognitect.transit.delimiters.RES = "`";
-com.cognitect.transit.delimiters.ESC_TAG = "~#";
-com.cognitect.transit.caching = {};
-com.cognitect.transit.caching.MIN_SIZE_CACHEABLE = 3;
-com.cognitect.transit.caching.BASE_CHAR_IDX = 48;
-com.cognitect.transit.caching.CACHE_CODE_DIGITS = 44;
-com.cognitect.transit.caching.MAX_CACHE_ENTRIES = com.cognitect.transit.caching.CACHE_CODE_DIGITS * com.cognitect.transit.caching.CACHE_CODE_DIGITS;
-com.cognitect.transit.caching.MAX_CACHE_SIZE = 4096;
-com.cognitect.transit.caching.isCacheable = function(a, b) {
-  if (a.length > com.cognitect.transit.caching.MIN_SIZE_CACHEABLE) {
-    if (b) {
-      return !0;
-    }
-    var c = a.charAt(0), d = a.charAt(1);
-    return c === com.cognitect.transit.delimiters.ESC ? ":" === d || "$" === d || "#" === d : !1;
-  }
-  return !1;
-};
-com.cognitect.transit.caching.idxToCode = function(a) {
-  var b = Math.floor(a / com.cognitect.transit.caching.CACHE_CODE_DIGITS);
-  a = String.fromCharCode(a % com.cognitect.transit.caching.CACHE_CODE_DIGITS + com.cognitect.transit.caching.BASE_CHAR_IDX);
-  return 0 === b ? com.cognitect.transit.delimiters.SUB + a : com.cognitect.transit.delimiters.SUB + String.fromCharCode(b + com.cognitect.transit.caching.BASE_CHAR_IDX) + a;
-};
-com.cognitect.transit.caching.WriteCache = function() {
-  this.cacheSize = this.gen = this.idx = 0;
-  this.cache = {};
-};
-com.cognitect.transit.caching.WriteCache.prototype.write = function(a, b) {
-  if (com.cognitect.transit.caching.isCacheable(a, b)) {
-    this.cacheSize === com.cognitect.transit.caching.MAX_CACHE_SIZE ? (this.clear(), this.gen = 0, this.cache = {}) : this.idx === com.cognitect.transit.caching.MAX_CACHE_ENTRIES && this.clear();
-    var c = this.cache[a];
-    return null == c ? (this.cache[a] = [com.cognitect.transit.caching.idxToCode(this.idx), this.gen], this.idx++, a) : c[1] != this.gen ? (c[1] = this.gen, c[0] = com.cognitect.transit.caching.idxToCode(this.idx), this.idx++, a) : c[0];
-  }
-  return a;
-};
-com.cognitect.transit.caching.WriteCache.prototype.clear = function() {
-  this.idx = 0;
-  this.gen++;
-};
-com.cognitect.transit.caching.writeCache = function() {
-  return new com.cognitect.transit.caching.WriteCache;
-};
-com.cognitect.transit.caching.isCacheCode = function(a) {
-  return a.charAt(0) === com.cognitect.transit.delimiters.SUB && " " !== a.charAt(1);
-};
-com.cognitect.transit.caching.codeToIdx = function(a) {
-  if (2 === a.length) {
-    return a.charCodeAt(1) - com.cognitect.transit.caching.BASE_CHAR_IDX;
-  }
-  var b = (a.charCodeAt(1) - com.cognitect.transit.caching.BASE_CHAR_IDX) * com.cognitect.transit.caching.CACHE_CODE_DIGITS;
-  a = a.charCodeAt(2) - com.cognitect.transit.caching.BASE_CHAR_IDX;
-  return b + a;
-};
-com.cognitect.transit.caching.ReadCache = function() {
-  this.idx = 0;
-  this.cache = [];
-};
-com.cognitect.transit.caching.ReadCache.prototype.write = function(a, b) {
-  this.idx == com.cognitect.transit.caching.MAX_CACHE_ENTRIES && (this.idx = 0);
-  this.cache[this.idx] = a;
-  this.idx++;
-  return a;
-};
-com.cognitect.transit.caching.ReadCache.prototype.read = function(a, b) {
-  return this.cache[com.cognitect.transit.caching.codeToIdx(a)];
-};
-com.cognitect.transit.caching.ReadCache.prototype.clear = function() {
-  this.idx = 0;
-};
-com.cognitect.transit.caching.readCache = function() {
-  return new com.cognitect.transit.caching.ReadCache;
-};
-com.cognitect.transit.eq = {};
-com.cognitect.transit.eq.hashCodeProperty = "transit$hashCode$";
-com.cognitect.transit.eq.hashCodeCounter = 1;
-com.cognitect.transit.eq.equals = function(a, b) {
-  if (null == a) {
-    return null == b;
-  }
-  if (a === b) {
-    return !0;
-  }
-  if ("object" === typeof a) {
-    if (com.cognitect.transit.util.isArray(a)) {
-      if (com.cognitect.transit.util.isArray(b) && a.length === b.length) {
-        for (var c = 0;c < a.length;c++) {
-          if (!com.cognitect.transit.eq.equals(a[c], b[c])) {
-            return !1;
-          }
-        }
-        return !0;
-      }
-      return !1;
-    }
-    if (a.com$cognitect$transit$equals) {
-      return a.com$cognitect$transit$equals(b);
-    }
-    if (null != b && "object" === typeof b) {
-      if (b.com$cognitect$transit$equals) {
-        return b.com$cognitect$transit$equals(a);
-      }
-      var c = 0, d = com.cognitect.transit.util.objectKeys(b).length, e;
-      for (e in a) {
-        if (a.hasOwnProperty(e) && (c++, !b.hasOwnProperty(e) || !com.cognitect.transit.eq.equals(a[e], b[e]))) {
-          return !1;
-        }
-      }
-      return c === d;
-    }
-  }
-  return !1;
-};
-com.cognitect.transit.eq.hashCombine = function(a, b) {
-  return a ^ b + 2654435769 + (a << 6) + (a >> 2);
-};
-com.cognitect.transit.eq.stringCodeCache = {};
-com.cognitect.transit.eq.stringCodeCacheSize = 0;
-com.cognitect.transit.eq.STR_CACHE_MAX = 256;
-com.cognitect.transit.eq.hashString = function(a) {
-  var b = com.cognitect.transit.eq.stringCodeCache[a];
-  if (null != b) {
-    return b;
-  }
-  for (var c = b = 0;c < a.length;++c) {
-    b = 31 * b + a.charCodeAt(c), b %= 4294967296;
-  }
-  com.cognitect.transit.eq.stringCodeCacheSize++;
-  com.cognitect.transit.eq.stringCodeCacheSize >= com.cognitect.transit.eq.STR_CACHE_MAX && (com.cognitect.transit.eq.stringCodeCache = {}, com.cognitect.transit.eq.stringCodeCacheSize = 1);
-  return com.cognitect.transit.eq.stringCodeCache[a] = b;
-};
-com.cognitect.transit.eq.hashMapLike = function(a) {
-  var b = 0;
-  if (null != a.forEach) {
-    a.forEach(function(a, c, d) {
-      b = (b + (com.cognitect.transit.eq.hashCode(c) ^ com.cognitect.transit.eq.hashCode(a))) % 4503599627370496;
-    });
-  } else {
-    for (var c = com.cognitect.transit.util.objectKeys(a), d = 0;d < c.length;d++) {
-      var e = c[d], f = a[e], b = (b + (com.cognitect.transit.eq.hashCode(e) ^ com.cognitect.transit.eq.hashCode(f))) % 4503599627370496
-    }
-  }
-  return b;
-};
-com.cognitect.transit.eq.hashArrayLike = function(a) {
-  var b = 0;
-  if (com.cognitect.transit.util.isArray(a)) {
-    for (var c = 0;c < a.length;c++) {
-      b = com.cognitect.transit.eq.hashCombine(b, com.cognitect.transit.eq.hashCode(a[c]));
-    }
-  } else {
-    a.forEach && a.forEach(function(a, c) {
-      b = com.cognitect.transit.eq.hashCombine(b, com.cognitect.transit.eq.hashCode(a));
-    });
-  }
-  return b;
-};
-com.cognitect.transit.eq.hashCode = function(a) {
-  if (null == a) {
-    return 0;
-  }
-  switch(typeof a) {
-    case "number":
-      return a;
-    case "boolean":
-      return !0 === a ? 1 : 0;
-    case "string":
-      return com.cognitect.transit.eq.hashString(a);
-    case "function":
-      var b = a[com.cognitect.transit.eq.hashCodeProperty];
-      b || (b = com.cognitect.transit.eq.hashCodeCounter, "undefined" != typeof Object.defineProperty ? Object.defineProperty(a, com.cognitect.transit.eq.hashCodeProperty, {value:b, enumerable:!1}) : a[com.cognitect.transit.eq.hashCodeProperty] = b, com.cognitect.transit.eq.hashCodeCounter++);
-      return b;
-    default:
-      return a instanceof Date ? a.valueOf() : com.cognitect.transit.util.isArray(a) ? com.cognitect.transit.eq.hashArrayLike(a) : a.com$cognitect$transit$hashCode ? a.com$cognitect$transit$hashCode() : com.cognitect.transit.eq.hashMapLike(a);
-  }
-};
-com.cognitect.transit.eq.extendToEQ = function(a, b) {
-  a.com$cognitect$transit$hashCode = b.hashCode;
-  a.com$cognitect$transit$equals = b.equals;
-  return a;
-};
-goog.math.Long = function(a, b) {
-  this.low_ = a | 0;
-  this.high_ = b | 0;
-};
-goog.math.Long.IntCache_ = {};
-goog.math.Long.fromInt = function(a) {
-  if (-128 <= a && 128 > a) {
-    var b = goog.math.Long.IntCache_[a];
-    if (b) {
-      return b;
-    }
-  }
-  b = new goog.math.Long(a | 0, 0 > a ? -1 : 0);
-  -128 <= a && 128 > a && (goog.math.Long.IntCache_[a] = b);
-  return b;
-};
-goog.math.Long.fromNumber = function(a) {
-  return isNaN(a) || !isFinite(a) ? goog.math.Long.ZERO : a <= -goog.math.Long.TWO_PWR_63_DBL_ ? goog.math.Long.MIN_VALUE : a + 1 >= goog.math.Long.TWO_PWR_63_DBL_ ? goog.math.Long.MAX_VALUE : 0 > a ? goog.math.Long.fromNumber(-a).negate() : new goog.math.Long(a % goog.math.Long.TWO_PWR_32_DBL_ | 0, a / goog.math.Long.TWO_PWR_32_DBL_ | 0);
-};
-goog.math.Long.fromBits = function(a, b) {
-  return new goog.math.Long(a, b);
-};
-goog.math.Long.fromString = function(a, b) {
-  if (0 == a.length) {
-    throw Error("number format error: empty string");
-  }
-  var c = b || 10;
-  if (2 > c || 36 < c) {
-    throw Error("radix out of range: " + c);
-  }
-  if ("-" == a.charAt(0)) {
-    return goog.math.Long.fromString(a.substring(1), c).negate();
-  }
-  if (0 <= a.indexOf("-")) {
-    throw Error('number format error: interior "-" character: ' + a);
-  }
-  for (var d = goog.math.Long.fromNumber(Math.pow(c, 8)), e = goog.math.Long.ZERO, f = 0;f < a.length;f += 8) {
-    var g = Math.min(8, a.length - f), h = parseInt(a.substring(f, f + g), c);
-    8 > g ? (g = goog.math.Long.fromNumber(Math.pow(c, g)), e = e.multiply(g).add(goog.math.Long.fromNumber(h))) : (e = e.multiply(d), e = e.add(goog.math.Long.fromNumber(h)));
-  }
-  return e;
-};
-goog.math.Long.TWO_PWR_16_DBL_ = 65536;
-goog.math.Long.TWO_PWR_24_DBL_ = 16777216;
-goog.math.Long.TWO_PWR_32_DBL_ = goog.math.Long.TWO_PWR_16_DBL_ * goog.math.Long.TWO_PWR_16_DBL_;
-goog.math.Long.TWO_PWR_31_DBL_ = goog.math.Long.TWO_PWR_32_DBL_ / 2;
-goog.math.Long.TWO_PWR_48_DBL_ = goog.math.Long.TWO_PWR_32_DBL_ * goog.math.Long.TWO_PWR_16_DBL_;
-goog.math.Long.TWO_PWR_64_DBL_ = goog.math.Long.TWO_PWR_32_DBL_ * goog.math.Long.TWO_PWR_32_DBL_;
-goog.math.Long.TWO_PWR_63_DBL_ = goog.math.Long.TWO_PWR_64_DBL_ / 2;
-goog.math.Long.ZERO = goog.math.Long.fromInt(0);
-goog.math.Long.ONE = goog.math.Long.fromInt(1);
-goog.math.Long.NEG_ONE = goog.math.Long.fromInt(-1);
-goog.math.Long.MAX_VALUE = goog.math.Long.fromBits(-1, 2147483647);
-goog.math.Long.MIN_VALUE = goog.math.Long.fromBits(0, -2147483648);
-goog.math.Long.TWO_PWR_24_ = goog.math.Long.fromInt(16777216);
-goog.math.Long.prototype.toInt = function() {
-  return this.low_;
-};
-goog.math.Long.prototype.toNumber = function() {
-  return this.high_ * goog.math.Long.TWO_PWR_32_DBL_ + this.getLowBitsUnsigned();
-};
-goog.math.Long.prototype.toString = function(a) {
-  a = a || 10;
-  if (2 > a || 36 < a) {
-    throw Error("radix out of range: " + a);
-  }
-  if (this.isZero()) {
-    return "0";
-  }
-  if (this.isNegative()) {
-    if (this.equals(goog.math.Long.MIN_VALUE)) {
-      var b = goog.math.Long.fromNumber(a), c = this.div(b), b = c.multiply(b).subtract(this);
-      return c.toString(a) + b.toInt().toString(a);
-    }
-    return "-" + this.negate().toString(a);
-  }
-  for (var c = goog.math.Long.fromNumber(Math.pow(a, 6)), b = this, d = "";;) {
-    var e = b.div(c), f = b.subtract(e.multiply(c)).toInt().toString(a), b = e;
-    if (b.isZero()) {
-      return f + d;
-    }
-    for (;6 > f.length;) {
-      f = "0" + f;
-    }
-    d = "" + f + d;
-  }
-};
-goog.math.Long.prototype.getHighBits = function() {
-  return this.high_;
-};
-goog.math.Long.prototype.getLowBits = function() {
-  return this.low_;
-};
-goog.math.Long.prototype.getLowBitsUnsigned = function() {
-  return 0 <= this.low_ ? this.low_ : goog.math.Long.TWO_PWR_32_DBL_ + this.low_;
-};
-goog.math.Long.prototype.getNumBitsAbs = function() {
-  if (this.isNegative()) {
-    return this.equals(goog.math.Long.MIN_VALUE) ? 64 : this.negate().getNumBitsAbs();
-  }
-  for (var a = 0 != this.high_ ? this.high_ : this.low_, b = 31;0 < b && 0 == (a & 1 << b);b--) {
-  }
-  return 0 != this.high_ ? b + 33 : b + 1;
-};
-goog.math.Long.prototype.isZero = function() {
-  return 0 == this.high_ && 0 == this.low_;
-};
-goog.math.Long.prototype.isNegative = function() {
-  return 0 > this.high_;
-};
-goog.math.Long.prototype.isOdd = function() {
-  return 1 == (this.low_ & 1);
-};
-goog.math.Long.prototype.equals = function(a) {
-  return this.high_ == a.high_ && this.low_ == a.low_;
-};
-goog.math.Long.prototype.notEquals = function(a) {
-  return this.high_ != a.high_ || this.low_ != a.low_;
-};
-goog.math.Long.prototype.lessThan = function(a) {
-  return 0 > this.compare(a);
-};
-goog.math.Long.prototype.lessThanOrEqual = function(a) {
-  return 0 >= this.compare(a);
-};
-goog.math.Long.prototype.greaterThan = function(a) {
-  return 0 < this.compare(a);
-};
-goog.math.Long.prototype.greaterThanOrEqual = function(a) {
-  return 0 <= this.compare(a);
-};
-goog.math.Long.prototype.compare = function(a) {
-  if (this.equals(a)) {
-    return 0;
-  }
-  var b = this.isNegative(), c = a.isNegative();
-  return b && !c ? -1 : !b && c ? 1 : this.subtract(a).isNegative() ? -1 : 1;
-};
-goog.math.Long.prototype.negate = function() {
-  return this.equals(goog.math.Long.MIN_VALUE) ? goog.math.Long.MIN_VALUE : this.not().add(goog.math.Long.ONE);
-};
-goog.math.Long.prototype.add = function(a) {
-  var b = this.high_ >>> 16, c = this.high_ & 65535, d = this.low_ >>> 16, e = a.high_ >>> 16, f = a.high_ & 65535, g = a.low_ >>> 16, h;
-  h = 0 + ((this.low_ & 65535) + (a.low_ & 65535));
-  a = 0 + (h >>> 16);
-  a += d + g;
-  d = 0 + (a >>> 16);
-  d += c + f;
-  c = 0 + (d >>> 16);
-  c = c + (b + e) & 65535;
-  return goog.math.Long.fromBits((a & 65535) << 16 | h & 65535, c << 16 | d & 65535);
-};
-goog.math.Long.prototype.subtract = function(a) {
-  return this.add(a.negate());
-};
-goog.math.Long.prototype.multiply = function(a) {
-  if (this.isZero() || a.isZero()) {
-    return goog.math.Long.ZERO;
-  }
-  if (this.equals(goog.math.Long.MIN_VALUE)) {
-    return a.isOdd() ? goog.math.Long.MIN_VALUE : goog.math.Long.ZERO;
-  }
-  if (a.equals(goog.math.Long.MIN_VALUE)) {
-    return this.isOdd() ? goog.math.Long.MIN_VALUE : goog.math.Long.ZERO;
-  }
-  if (this.isNegative()) {
-    return a.isNegative() ? this.negate().multiply(a.negate()) : this.negate().multiply(a).negate();
-  }
-  if (a.isNegative()) {
-    return this.multiply(a.negate()).negate();
-  }
-  if (this.lessThan(goog.math.Long.TWO_PWR_24_) && a.lessThan(goog.math.Long.TWO_PWR_24_)) {
-    return goog.math.Long.fromNumber(this.toNumber() * a.toNumber());
-  }
-  var b = this.high_ >>> 16, c = this.high_ & 65535, d = this.low_ >>> 16, e = this.low_ & 65535, f = a.high_ >>> 16, g = a.high_ & 65535, h = a.low_ >>> 16;
-  a = a.low_ & 65535;
-  var k, m, l, n;
-  n = 0 + e * a;
-  l = 0 + (n >>> 16);
-  l += d * a;
-  m = 0 + (l >>> 16);
-  l = (l & 65535) + e * h;
-  m += l >>> 16;
-  l &= 65535;
-  m += c * a;
-  k = 0 + (m >>> 16);
-  m = (m & 65535) + d * h;
-  k += m >>> 16;
-  m &= 65535;
-  m += e * g;
-  k += m >>> 16;
-  m &= 65535;
-  k = k + (b * a + c * h + d * g + e * f) & 65535;
-  return goog.math.Long.fromBits(l << 16 | n & 65535, k << 16 | m);
-};
-goog.math.Long.prototype.div = function(a) {
-  if (a.isZero()) {
-    throw Error("division by zero");
-  }
-  if (this.isZero()) {
-    return goog.math.Long.ZERO;
-  }
-  if (this.equals(goog.math.Long.MIN_VALUE)) {
-    if (a.equals(goog.math.Long.ONE) || a.equals(goog.math.Long.NEG_ONE)) {
-      return goog.math.Long.MIN_VALUE;
-    }
-    if (a.equals(goog.math.Long.MIN_VALUE)) {
-      return goog.math.Long.ONE;
-    }
-    var b = this.shiftRight(1).div(a).shiftLeft(1);
-    if (b.equals(goog.math.Long.ZERO)) {
-      return a.isNegative() ? goog.math.Long.ONE : goog.math.Long.NEG_ONE;
-    }
-    var c = this.subtract(a.multiply(b));
-    return b.add(c.div(a));
-  }
-  if (a.equals(goog.math.Long.MIN_VALUE)) {
-    return goog.math.Long.ZERO;
-  }
-  if (this.isNegative()) {
-    return a.isNegative() ? this.negate().div(a.negate()) : this.negate().div(a).negate();
-  }
-  if (a.isNegative()) {
-    return this.div(a.negate()).negate();
-  }
-  for (var d = goog.math.Long.ZERO, c = this;c.greaterThanOrEqual(a);) {
-    for (var b = Math.max(1, Math.floor(c.toNumber() / a.toNumber())), e = Math.ceil(Math.log(b) / Math.LN2), e = 48 >= e ? 1 : Math.pow(2, e - 48), f = goog.math.Long.fromNumber(b), g = f.multiply(a);g.isNegative() || g.greaterThan(c);) {
-      b -= e, f = goog.math.Long.fromNumber(b), g = f.multiply(a);
-    }
-    f.isZero() && (f = goog.math.Long.ONE);
-    d = d.add(f);
-    c = c.subtract(g);
-  }
-  return d;
-};
-goog.math.Long.prototype.modulo = function(a) {
-  return this.subtract(this.div(a).multiply(a));
-};
-goog.math.Long.prototype.not = function() {
-  return goog.math.Long.fromBits(~this.low_, ~this.high_);
-};
-goog.math.Long.prototype.and = function(a) {
-  return goog.math.Long.fromBits(this.low_ & a.low_, this.high_ & a.high_);
-};
-goog.math.Long.prototype.or = function(a) {
-  return goog.math.Long.fromBits(this.low_ | a.low_, this.high_ | a.high_);
-};
-goog.math.Long.prototype.xor = function(a) {
-  return goog.math.Long.fromBits(this.low_ ^ a.low_, this.high_ ^ a.high_);
-};
-goog.math.Long.prototype.shiftLeft = function(a) {
-  a &= 63;
-  if (0 == a) {
-    return this;
-  }
-  var b = this.low_;
-  return 32 > a ? goog.math.Long.fromBits(b << a, this.high_ << a | b >>> 32 - a) : goog.math.Long.fromBits(0, b << a - 32);
-};
-goog.math.Long.prototype.shiftRight = function(a) {
-  a &= 63;
-  if (0 == a) {
-    return this;
-  }
-  var b = this.high_;
-  return 32 > a ? goog.math.Long.fromBits(this.low_ >>> a | b << 32 - a, b >> a) : goog.math.Long.fromBits(b >> a - 32, 0 <= b ? 0 : -1);
-};
-goog.math.Long.prototype.shiftRightUnsigned = function(a) {
-  a &= 63;
-  if (0 == a) {
-    return this;
-  }
-  var b = this.high_;
-  return 32 > a ? goog.math.Long.fromBits(this.low_ >>> a | b << 32 - a, b >>> a) : 32 == a ? goog.math.Long.fromBits(b, 0) : goog.math.Long.fromBits(b >>> a - 32, 0);
-};
-com.cognitect.transit.types = {};
-com.cognitect.transit.types.TaggedValue = function(a, b) {
-  this.tag = a;
-  this.rep = b;
-  this.hashCode = -1;
-};
-com.cognitect.transit.types.TaggedValue.prototype.toString = function() {
-  return "[TaggedValue: " + this.tag + ", " + this.rep + "]";
-};
-com.cognitect.transit.types.TaggedValue.prototype.equiv = function(a) {
-  return com.cognitect.transit.eq.equals(this, a);
-};
-com.cognitect.transit.types.TaggedValue.prototype.equiv = com.cognitect.transit.types.TaggedValue.prototype.equiv;
-com.cognitect.transit.types.TaggedValue.prototype.com$cognitect$transit$equals = function(a) {
-  return a instanceof com.cognitect.transit.types.TaggedValue ? this.tag === a.tag && com.cognitect.transit.eq.equals(this.rep, a.rep) : !1;
-};
-com.cognitect.transit.types.TaggedValue.prototype.com$cognitect$transit$hashCode = function() {
-  -1 === this.hashCode && (this.hashCode = com.cognitect.transit.eq.hashCombine(com.cognitect.transit.eq.hashCode(this.tag), com.cognitect.transit.eq.hashCode(this.rep)));
-  return this.hashCode;
-};
-com.cognitect.transit.types.taggedValue = function(a, b) {
-  return new com.cognitect.transit.types.TaggedValue(a, b);
-};
-com.cognitect.transit.types.isTaggedValue = function(a) {
-  return a instanceof com.cognitect.transit.types.TaggedValue;
-};
-com.cognitect.transit.types.nullValue = function() {
-  return null;
-};
-com.cognitect.transit.types.boolValue = function(a) {
-  return "t" === a;
-};
-com.cognitect.transit.types.MAX_INT = goog.math.Long.fromString("9007199254740992");
-com.cognitect.transit.types.MIN_INT = goog.math.Long.fromString("-9007199254740992");
-com.cognitect.transit.types.intValue = function(a) {
-  if ("number" === typeof a || a instanceof goog.math.Long) {
-    return a;
-  }
-  a = goog.math.Long.fromString(a, 10);
-  return a.greaterThan(com.cognitect.transit.types.MAX_INT) || a.lessThan(com.cognitect.transit.types.MIN_INT) ? a : a.toNumber();
-};
-goog.math.Long.prototype.equiv = function(a) {
-  return com.cognitect.transit.eq.equals(this, a);
-};
-goog.math.Long.prototype.equiv = goog.math.Long.prototype.equiv;
-goog.math.Long.prototype.com$cognitect$transit$equals = function(a) {
-  return a instanceof goog.math.Long && this.equals(a);
-};
-goog.math.Long.prototype.com$cognitect$transit$hashCode = function() {
-  return this.toInt();
-};
-com.cognitect.transit.types.isInteger = function(a) {
-  return a instanceof goog.math.Long ? !0 : "number" === typeof a && !isNaN(a) && Infinity !== a && parseFloat(a) === parseInt(a);
-};
-com.cognitect.transit.types.floatValue = function(a) {
-  return parseFloat(a);
-};
-com.cognitect.transit.types.bigInteger = function(a) {
-  return com.cognitect.transit.types.taggedValue("n", a);
-};
-com.cognitect.transit.types.isBigInteger = function(a) {
-  return a instanceof com.cognitect.transit.types.TaggedValue && "n" === a.tag;
-};
-com.cognitect.transit.types.bigDecimalValue = function(a) {
-  return com.cognitect.transit.types.taggedValue("f", a);
-};
-com.cognitect.transit.types.isBigDecimal = function(a) {
-  return a instanceof com.cognitect.transit.types.TaggedValue && "f" === a.tag;
-};
-com.cognitect.transit.types.charValue = function(a) {
-  return a;
-};
-com.cognitect.transit.types.Keyword = function(a) {
-  this.name = a;
-  this.hashCode = -1;
-};
-com.cognitect.transit.types.Keyword.prototype.toString = function() {
-  return ":" + this.name;
-};
-com.cognitect.transit.types.Keyword.prototype.equiv = function(a) {
-  return com.cognitect.transit.eq.equals(this, a);
-};
-com.cognitect.transit.types.Keyword.prototype.equiv = com.cognitect.transit.types.Keyword.prototype.equiv;
-com.cognitect.transit.types.Keyword.prototype.com$cognitect$transit$equals = function(a) {
-  return a instanceof com.cognitect.transit.types.Keyword && this.name == a.name;
-};
-com.cognitect.transit.types.Keyword.prototype.com$cognitect$transit$hashCode = function() {
-  -1 === this.hashCode && (this.hashCode = com.cognitect.transit.eq.hashCode(this.name));
-  return this.hashCode;
-};
-com.cognitect.transit.types.keyword = function(a) {
-  return new com.cognitect.transit.types.Keyword(a);
-};
-com.cognitect.transit.types.isKeyword = function(a) {
-  return a instanceof com.cognitect.transit.types.Keyword;
-};
-com.cognitect.transit.types.Symbol = function(a) {
-  this.name = a;
-  this.hashCode = -1;
-};
-com.cognitect.transit.types.Symbol.prototype.toString = function() {
-  return "[Symbol: " + this.name + "]";
-};
-com.cognitect.transit.types.Symbol.prototype.equiv = function(a) {
-  return com.cognitect.transit.eq.equals(this, a);
-};
-com.cognitect.transit.types.Symbol.prototype.equiv = com.cognitect.transit.types.Symbol.prototype.equiv;
-com.cognitect.transit.types.Symbol.prototype.com$cognitect$transit$equals = function(a) {
-  return a instanceof com.cognitect.transit.types.Symbol && this.name == a.name;
-};
-com.cognitect.transit.types.Symbol.prototype.com$cognitect$transit$hashCode = function() {
-  -1 === this.hashCode && (this.hashCode = com.cognitect.transit.eq.hashCode(this.name));
-  return this.hashCode;
-};
-com.cognitect.transit.types.symbol = function(a) {
-  return new com.cognitect.transit.types.Symbol(a);
-};
-com.cognitect.transit.types.isSymbol = function(a) {
-  return a instanceof com.cognitect.transit.types.Symbol;
-};
-com.cognitect.transit.types.hexFor = function(a, b, c) {
-  var d = "";
-  c = c || b + 1;
-  for (var e = 8 * (7 - b), f = goog.math.Long.fromInt(255).shiftLeft(e);b < c;b++, e -= 8, f = f.shiftRightUnsigned(8)) {
-    var g = a.and(f).shiftRightUnsigned(e).toString(16);
-    1 == g.length && (g = "0" + g);
-    d += g;
-  }
-  return d;
-};
-com.cognitect.transit.types.UUID = function(a, b) {
-  this.high = a;
-  this.low = b;
-  this.hashCode = -1;
-};
-com.cognitect.transit.types.UUID.prototype.getLeastSignificantBits = function() {
-  return this.low;
-};
-com.cognitect.transit.types.UUID.prototype.getMostSignificantBits = function() {
-  return this.high;
-};
-com.cognitect.transit.types.UUID.prototype.toString = function(a) {
-  var b = this.high, c = this.low;
-  a = "" + (com.cognitect.transit.types.hexFor(b, 0, 4) + "-");
-  a += com.cognitect.transit.types.hexFor(b, 4, 6) + "-";
-  a += com.cognitect.transit.types.hexFor(b, 6, 8) + "-";
-  a += com.cognitect.transit.types.hexFor(c, 0, 2) + "-";
-  return a += com.cognitect.transit.types.hexFor(c, 2, 8);
-};
-com.cognitect.transit.types.UUID.prototype.equiv = function(a) {
-  return com.cognitect.transit.eq.equals(this, a);
-};
-com.cognitect.transit.types.UUID.prototype.equiv = com.cognitect.transit.types.UUID.prototype.equiv;
-com.cognitect.transit.types.UUID.prototype.com$cognitect$transit$equals = function(a) {
-  return a instanceof com.cognitect.transit.types.UUID && this.high.equals(a.high) && this.low.equals(a.low);
-};
-com.cognitect.transit.types.UUID.prototype.com$cognitect$transit$hashCode = function() {
-  -1 === this.hashCode && (this.hashCode = com.cognitect.transit.eq.hashCode(this.toString()));
-  return this.hashCode;
-};
-com.cognitect.transit.types.UUIDfromString = function(a) {
-  a = a.replace(/-/g, "");
-  for (var b = null, c = null, d = c = 0, e = 24, f = 0, f = c = 0, e = 24;8 > f;f += 2, e -= 8) {
-    c |= parseInt(a.substring(f, f + 2), 16) << e;
-  }
-  d = 0;
-  f = 8;
-  for (e = 24;16 > f;f += 2, e -= 8) {
-    d |= parseInt(a.substring(f, f + 2), 16) << e;
-  }
-  b = goog.math.Long.fromBits(d, c);
-  c = 0;
-  f = 16;
-  for (e = 24;24 > f;f += 2, e -= 8) {
-    c |= parseInt(a.substring(f, f + 2), 16) << e;
-  }
-  d = 0;
-  for (e = f = 24;32 > f;f += 2, e -= 8) {
-    d |= parseInt(a.substring(f, f + 2), 16) << e;
-  }
-  c = goog.math.Long.fromBits(d, c);
-  return new com.cognitect.transit.types.UUID(b, c);
-};
-com.cognitect.transit.types.uuid = function(a) {
-  return com.cognitect.transit.types.UUIDfromString(a);
-};
-com.cognitect.transit.types.isUUID = function(a) {
-  return a instanceof com.cognitect.transit.types.UUID;
-};
-com.cognitect.transit.types.date = function(a) {
-  a = "number" === typeof a ? a : parseInt(a, 10);
-  return new Date(a);
-};
-com.cognitect.transit.types.verboseDate = function(a) {
-  return new Date(a);
-};
-Date.prototype.com$cognitect$transit$equals = function(a) {
-  return a instanceof Date ? this.valueOf() === a.valueOf() : !1;
-};
-Date.prototype.com$cognitect$transit$hashCode = function() {
-  return this.valueOf();
-};
-com.cognitect.transit.types.binary = function(a, b) {
-  return b && !1 === b.preferBuffers || "undefined" == typeof Buffer ? "undefined" != typeof Uint8Array ? com.cognitect.transit.util.Base64ToUint8(a) : com.cognitect.transit.types.taggedValue("b", a) : new Buffer(a, "base64");
-};
-com.cognitect.transit.types.isBinary = function(a) {
-  return "undefined" != typeof Buffer && a instanceof Buffer ? !0 : "undefined" != typeof Uint8Array && a instanceof Uint8Array ? !0 : a instanceof com.cognitect.transit.types.TaggedValue && "b" === a.tag;
-};
-com.cognitect.transit.types.uri = function(a) {
-  return com.cognitect.transit.types.taggedValue("r", a);
-};
-com.cognitect.transit.types.isURI = function(a) {
-  return a instanceof com.cognitect.transit.types.TaggedValue && "r" === a.tag;
-};
-com.cognitect.transit.types.KEYS = 0;
-com.cognitect.transit.types.VALUES = 1;
-com.cognitect.transit.types.ENTRIES = 2;
-com.cognitect.transit.types.TransitArrayMapIterator = function(a, b) {
-  this.entries = a;
-  this.type = b || com.cognitect.transit.types.KEYS;
-  this.idx = 0;
-};
-com.cognitect.transit.types.TransitArrayMapIterator.prototype.next = function(a, b) {
-  if (this.idx < this.entries.length) {
-    var c = null, c = this.type === com.cognitect.transit.types.KEYS ? this.entries[this.idx] : this.type === com.cognitect.transit.types.VALUES ? this.entries[this.idx + 1] : [this.entries[this.idx], this.entries[this.idx + 1]], c = {value:c, done:!1};
-    this.idx += 2;
-    return c;
-  }
-  return {value:null, done:!0};
-};
-com.cognitect.transit.types.TransitArrayMapIterator.prototype.next = com.cognitect.transit.types.TransitArrayMapIterator.prototype.next;
-com.cognitect.transit.types.TransitMapIterator = function(a, b) {
-  this.map = a;
-  this.type = b || com.cognitect.transit.types.KEYS;
-  this.keys = this.map.getKeys();
-  this.idx = 0;
-  this.bucket = null;
-  this.bucketIdx = 0;
-};
-com.cognitect.transit.types.TransitMapIterator.prototype.next = function() {
-  if (this.idx < this.map.size) {
-    null != this.bucket && this.bucketIdx < this.bucket.length || (this.bucket = this.map.map[this.keys[this.idx]], this.bucketIdx = 0);
-    var a = null, a = this.type === com.cognitect.transit.types.KEYS ? this.bucket[this.bucketIdx] : this.type === com.cognitect.transit.types.VALUES ? this.bucket[this.bucketIdx + 1] : [this.bucket[this.bucketIdx], this.bucket[this.bucketIdx + 1]], a = {value:a, done:!1};
-    this.idx++;
-    this.bucketIdx += 2;
-    return a;
-  }
-  return {value:null, done:!0};
-};
-com.cognitect.transit.types.TransitMapIterator.prototype.next = com.cognitect.transit.types.TransitMapIterator.prototype.next;
-com.cognitect.transit.types.mapEquals = function(a, b) {
-  if ((b instanceof com.cognitect.transit.types.TransitMap || b instanceof com.cognitect.transit.types.TransitArrayMap) && a.size === b.size) {
-    for (var c in a.map) {
-      for (var d = a.map[c], e = 0;e < d.length;e += 2) {
-        if (!com.cognitect.transit.eq.equals(d[e + 1], b.get(d[e]))) {
-          return !1;
-        }
-      }
-    }
-    return !0;
-  }
-  if (null != b && "object" === typeof b && (c = com.cognitect.transit.util.objectKeys(b), d = c.length, a.size === d)) {
-    for (e = 0;e < d;e++) {
-      var f = c[e];
-      if (!a.has(f) || !com.cognitect.transit.eq.equals(b[f], a.get(f))) {
-        return !1;
-      }
-    }
-    return !0;
-  }
-  return !1;
-};
-com.cognitect.transit.types.SMALL_ARRAY_MAP_THRESHOLD = 8;
-com.cognitect.transit.types.ARRAY_MAP_THRESHOLD = 32;
-com.cognitect.transit.types.ARRAY_MAP_ACCESS_THRESHOLD = 32;
-com.cognitect.transit.types.TransitArrayMap = function(a) {
-  this._entries = a;
-  this.backingMap = null;
-  this.hashCode = -1;
-  this.size = a.length / 2;
-  this.accesses = 0;
-};
-com.cognitect.transit.types.TransitArrayMap.prototype.toString = function() {
-  return "[TransitArrayMap]";
-};
-com.cognitect.transit.types.TransitArrayMap.prototype.convert = function() {
-  if (this.backingMap) {
-    throw Error("Invalid operation, already converted");
-  }
-  if (this.size < com.cognitect.transit.types.SMALL_ARRAY_MAP_THRESHOLD) {
-    return !1;
-  }
-  this.accesses++;
-  return this.accesses > com.cognitect.transit.types.ARRAY_MAP_ACCESS_THRESHOLD ? (this.backingMap = com.cognitect.transit.types.map(this._entries, !1, !0), this._entries = [], !0) : !1;
-};
-com.cognitect.transit.types.TransitArrayMap.prototype.clear = function() {
-  this.hashCode = -1;
-  this.backingMap ? this.backingMap.clear() : this._entries = [];
-  this.size = 0;
-};
-com.cognitect.transit.types.TransitArrayMap.prototype.clear = com.cognitect.transit.types.TransitArrayMap.prototype.clear;
-com.cognitect.transit.types.TransitArrayMap.prototype.keys = function() {
-  return this.backingMap ? this.backingMap.keys() : new com.cognitect.transit.types.TransitArrayMapIterator(this._entries, com.cognitect.transit.types.KEYS);
-};
-com.cognitect.transit.types.TransitArrayMap.prototype.keys = com.cognitect.transit.types.TransitArrayMap.prototype.keys;
-com.cognitect.transit.types.TransitArrayMap.prototype.keySet = function() {
-  if (this.backingMap) {
-    return this.backingMap.keySet();
-  }
-  for (var a = [], b = 0, c = 0;c < this._entries.length;b++, c += 2) {
-    a[b] = this._entries[c];
-  }
-  return a;
-};
-com.cognitect.transit.types.TransitArrayMap.prototype.keySet = com.cognitect.transit.types.TransitArrayMap.prototype.keySet;
-com.cognitect.transit.types.TransitArrayMap.prototype.entries = function() {
-  return this.backingMap ? this.backingMap.entries() : new com.cognitect.transit.types.TransitArrayMapIterator(this._entries, com.cognitect.transit.types.ENTRIES);
-};
-com.cognitect.transit.types.TransitArrayMap.prototype.entries = com.cognitect.transit.types.TransitArrayMap.prototype.entries;
-com.cognitect.transit.types.TransitArrayMap.prototype.values = function() {
-  return this.backingMap ? this.backingMap.values() : new com.cognitect.transit.types.TransitArrayMapIterator(this._entries, com.cognitect.transit.types.VALUES);
-};
-com.cognitect.transit.types.TransitArrayMap.prototype.values = com.cognitect.transit.types.TransitArrayMap.prototype.values;
-com.cognitect.transit.types.TransitArrayMap.prototype.forEach = function(a) {
-  if (this.backingMap) {
-    this.backingMap.forEach(a);
-  } else {
-    for (var b = 0;b < this._entries.length;b += 2) {
-      a(this._entries[b + 1], this._entries[b]);
-    }
-  }
-};
-com.cognitect.transit.types.TransitArrayMap.prototype.forEach = com.cognitect.transit.types.TransitArrayMap.prototype.forEach;
-com.cognitect.transit.types.TransitArrayMap.prototype.get = function(a, b) {
-  if (this.backingMap) {
-    return this.backingMap.get(a);
-  }
-  if (this.convert()) {
-    return this.get(a);
-  }
-  for (var c = 0;c < this._entries.length;c += 2) {
-    if (com.cognitect.transit.eq.equals(this._entries[c], a)) {
-      return this._entries[c + 1];
-    }
-  }
-  return b;
-};
-com.cognitect.transit.types.TransitArrayMap.prototype.get = com.cognitect.transit.types.TransitArrayMap.prototype.get;
-com.cognitect.transit.types.TransitArrayMap.prototype.has = function(a) {
-  if (this.backingMap) {
-    return this.backingMap.has(a);
-  }
-  if (this.convert()) {
-    return this.has(a);
-  }
-  for (var b = 0;b < this._entries.length;b += 2) {
-    if (com.cognitect.transit.eq.equals(this._entries[b], a)) {
-      return !0;
-    }
-  }
-  return !1;
-};
-com.cognitect.transit.types.TransitArrayMap.prototype.has = com.cognitect.transit.types.TransitArrayMap.prototype.has;
-com.cognitect.transit.types.TransitArrayMap.prototype.set = function(a, b) {
-  this.hashCode = -1;
-  if (this.backingMap) {
-    this.backingMap.set(a, b), this.size = this.backingMap.size;
-  } else {
-    for (var c = 0;c < this._entries.length;c += 2) {
-      if (com.cognitect.transit.eq.equals(this._entries[c], a)) {
-        this._entries[c + 1] = b;
-        return;
-      }
-    }
-    this._entries.push(a);
-    this._entries.push(b);
-    this.size++;
-    this.size > com.cognitect.transit.types.ARRAY_MAP_THRESHOLD && (this.backingMap = com.cognitect.transit.types.map(this._entries, !1, !0), this._entries = null);
-  }
-};
-com.cognitect.transit.types.TransitArrayMap.prototype.set = com.cognitect.transit.types.TransitArrayMap.prototype.set;
-com.cognitect.transit.types.TransitArrayMap.prototype["delete"] = function(a) {
-  this.hashCode = -1;
-  if (this.backingMap) {
-    this.backingMap["delete"](a), this.size = this.backingMap.size;
-  } else {
-    for (var b = 0;b < this._entries.length;b += 2) {
-      if (com.cognitect.transit.eq.equals(this._entries[b], a)) {
-        this._entries.splice(b, 2);
-        this.size--;
-        break;
-      }
-    }
-  }
-};
-com.cognitect.transit.types.TransitArrayMap.prototype.com$cognitect$transit$hashCode = function() {
-  if (this.backingMap) {
-    return this.backingMap.com$cognitect$transit$hashCode();
-  }
-  -1 === this.hashCode && (this.hashCode = com.cognitect.transit.eq.hashMapLike(this));
-  return this.hashCode;
-};
-com.cognitect.transit.types.TransitArrayMap.prototype.com$cognitect$transit$equals = function(a) {
-  return this.backingMap ? com.cognitect.transit.types.mapEquals(this.backingMap, a) : com.cognitect.transit.types.mapEquals(this, a);
-};
-com.cognitect.transit.types.TransitMap = function(a, b, c) {
-  this.map = b || {};
-  this._keys = a || [];
-  this.size = c || 0;
-  this.hashCode = -1;
-};
-com.cognitect.transit.types.TransitMap.prototype.toString = function() {
-  return "[TransitMap]";
-};
-com.cognitect.transit.types.TransitMap.prototype.clear = function() {
-  this.hashCode = -1;
-  this.map = {};
-  this._keys = [];
-  this.size = 0;
-};
-com.cognitect.transit.types.TransitMap.prototype.clear = com.cognitect.transit.types.TransitMap.prototype.clear;
-com.cognitect.transit.types.TransitMap.prototype.getKeys = function() {
-  return null != this._keys ? this._keys : com.cognitect.transit.util.objectKeys(this.map);
-};
-com.cognitect.transit.types.TransitMap.prototype["delete"] = function(a) {
-  this.hashCode = -1;
-  this._keys = null;
-  for (var b = com.cognitect.transit.eq.hashCode(a), c = this.map[b], d = 0;d < c.length;d += 2) {
-    if (com.cognitect.transit.eq.equals(a, c[d])) {
-      c.splice(d, 2);
-      0 === c.length && delete this.map[b];
-      this.size--;
-      break;
-    }
-  }
-};
-com.cognitect.transit.types.TransitMap.prototype.entries = function() {
-  return new com.cognitect.transit.types.TransitMapIterator(this, com.cognitect.transit.types.ENTRIES);
-};
-com.cognitect.transit.types.TransitMap.prototype.entries = com.cognitect.transit.types.TransitMap.prototype.entries;
-com.cognitect.transit.types.TransitMap.prototype.forEach = function(a) {
-  for (var b = this.getKeys(), c = 0;c < b.length;c++) {
-    for (var d = this.map[b[c]], e = 0;e < d.length;e += 2) {
-      a(d[e + 1], d[e], this);
-    }
-  }
-};
-com.cognitect.transit.types.TransitMap.prototype.forEach = com.cognitect.transit.types.TransitMap.prototype.forEach;
-com.cognitect.transit.types.TransitMap.prototype.get = function(a, b) {
-  var c = com.cognitect.transit.eq.hashCode(a), c = this.map[c];
-  if (null != c) {
-    for (var d = 0;d < c.length;d += 2) {
-      if (com.cognitect.transit.eq.equals(a, c[d])) {
-        return c[d + 1];
-      }
-    }
-  } else {
-    return b;
-  }
-};
-com.cognitect.transit.types.TransitMap.prototype.get = com.cognitect.transit.types.TransitMap.prototype.get;
-com.cognitect.transit.types.TransitMap.prototype.has = function(a) {
-  var b = com.cognitect.transit.eq.hashCode(a), b = this.map[b];
-  if (null != b) {
-    for (var c = 0;c < b.length;c += 2) {
-      if (com.cognitect.transit.eq.equals(a, b[c])) {
-        return !0;
-      }
-    }
-  }
-  return !1;
-};
-com.cognitect.transit.types.TransitMap.prototype.has = com.cognitect.transit.types.TransitMap.prototype.has;
-com.cognitect.transit.types.TransitMap.prototype.keys = function() {
-  return new com.cognitect.transit.types.TransitMapIterator(this, com.cognitect.transit.types.KEYS);
-};
-com.cognitect.transit.types.TransitMap.prototype.keys = com.cognitect.transit.types.TransitMap.prototype.keys;
-com.cognitect.transit.types.TransitMap.prototype.keySet = function() {
-  for (var a = this.getKeys(), b = [], c = 0;c < a.length;c++) {
-    for (var d = this.map[a[c]], e = 0;e < d.length;e += 2) {
-      b.push(d[e]);
-    }
-  }
-  return b;
-};
-com.cognitect.transit.types.TransitMap.prototype.keySet = com.cognitect.transit.types.TransitMap.prototype.keySet;
-com.cognitect.transit.types.TransitMap.prototype.set = function(a, b) {
-  this.hashCode = -1;
-  var c = com.cognitect.transit.eq.hashCode(a), d = this.map[c];
-  if (null == d) {
-    this._keys && this._keys.push(c), this.map[c] = [a, b], this.size++;
-  } else {
-    for (var c = !0, e = 0;e < d.length;e += 2) {
-      if (com.cognitect.transit.eq.equals(b, d[e])) {
-        c = !1;
-        d[e] = b;
-        break;
-      }
-    }
-    c && (d.push(a), d.push(b), this.size++);
-  }
-};
-com.cognitect.transit.types.TransitMap.prototype.set = com.cognitect.transit.types.TransitMap.prototype.set;
-com.cognitect.transit.types.TransitMap.prototype.values = function() {
-  return new com.cognitect.transit.types.TransitMapIterator(this, com.cognitect.transit.types.VALUES);
-};
-com.cognitect.transit.types.TransitMap.prototype.values = com.cognitect.transit.types.TransitMap.prototype.values;
-com.cognitect.transit.types.TransitMap.prototype.com$cognitect$transit$hashCode = function() {
-  -1 === this.hashCode && (this.hashCode = com.cognitect.transit.eq.hashMapLike(this));
-  return this.hashCode;
-};
-com.cognitect.transit.types.TransitMap.prototype.com$cognitect$transit$equals = function(a) {
-  return com.cognitect.transit.types.mapEquals(this, a);
-};
-com.cognitect.transit.types.map = function(a, b, c) {
-  a = a || [];
-  b = !1 === b ? b : !0;
-  if ((!0 !== c || !c) && a.length <= 2 * com.cognitect.transit.types.ARRAY_MAP_THRESHOLD) {
-    if (b) {
-      var d = a;
-      a = [];
-      for (b = 0;b < d.length;b += 2) {
-        var e = !1;
-        for (c = 0;c < a.length;c += 2) {
-          if (com.cognitect.transit.eq.equals(a[c], d[b])) {
-            a[c + 1] = d[b + 1];
-            e = !0;
-            break;
-          }
-        }
-        e || (a.push(d[b]), a.push(d[b + 1]));
-      }
-    }
-    return new com.cognitect.transit.types.TransitArrayMap(a);
-  }
-  var d = {}, e = [], f = 0;
-  for (b = 0;b < a.length;b += 2) {
-    c = com.cognitect.transit.eq.hashCode(a[b]);
-    var g = d[c];
-    if (null == g) {
-      e.push(c), d[c] = [a[b], a[b + 1]], f++;
-    } else {
-      var h = !0;
-      for (c = 0;c < g.length;c += 2) {
-        if (com.cognitect.transit.eq.equals(g[c], a[b])) {
-          g[c + 1] = a[b + 1];
-          h = !1;
-          break;
-        }
-      }
-      h && (g.push(a[b]), g.push(a[b + 1]), f++);
-    }
-  }
-  return new com.cognitect.transit.types.TransitMap(e, d, f);
-};
-com.cognitect.transit.types.isArrayMap = function(a) {
-  return a instanceof com.cognitect.transit.types.TransitArrayMap;
-};
-com.cognitect.transit.types.isMap = function(a) {
-  return a instanceof com.cognitect.transit.types.TransitArrayMap || a instanceof com.cognitect.transit.types.TransitMap;
-};
-com.cognitect.transit.types.TransitSet = function(a) {
-  this.map = a;
-  this.size = a.size;
-};
-com.cognitect.transit.types.TransitSet.prototype.toString = function() {
-  return "[TransitSet]";
-};
-com.cognitect.transit.types.TransitSet.prototype.add = function(a) {
-  this.map.set(a, a);
-  this.size = this.map.size;
-};
-com.cognitect.transit.types.TransitSet.prototype.add = com.cognitect.transit.types.TransitSet.prototype.add;
-com.cognitect.transit.types.TransitSet.prototype.clear = function() {
-  this.map = new com.cognitect.transit.types.TransitMap;
-  this.size = 0;
-};
-com.cognitect.transit.types.TransitSet.prototype.clear = com.cognitect.transit.types.TransitSet.prototype.clear;
-com.cognitect.transit.types.TransitSet.prototype["delete"] = function(a) {
-  this.map["delete"](a);
-  this.size = this.map.size;
-};
-com.cognitect.transit.types.TransitSet.prototype.entries = function() {
-  return this.map.entries();
-};
-com.cognitect.transit.types.TransitSet.prototype.entries = com.cognitect.transit.types.TransitSet.prototype.entries;
-com.cognitect.transit.types.TransitSet.prototype.forEach = function(a, b) {
-  var c = this;
-  this.map.forEach(function(b, e, f) {
-    a(e, c);
-  });
-};
-com.cognitect.transit.types.TransitSet.prototype.forEach = com.cognitect.transit.types.TransitSet.prototype.forEach;
-com.cognitect.transit.types.TransitSet.prototype.has = function(a) {
-  return this.map.has(a);
-};
-com.cognitect.transit.types.TransitSet.prototype.has = com.cognitect.transit.types.TransitSet.prototype.has;
-com.cognitect.transit.types.TransitSet.prototype.keys = function() {
-  return this.map.keys();
-};
-com.cognitect.transit.types.TransitSet.prototype.keys = com.cognitect.transit.types.TransitSet.prototype.keys;
-com.cognitect.transit.types.TransitSet.prototype.keySet = function() {
-  return this.map.keySet();
-};
-com.cognitect.transit.types.TransitSet.prototype.keySet = com.cognitect.transit.types.TransitSet.prototype.keySet;
-com.cognitect.transit.types.TransitSet.prototype.values = function() {
-  return this.map.values();
-};
-com.cognitect.transit.types.TransitSet.prototype.values = com.cognitect.transit.types.TransitSet.prototype.values;
-com.cognitect.transit.types.TransitSet.prototype.com$cognitect$transit$equals = function(a) {
-  if (a instanceof com.cognitect.transit.types.TransitSet) {
-    if (this.size === a.size) {
-      return com.cognitect.transit.eq.equals(this.map, a.map);
-    }
-  } else {
-    return !1;
-  }
-};
-com.cognitect.transit.types.TransitSet.prototype.com$cognitect$transit$hashCode = function(a) {
-  return com.cognitect.transit.eq.hashCode(this.map);
-};
-com.cognitect.transit.types.set = function(a) {
-  a = a || [];
-  for (var b = {}, c = [], d = 0, e = 0;e < a.length;e++) {
-    var f = com.cognitect.transit.eq.hashCode(a[e]), g = b[f];
-    if (null == g) {
-      c.push(f), b[f] = [a[e], a[e]], d++;
-    } else {
-      for (var f = !0, h = 0;h < g.length;h += 2) {
-        if (com.cognitect.transit.eq.equals(g[h], a[e])) {
-          f = !1;
-          break;
-        }
-      }
-      f && (g.push(a[e]), g.push(a[e]), d++);
-    }
-  }
-  return new com.cognitect.transit.types.TransitSet(new com.cognitect.transit.types.TransitMap(c, b, d));
-};
-com.cognitect.transit.types.isSet = function(a) {
-  return a instanceof com.cognitect.transit.types.TransitSet;
-};
-com.cognitect.transit.types.quoted = function(a) {
-  return com.cognitect.transit.types.taggedValue("'", a);
-};
-com.cognitect.transit.types.isQuoted = function(a) {
-  return a instanceof com.cognitect.transit.types.TaggedValue && "'" === a.tag;
-};
-com.cognitect.transit.types.list = function(a) {
-  return com.cognitect.transit.types.taggedValue("list", a);
-};
-com.cognitect.transit.types.isList = function(a) {
-  return a instanceof com.cognitect.transit.types.List && "list" === a.tag;
-};
-com.cognitect.transit.types.link = function(a) {
-  return com.cognitect.transit.types.taggedValue("link", a);
-};
-com.cognitect.transit.types.isLink = function(a) {
-  return a instanceof com.cognitect.transit.types.TaggedValue && "link" === a.tag;
-};
-com.cognitect.transit.types.specialDouble = function(a) {
-  switch(a) {
-    case "-INF":
-      return -Infinity;
-    case "INF":
-      return Infinity;
-    case "NaN":
-      return NaN;
-    default:
-      throw Error("Invalid special double value " + a);;
-  }
-};
-com.cognitect.transit.impl = {};
-com.cognitect.transit.impl.decoder = {};
-com.cognitect.transit.impl.decoder.Tag = function(a) {
-  this.str = a;
-};
-com.cognitect.transit.impl.decoder.tag = function(a) {
-  return new com.cognitect.transit.impl.decoder.Tag(a);
-};
-com.cognitect.transit.impl.decoder.isTag = function(a) {
-  return a && a instanceof com.cognitect.transit.impl.decoder.Tag;
-};
-com.cognitect.transit.impl.decoder.isGroundHandler = function(a) {
-  switch(a) {
-    case "_":
-    ;
-    case "s":
-    ;
-    case "?":
-    ;
-    case "i":
-    ;
-    case "d":
-    ;
-    case "b":
-    ;
-    case "'":
-    ;
-    case "array":
-    ;
-    case "map":
-      return !0;
-  }
-  return !1;
-};
-com.cognitect.transit.impl.decoder.Decoder = function(a) {
-  this.options = a || {};
-  this.handlers = {};
-  for (var b in this.defaults.handlers) {
-    this.handlers[b] = this.defaults.handlers[b];
-  }
-  for (b in this.options.handlers) {
-    if (com.cognitect.transit.impl.decoder.isGroundHandler(b)) {
-      throw Error('Cannot override handler for ground type "' + b + '"');
-    }
-    this.handlers[b] = this.options.handlers[b];
-  }
-  this.preferStrings = null != this.options.preferStrings ? this.options.preferStrings : this.defaults.preferStrings;
-  this.preferBuffers = null != this.options.preferBuffers ? this.options.preferBuffers : this.defaults.preferBuffers;
-  this.defaultHandler = this.options.defaultHandler || this.defaults.defaultHandler;
-  this.mapBuilder = this.options.mapBuilder;
-  this.arrayBuilder = this.options.arrayBuilder;
-};
-com.cognitect.transit.impl.decoder.Decoder.prototype.defaults = {handlers:{_:function(a, b) {
-  return com.cognitect.transit.types.nullValue();
-}, "?":function(a, b) {
-  return com.cognitect.transit.types.boolValue(a);
-}, b:function(a, b) {
-  return com.cognitect.transit.types.binary(a, b);
-}, i:function(a, b) {
-  return com.cognitect.transit.types.intValue(a);
-}, n:function(a, b) {
-  return com.cognitect.transit.types.bigInteger(a);
-}, d:function(a, b) {
-  return com.cognitect.transit.types.floatValue(a);
-}, f:function(a, b) {
-  return com.cognitect.transit.types.bigDecimalValue(a);
-}, c:function(a, b) {
-  return com.cognitect.transit.types.charValue(a);
-}, ":":function(a, b) {
-  return com.cognitect.transit.types.keyword(a);
-}, $:function(a, b) {
-  return com.cognitect.transit.types.symbol(a);
-}, r:function(a, b) {
-  return com.cognitect.transit.types.uri(a);
-}, z:function(a, b) {
-  return com.cognitect.transit.types.specialDouble(a);
-}, "'":function(a, b) {
-  return a;
-}, m:function(a, b) {
-  return com.cognitect.transit.types.date(a);
-}, t:function(a, b) {
-  return com.cognitect.transit.types.verboseDate(a);
-}, u:function(a, b) {
-  return com.cognitect.transit.types.uuid(a);
-}, set:function(a, b) {
-  return com.cognitect.transit.types.set(a);
-}, list:function(a, b) {
-  return com.cognitect.transit.types.list(a);
-}, link:function(a, b) {
-  return com.cognitect.transit.types.link(a);
-}, cmap:function(a, b) {
-  return com.cognitect.transit.types.map(a, !1);
-}}, defaultHandler:function(a, b) {
-  return com.cognitect.transit.types.taggedValue(a, b);
-}, preferStrings:!0, preferBuffers:!0};
-com.cognitect.transit.impl.decoder.Decoder.prototype.decode = function(a, b, c, d) {
-  if (null == a) {
-    return null;
-  }
-  switch(typeof a) {
-    case "string":
-      return this.decodeString(a, b, c, d);
-    case "object":
-      return com.cognitect.transit.util.isArray(a) ? "^ " === a[0] ? this.decodeArrayHash(a, b, c, d) : this.decodeArray(a, b, c, d) : this.decodeHash(a, b, c, d);
-  }
-  return a;
-};
-com.cognitect.transit.impl.decoder.Decoder.prototype.decode = com.cognitect.transit.impl.decoder.Decoder.prototype.decode;
-com.cognitect.transit.impl.decoder.Decoder.prototype.decodeString = function(a, b, c, d) {
-  return com.cognitect.transit.caching.isCacheable(a, c) ? (a = this.parseString(a, b, !1), b && b.write(a, c), a) : com.cognitect.transit.caching.isCacheCode(a) ? b.read(a, c) : this.parseString(a, b, c);
-};
-com.cognitect.transit.impl.decoder.Decoder.prototype.decodeHash = function(a, b, c, d) {
-  c = com.cognitect.transit.util.objectKeys(a);
-  var e = c[0];
-  d = 1 == c.length ? this.decode(e, b, !1, !1) : null;
-  if (com.cognitect.transit.impl.decoder.isTag(d)) {
-    return a = a[e], c = this.handlers[d.str], null != c ? c(this.decode(a, b, !1, !0), this) : com.cognitect.transit.types.taggedValue(d.str, this.decode(a, b, !1, !1));
-  }
-  if (this.mapBuilder) {
-    if (c.length < 2 * com.cognitect.transit.types.SMALL_ARRAY_MAP_THRESHOLD && this.mapBuilder.fromArray) {
-      var f = [];
-      for (d = 0;d < c.length;d++) {
-        e = c[d], f.push(this.decode(e, b, !0, !1)), f.push(this.decode(a[e], b, !1, !1));
-      }
-      return this.mapBuilder.fromArray(f, a);
-    }
-    f = this.mapBuilder.init(a);
-    for (d = 0;d < c.length;d++) {
-      e = c[d], f = this.mapBuilder.add(f, this.decode(e, b, !0, !1), this.decode(a[e], b, !1, !1), a);
-    }
-    return this.mapBuilder.finalize(f, a);
-  }
-  f = [];
-  for (d = 0;d < c.length;d++) {
-    e = c[d], f.push(this.decode(e, b, !0, !1)), f.push(this.decode(a[e], b, !1, !1));
-  }
-  return com.cognitect.transit.types.map(f, !1);
-};
-com.cognitect.transit.impl.decoder.Decoder.prototype.decodeArrayHash = function(a, b, c, d) {
-  if (this.mapBuilder) {
-    if (a.length < 2 * com.cognitect.transit.types.SMALL_ARRAY_MAP_THRESHOLD + 1 && this.mapBuilder.fromArray) {
-      d = [];
-      for (c = 1;c < a.length;c += 2) {
-        d.push(this.decode(a[c], b, !0, !1)), d.push(this.decode(a[c + 1], b, !1, !1));
-      }
-      return this.mapBuilder.fromArray(d, a);
-    }
-    d = this.mapBuilder.init(a);
-    for (c = 1;c < a.length;c += 2) {
-      d = this.mapBuilder.add(d, this.decode(a[c], b, !0, !1), this.decode(a[c + 1], b, !1, !1), a);
-    }
-    return this.mapBuilder.finalize(d, a);
-  }
-  d = [];
-  for (c = 1;c < a.length;c += 2) {
-    d.push(this.decode(a[c], b, !0, !1)), d.push(this.decode(a[c + 1], b, !1, !1));
-  }
-  return com.cognitect.transit.types.map(d, !1);
-};
-com.cognitect.transit.impl.decoder.Decoder.prototype.decodeArray = function(a, b, c, d) {
-  if (d) {
-    var e = [];
-    for (d = 0;d < a.length;d++) {
-      e.push(this.decode(a[d], b, c, !1));
-    }
-    return e;
-  }
-  e = b && b.idx;
-  if (2 === a.length && "string" === typeof a[0] && (d = this.decode(a[0], b, !1, !1), com.cognitect.transit.impl.decoder.isTag(d))) {
-    return a = a[1], e = this.handlers[d.str], null != e ? e = e(this.decode(a, b, c, !0), this) : com.cognitect.transit.types.taggedValue(d.str, this.decode(a, b, c, !1));
-  }
-  b && e != b.idx && (b.idx = e);
-  if (this.arrayBuilder) {
-    if (32 >= a.length && this.arrayBuilder.fromArray) {
-      e = [];
-      for (d = 0;d < a.length;d++) {
-        e.push(this.decode(a[d], b, c, !1));
-      }
-      return this.arrayBuilder.fromArray(e, a);
-    }
-    e = this.arrayBuilder.init();
-    for (d = 0;d < a.length;d++) {
-      e = this.arrayBuilder.add(e, this.decode(a[d], b, c, !1), a);
-    }
-    return this.arrayBuilder.finalize(e, a);
-  }
-  e = [];
-  for (d = 0;d < a.length;d++) {
-    e.push(this.decode(a[d], b, c, !1));
-  }
-  return e;
-};
-com.cognitect.transit.impl.decoder.Decoder.prototype.parseString = function(a, b, c) {
-  if (a.charAt(0) === com.cognitect.transit.delimiters.ESC) {
-    b = a.charAt(1);
-    if (b === com.cognitect.transit.delimiters.ESC || b === com.cognitect.transit.delimiters.SUB || b === com.cognitect.transit.delimiters.RES) {
-      return a.substring(1);
-    }
-    if (b === com.cognitect.transit.delimiters.TAG) {
-      return com.cognitect.transit.impl.decoder.tag(a.substring(2));
-    }
-    c = this.handlers[b];
-    return null == c ? this.defaultHandler(b, a.substring(2)) : c(a.substring(2), this);
-  }
-  return a;
-};
-com.cognitect.transit.impl.decoder.decoder = function(a) {
-  return new com.cognitect.transit.impl.decoder.Decoder(a);
-};
-com.cognitect.transit.impl.reader = {};
-com.cognitect.transit.impl.reader.JSONUnmarshaller = function(a) {
-  this.decoder = new com.cognitect.transit.impl.decoder.Decoder(a);
-};
-com.cognitect.transit.impl.reader.JSONUnmarshaller.prototype.unmarshal = function(a, b) {
-  return this.decoder.decode(JSON.parse(a), b);
-};
-com.cognitect.transit.impl.reader.Reader = function(a, b) {
-  this.unmarshaller = a;
-  this.options = b || {};
-  this.cache = this.options.cache ? this.options.cache : new com.cognitect.transit.caching.ReadCache;
-};
-com.cognitect.transit.impl.reader.Reader.prototype.read = function(a) {
-  a = this.unmarshaller.unmarshal(a, this.cache);
-  this.cache.clear();
-  return a;
-};
-com.cognitect.transit.impl.reader.Reader.prototype.read = com.cognitect.transit.impl.reader.Reader.prototype.read;
 hello.app.state = {};
 "undefined" === typeof hello.app.state.app_state && (hello.app.state.app_state = reagent.core.atom.call(null, cljs.core.PersistentArrayMap.EMPTY));
 goog.math.Coordinate = function(a, b) {
@@ -51795,1249 +53234,6 @@ com.firstlinq.ssr.util.__GT_ring_req = function() {
     };
   }(cljs.nodejs.require.call(null, "url"));
 }();
-com.cognitect.transit.handlers = {};
-com.cognitect.transit.handlers.ctorGuid = 0;
-com.cognitect.transit.handlers.ctorGuidProperty = "transit$guid$" + com.cognitect.transit.util.randomUUID();
-com.cognitect.transit.handlers.typeTag = function(a) {
-  if (null == a) {
-    return "null";
-  }
-  if (a === String) {
-    return "string";
-  }
-  if (a === Boolean) {
-    return "boolean";
-  }
-  if (a === Number) {
-    return "number";
-  }
-  if (a === Array) {
-    return "array";
-  }
-  if (a === Object) {
-    return "map";
-  }
-  var b = a[com.cognitect.transit.handlers.ctorGuidProperty];
-  null == b && ("undefined" != typeof Object.defineProperty ? (b = ++com.cognitect.transit.handlers.ctorGuid, Object.defineProperty(a, com.cognitect.transit.handlers.ctorGuidProperty, {value:b, enumerable:!1})) : a[com.cognitect.transit.handlers.ctorGuidProperty] = b = ++com.cognitect.transit.handlers.ctorGuid);
-  return b;
-};
-com.cognitect.transit.handlers.constructor = function(a) {
-  return null == a ? null : a.constructor;
-};
-com.cognitect.transit.handlers.padZeros = function(a, b) {
-  for (var c = a.toString(), d = c.length;d < b;d++) {
-    c = "0" + c;
-  }
-  return c;
-};
-com.cognitect.transit.handlers.stringableKeys = function(a) {
-  a = com.cognitect.transit.util.objectKeys(a);
-  for (var b = 0;b < a.length;b++) {
-  }
-  return !0;
-};
-com.cognitect.transit.handlers.NilHandler = function() {
-};
-com.cognitect.transit.handlers.NilHandler.prototype.tag = function(a) {
-  return "_";
-};
-com.cognitect.transit.handlers.NilHandler.prototype.rep = function(a) {
-  return null;
-};
-com.cognitect.transit.handlers.NilHandler.prototype.stringRep = function(a) {
-  return "null";
-};
-com.cognitect.transit.handlers.StringHandler = function() {
-};
-com.cognitect.transit.handlers.StringHandler.prototype.tag = function(a) {
-  return "s";
-};
-com.cognitect.transit.handlers.StringHandler.prototype.rep = function(a) {
-  return a;
-};
-com.cognitect.transit.handlers.StringHandler.prototype.stringRep = function(a) {
-  return a;
-};
-com.cognitect.transit.handlers.NumberHandler = function() {
-};
-com.cognitect.transit.handlers.NumberHandler.prototype.tag = function(a) {
-  return "i";
-};
-com.cognitect.transit.handlers.NumberHandler.prototype.rep = function(a) {
-  return a;
-};
-com.cognitect.transit.handlers.NumberHandler.prototype.stringRep = function(a) {
-  return a.toString();
-};
-com.cognitect.transit.handlers.IntegerHandler = function() {
-};
-com.cognitect.transit.handlers.IntegerHandler.prototype.tag = function(a) {
-  return "i";
-};
-com.cognitect.transit.handlers.IntegerHandler.prototype.rep = function(a) {
-  return a.toString();
-};
-com.cognitect.transit.handlers.IntegerHandler.prototype.stringRep = function(a) {
-  return a.toString();
-};
-com.cognitect.transit.handlers.BooleanHandler = function() {
-};
-com.cognitect.transit.handlers.BooleanHandler.prototype.tag = function(a) {
-  return "?";
-};
-com.cognitect.transit.handlers.BooleanHandler.prototype.rep = function(a) {
-  return a;
-};
-com.cognitect.transit.handlers.BooleanHandler.prototype.stringRep = function(a) {
-  return a.toString();
-};
-com.cognitect.transit.handlers.ArrayHandler = function() {
-};
-com.cognitect.transit.handlers.ArrayHandler.prototype.tag = function(a) {
-  return "array";
-};
-com.cognitect.transit.handlers.ArrayHandler.prototype.rep = function(a) {
-  return a;
-};
-com.cognitect.transit.handlers.ArrayHandler.prototype.stringRep = function(a) {
-  return null;
-};
-com.cognitect.transit.handlers.MapHandler = function() {
-};
-com.cognitect.transit.handlers.MapHandler.prototype.tag = function(a) {
-  return "map";
-};
-com.cognitect.transit.handlers.MapHandler.prototype.rep = function(a) {
-  return a;
-};
-com.cognitect.transit.handlers.MapHandler.prototype.stringRep = function(a) {
-  return null;
-};
-com.cognitect.transit.handlers.VerboseDateHandler = function() {
-};
-com.cognitect.transit.handlers.VerboseDateHandler.prototype.tag = function(a) {
-  return "t";
-};
-com.cognitect.transit.handlers.VerboseDateHandler.prototype.rep = function(a) {
-  return a.getUTCFullYear() + "-" + com.cognitect.transit.handlers.padZeros(a.getUTCMonth() + 1, 2) + "-" + com.cognitect.transit.handlers.padZeros(a.getUTCDate(), 2) + "T" + com.cognitect.transit.handlers.padZeros(a.getUTCHours(), 2) + ":" + com.cognitect.transit.handlers.padZeros(a.getUTCMinutes(), 2) + ":" + com.cognitect.transit.handlers.padZeros(a.getUTCSeconds(), 2) + "." + com.cognitect.transit.handlers.padZeros(a.getUTCMilliseconds(), 3) + "Z";
-};
-com.cognitect.transit.handlers.VerboseDateHandler.prototype.stringRep = function(a, b) {
-  return b.rep(a);
-};
-com.cognitect.transit.handlers.DateHandler = function() {
-};
-com.cognitect.transit.handlers.DateHandler.prototype.tag = function(a) {
-  return "m";
-};
-com.cognitect.transit.handlers.DateHandler.prototype.rep = function(a) {
-  return a.valueOf();
-};
-com.cognitect.transit.handlers.DateHandler.prototype.stringRep = function(a) {
-  return a.valueOf().toString();
-};
-com.cognitect.transit.handlers.DateHandler.prototype.getVerboseHandler = function(a) {
-  return new com.cognitect.transit.handlers.VerboseDateHandler;
-};
-com.cognitect.transit.handlers.UUIDHandler = function() {
-};
-com.cognitect.transit.handlers.UUIDHandler.prototype.tag = function(a) {
-  return "u";
-};
-com.cognitect.transit.handlers.UUIDHandler.prototype.rep = function(a) {
-  return a.toString();
-};
-com.cognitect.transit.handlers.UUIDHandler.prototype.stringRep = function(a) {
-  return a.toString();
-};
-com.cognitect.transit.handlers.KeywordHandler = function() {
-};
-com.cognitect.transit.handlers.KeywordHandler.prototype.tag = function(a) {
-  return ":";
-};
-com.cognitect.transit.handlers.KeywordHandler.prototype.rep = function(a) {
-  return a.name;
-};
-com.cognitect.transit.handlers.KeywordHandler.prototype.stringRep = function(a, b) {
-  return b.rep(a);
-};
-com.cognitect.transit.handlers.SymbolHandler = function() {
-};
-com.cognitect.transit.handlers.SymbolHandler.prototype.tag = function(a) {
-  return "$";
-};
-com.cognitect.transit.handlers.SymbolHandler.prototype.rep = function(a) {
-  return a.name;
-};
-com.cognitect.transit.handlers.SymbolHandler.prototype.stringRep = function(a, b) {
-  return b.rep(a);
-};
-com.cognitect.transit.handlers.TaggedHandler = function() {
-};
-com.cognitect.transit.handlers.TaggedHandler.prototype.tag = function(a) {
-  return a.tag;
-};
-com.cognitect.transit.handlers.TaggedHandler.prototype.rep = function(a) {
-  return a.rep;
-};
-com.cognitect.transit.handlers.TaggedHandler.prototype.stringRep = function(a, b) {
-  return null;
-};
-com.cognitect.transit.handlers.TransitSetHandler = function() {
-};
-com.cognitect.transit.handlers.TransitSetHandler.prototype.tag = function(a) {
-  return "set";
-};
-com.cognitect.transit.handlers.TransitSetHandler.prototype.rep = function(a) {
-  var b = [];
-  a.forEach(function(a, d) {
-    b.push(a);
-  });
-  return com.cognitect.transit.types.taggedValue("array", b);
-};
-com.cognitect.transit.handlers.TransitSetHandler.prototype.stringRep = function(a, b) {
-  return null;
-};
-com.cognitect.transit.handlers.TransitArrayMapHandler = function() {
-};
-com.cognitect.transit.handlers.TransitArrayMapHandler.prototype.tag = function(a) {
-  return "map";
-};
-com.cognitect.transit.handlers.TransitArrayMapHandler.prototype.rep = function(a) {
-  return a;
-};
-com.cognitect.transit.handlers.TransitArrayMapHandler.prototype.stringRep = function(a, b) {
-  return null;
-};
-com.cognitect.transit.handlers.TransitMapHandler = function() {
-};
-com.cognitect.transit.handlers.TransitMapHandler.prototype.tag = function(a) {
-  return "map";
-};
-com.cognitect.transit.handlers.TransitMapHandler.prototype.rep = function(a) {
-  return a;
-};
-com.cognitect.transit.handlers.TransitMapHandler.prototype.stringRep = function(a, b) {
-  return null;
-};
-com.cognitect.transit.handlers.BufferHandler = function() {
-};
-com.cognitect.transit.handlers.BufferHandler.prototype.tag = function(a) {
-  return "b";
-};
-com.cognitect.transit.handlers.BufferHandler.prototype.rep = function(a) {
-  return a.toString("base64");
-};
-com.cognitect.transit.handlers.BufferHandler.prototype.stringRep = function(a, b) {
-  return null;
-};
-com.cognitect.transit.handlers.Uint8ArrayHandler = function() {
-};
-com.cognitect.transit.handlers.Uint8ArrayHandler.prototype.tag = function(a) {
-  return "b";
-};
-com.cognitect.transit.handlers.Uint8ArrayHandler.prototype.rep = function(a) {
-  return com.cognitect.transit.util.Uint8ToBase64(a);
-};
-com.cognitect.transit.handlers.Uint8ArrayHandler.prototype.stringRep = function(a, b) {
-  return null;
-};
-com.cognitect.transit.handlers.defaultHandlers = function(a) {
-  a.set(null, new com.cognitect.transit.handlers.NilHandler);
-  a.set(String, new com.cognitect.transit.handlers.StringHandler);
-  a.set(Number, new com.cognitect.transit.handlers.NumberHandler);
-  a.set(goog.math.Long, new com.cognitect.transit.handlers.IntegerHandler);
-  a.set(Boolean, new com.cognitect.transit.handlers.BooleanHandler);
-  a.set(Array, new com.cognitect.transit.handlers.ArrayHandler);
-  a.set(Object, new com.cognitect.transit.handlers.MapHandler);
-  a.set(Date, new com.cognitect.transit.handlers.DateHandler);
-  a.set(com.cognitect.transit.types.UUID, new com.cognitect.transit.handlers.UUIDHandler);
-  a.set(com.cognitect.transit.types.Keyword, new com.cognitect.transit.handlers.KeywordHandler);
-  a.set(com.cognitect.transit.types.Symbol, new com.cognitect.transit.handlers.SymbolHandler);
-  a.set(com.cognitect.transit.types.TaggedValue, new com.cognitect.transit.handlers.TaggedHandler);
-  a.set(com.cognitect.transit.types.TransitSet, new com.cognitect.transit.handlers.TransitSetHandler);
-  a.set(com.cognitect.transit.types.TransitArrayMap, new com.cognitect.transit.handlers.TransitArrayMapHandler);
-  a.set(com.cognitect.transit.types.TransitMap, new com.cognitect.transit.handlers.TransitMapHandler);
-  "undefined" != typeof Buffer && a.set(Buffer, new com.cognitect.transit.handlers.BufferHandler);
-  "undefined" != typeof Uint8Array && a.set(Uint8Array, new com.cognitect.transit.handlers.Uint8ArrayHandler);
-  return a;
-};
-com.cognitect.transit.handlers.Handlers = function() {
-  this.handlers = {};
-  com.cognitect.transit.handlers.defaultHandlers(this);
-};
-com.cognitect.transit.handlers.Handlers.prototype.get = function(a) {
-  var b = null, b = "string" === typeof a ? this.handlers[a] : this.handlers[com.cognitect.transit.handlers.typeTag(a)];
-  return null != b ? b : this.handlers["default"];
-};
-com.cognitect.transit.handlers.Handlers.prototype.get = com.cognitect.transit.handlers.Handlers.prototype.get;
-com.cognitect.transit.handlers.validTag = function(a) {
-  switch(a) {
-    case "null":
-    ;
-    case "string":
-    ;
-    case "boolean":
-    ;
-    case "number":
-    ;
-    case "array":
-    ;
-    case "map":
-      return !1;
-  }
-  return !0;
-};
-com.cognitect.transit.handlers.Handlers.prototype.set = function(a, b) {
-  "string" === typeof a && com.cognitect.transit.handlers.validTag(a) ? this.handlers[a] = b : this.handlers[com.cognitect.transit.handlers.typeTag(a)] = b;
-};
-com.cognitect.transit.impl.writer = {};
-com.cognitect.transit.impl.writer.escape = function(a) {
-  if (0 < a.length) {
-    var b = a.charAt(0);
-    return b === com.cognitect.transit.delimiters.ESC || b === com.cognitect.transit.delimiters.SUB || b === com.cognitect.transit.delimiters.RES ? com.cognitect.transit.delimiters.ESC + a : a;
-  }
-  return a;
-};
-com.cognitect.transit.impl.writer.JSONMarshaller = function(a) {
-  this.opts = a || {};
-  this.preferStrings = null != this.opts.preferStrings ? this.opts.preferStrings : !0;
-  this.objectBuilder = this.opts.objectBuilder || null;
-  this.handlers = new com.cognitect.transit.handlers.Handlers;
-  if (a = this.opts.handlers) {
-    if (com.cognitect.transit.util.isArray(a) || !a.forEach) {
-      throw Error('transit writer "handlers" option must be a map');
-    }
-    var b = this;
-    a.forEach(function(a, d) {
-      b.handlers.set(d, a);
-    });
-  }
-  this.handlerForForeign = this.opts.handlerForForeign;
-  this.unpack = this.opts.unpack || function(a) {
-    return com.cognitect.transit.types.isArrayMap(a) && null === a.backingMap ? a._entries : !1;
-  };
-  this.verbose = this.opts && this.opts.verbose || !1;
-};
-com.cognitect.transit.impl.writer.JSONMarshaller.prototype.handler = function(a) {
-  var b = this.handlers.get(com.cognitect.transit.handlers.constructor(a));
-  return null != b ? b : (a = a && a.transitTag) ? this.handlers.get(a) : null;
-};
-com.cognitect.transit.impl.writer.JSONMarshaller.prototype.registerHandler = function(a, b) {
-  this.handlers.set(a, b);
-};
-com.cognitect.transit.impl.writer.JSONMarshaller.prototype.emitNil = function(a, b) {
-  return a ? this.emitString(com.cognitect.transit.delimiters.ESC, "_", "", a, b) : null;
-};
-com.cognitect.transit.impl.writer.JSONMarshaller.prototype.emitString = function(a, b, c, d, e) {
-  a = a + b + c;
-  return e ? e.write(a, d) : a;
-};
-com.cognitect.transit.impl.writer.JSONMarshaller.prototype.emitBoolean = function(a, b, c) {
-  return b ? this.emitString(com.cognitect.transit.delimiters.ESC, "?", a.toString()[0], b, c) : a;
-};
-com.cognitect.transit.impl.writer.JSONMarshaller.prototype.emitInteger = function(a, b, c) {
-  return Infinity === a ? this.emitString(com.cognitect.transit.delimiters.ESC, "z", "INF", b, c) : -Infinity === a ? this.emitString(com.cognitect.transit.delimiters.ESC, "z", "-INF", b, c) : isNaN(a) ? this.emitString(com.cognitect.transit.delimiters.ESC, "z", "NaN", b, c) : b || "string" === typeof a || a instanceof goog.math.Long ? this.emitString(com.cognitect.transit.delimiters.ESC, "i", a.toString(), b, c) : a;
-};
-com.cognitect.transit.impl.writer.JSONMarshaller.prototype.emitDouble = function(a, b, c) {
-  return b ? this.emitString(a.ESC, "d", a, b, c) : a;
-};
-com.cognitect.transit.impl.writer.JSONMarshaller.prototype.emitBinary = function(a, b, c) {
-  return this.emitString(com.cognitect.transit.delimiters.ESC, "b", a, b, c);
-};
-com.cognitect.transit.impl.writer.JSONMarshaller.prototype.emitQuoted = function(a, b, c) {
-  if (a.verbose) {
-    a = {};
-    var d = this.emitString(com.cognitect.transit.delimiters.ESC_TAG, "'", "", !0, c);
-    a[d] = com.cognitect.transit.impl.writer.marshal(this, b, !1, c);
-    return a;
-  }
-  return [this.emitString(com.cognitect.transit.delimiters.ESC_TAG, "'", "", !0, c), com.cognitect.transit.impl.writer.marshal(this, b, !1, c)];
-};
-com.cognitect.transit.impl.writer.emitObjects = function(a, b, c) {
-  var d = [];
-  if (com.cognitect.transit.util.isArray(b)) {
-    for (var e = 0;e < b.length;e++) {
-      d.push(com.cognitect.transit.impl.writer.marshal(a, b[e], !1, c));
-    }
-  } else {
-    b.forEach(function(b, e) {
-      d.push(com.cognitect.transit.impl.writer.marshal(a, b, !1, c));
-    });
-  }
-  return d;
-};
-com.cognitect.transit.impl.writer.emitArray = function(a, b, c, d) {
-  return com.cognitect.transit.impl.writer.emitObjects(a, b, d);
-};
-com.cognitect.transit.impl.writer.isStringableKey = function(a, b) {
-  if ("string" !== typeof b) {
-    var c = a.handler(b);
-    return c && 1 === c.tag(b).length;
-  }
-  return !0;
-};
-com.cognitect.transit.impl.writer.stringableKeys = function(a, b) {
-  var c = a.unpack(b), d = !0;
-  if (c) {
-    for (var e = 0;e < c.length && (d = com.cognitect.transit.impl.writer.isStringableKey(a, c[e]), d);e += 2) {
-    }
-    return d;
-  }
-  if (b.keys && (c = b.keys(), e = null, c.next)) {
-    for (e = c.next();!e.done;) {
-      d = com.cognitect.transit.impl.writer.isStringableKey(a, e.value);
-      if (!d) {
-        break;
-      }
-      e = c.next();
-    }
-    return d;
-  }
-  if (b.forEach) {
-    return b.forEach(function(b, c) {
-      d = d && com.cognitect.transit.impl.writer.isStringableKey(a, c);
-    }), d;
-  }
-  throw Error("Cannot walk keys of object type " + com.cognitect.transit.handlers.constructor(b).name);
-};
-com.cognitect.transit.impl.writer.isForeignObject = function(a) {
-  if (a.constructor.transit$isObject) {
-    return !0;
-  }
-  var b = a.constructor.toString(), b = b.substr(9), b = b.substr(0, b.indexOf("(")), b = "Object" == b;
-  "undefined" != typeof Object.defineProperty ? Object.defineProperty(a.constructor, "transit$isObject", {value:b, enumerable:!1}) : a.constructor.transit$isObject = b;
-  return b;
-};
-com.cognitect.transit.impl.writer.emitMap = function(a, b, c, d) {
-  if (b.constructor === Object || null != b.forEach || a.handlerForForeign && com.cognitect.transit.impl.writer.isForeignObject(b)) {
-    if (a.verbose) {
-      if (null != b.forEach) {
-        if (com.cognitect.transit.impl.writer.stringableKeys(a, b)) {
-          var e = {};
-          b.forEach(function(b, c) {
-            e[com.cognitect.transit.impl.writer.marshal(a, c, !0, !1)] = com.cognitect.transit.impl.writer.marshal(a, b, !1, d);
-          });
-        } else {
-          var f = a.unpack(b), g = [], h = a.emitString(com.cognitect.transit.delimiters.ESC_TAG, "cmap", "", !0, d);
-          if (f) {
-            for (c = 0;c < f.length;c += 2) {
-              g.push(com.cognitect.transit.impl.writer.marshal(a, f[c], !0, !1)), g.push(com.cognitect.transit.impl.writer.marshal(a, f[c + 1], !1, d));
-            }
-          } else {
-            b.forEach(function(b, c) {
-              g.push(com.cognitect.transit.impl.writer.marshal(a, c, !0, !1));
-              g.push(com.cognitect.transit.impl.writer.marshal(a, b, !1, d));
-            });
-          }
-          e = {};
-          e[h] = g;
-        }
-      } else {
-        for (e = {}, f = com.cognitect.transit.util.objectKeys(b), c = 0;c < f.length;c++) {
-          e[com.cognitect.transit.impl.writer.marshal(a, f[c], !0, !1)] = com.cognitect.transit.impl.writer.marshal(a, b[f[c]], !1, d);
-        }
-      }
-      return e;
-    }
-    if (null != b.forEach) {
-      if (com.cognitect.transit.impl.writer.stringableKeys(a, b)) {
-        f = a.unpack(b);
-        e = ["^ "];
-        if (f) {
-          for (c = 0;c < f.length;c += 2) {
-            e.push(com.cognitect.transit.impl.writer.marshal(a, f[c], !0, d)), e.push(com.cognitect.transit.impl.writer.marshal(a, f[c + 1], !1, d));
-          }
-        } else {
-          b.forEach(function(b, c) {
-            e.push(com.cognitect.transit.impl.writer.marshal(a, c, !0, d));
-            e.push(com.cognitect.transit.impl.writer.marshal(a, b, !1, d));
-          });
-        }
-        return e;
-      }
-      f = a.unpack(b);
-      g = [];
-      h = a.emitString(com.cognitect.transit.delimiters.ESC_TAG, "cmap", "", !0, d);
-      if (f) {
-        for (c = 0;c < f.length;c += 2) {
-          g.push(com.cognitect.transit.impl.writer.marshal(a, f[c], !0, d)), g.push(com.cognitect.transit.impl.writer.marshal(a, f[c + 1], !1, d));
-        }
-      } else {
-        b.forEach(function(b, c) {
-          g.push(com.cognitect.transit.impl.writer.marshal(a, c, !0, d));
-          g.push(com.cognitect.transit.impl.writer.marshal(a, b, !1, d));
-        });
-      }
-      return [h, g];
-    }
-    e = ["^ "];
-    f = com.cognitect.transit.util.objectKeys(b);
-    for (c = 0;c < f.length;c++) {
-      e.push(com.cognitect.transit.impl.writer.marshal(a, f[c], !0, d)), e.push(com.cognitect.transit.impl.writer.marshal(a, b[f[c]], !1, d));
-    }
-    return e;
-  }
-  if (null != a.objectBuilder) {
-    return a.objectBuilder(b, function(b) {
-      return com.cognitect.transit.impl.writer.marshal(a, b, !0, d);
-    }, function(b) {
-      return com.cognitect.transit.impl.writer.marshal(a, b, !1, d);
-    });
-  }
-  c = com.cognitect.transit.handlers.constructor(b).name;
-  f = Error("Cannot write " + c);
-  f.data = {obj:b, type:c};
-  throw f;
-};
-com.cognitect.transit.impl.writer.emitTaggedMap = function(a, b, c, d, e) {
-  return a.verbose ? (d = {}, d[a.emitString(com.cognitect.transit.delimiters.ESC_TAG, b, "", !0, e)] = com.cognitect.transit.impl.writer.marshal(a, c, !1, e), d) : [a.emitString(com.cognitect.transit.delimiters.ESC_TAG, b, "", !0, e), com.cognitect.transit.impl.writer.marshal(a, c, !1, e)];
-};
-com.cognitect.transit.impl.writer.emitEncoded = function(a, b, c, d, e, f, g) {
-  if (1 === c.length) {
-    if ("string" === typeof d) {
-      return a.emitString(com.cognitect.transit.delimiters.ESC, c, d, f, g);
-    }
-    if (f || a.preferStrings) {
-      (d = a.verbose && b.getVerboseHandler()) ? (c = d.tag(e), d = d.stringRep(e, d)) : d = b.stringRep(e, b);
-      if (null !== d) {
-        return a.emitString(com.cognitect.transit.delimiters.ESC, c, d, f, g);
-      }
-      a = Error('Tag "' + c + '" cannot be encoded as string');
-      a.data = {tag:c, rep:d, obj:e};
-      throw a;
-    }
-  }
-  return com.cognitect.transit.impl.writer.emitTaggedMap(a, c, d, f, g);
-};
-com.cognitect.transit.impl.writer.marshal = function(a, b, c, d) {
-  var e = a.handler(b) || (a.handlerForForeign ? a.handlerForForeign(b, a.handlers) : null), f = e ? e.tag(b) : null, g = e ? e.rep(b) : null;
-  if (null != e && null != f) {
-    switch(f) {
-      case "_":
-        return a.emitNil(c, d);
-      case "s":
-        return a.emitString("", "", com.cognitect.transit.impl.writer.escape(g), c, d);
-      case "?":
-        return a.emitBoolean(g, c, d);
-      case "i":
-        return a.emitInteger(g, c, d);
-      case "d":
-        return a.emitDouble(g, c, d);
-      case "b":
-        return a.emitBinary(g, c, d);
-      case "'":
-        return a.emitQuoted(a, g, d);
-      case "array":
-        return com.cognitect.transit.impl.writer.emitArray(a, g, c, d);
-      case "map":
-        return com.cognitect.transit.impl.writer.emitMap(a, g, c, d);
-      default:
-        return com.cognitect.transit.impl.writer.emitEncoded(a, e, f, g, b, c, d);
-    }
-  } else {
-    throw a = com.cognitect.transit.handlers.constructor(b).name, c = Error("Cannot write " + a), c.data = {obj:b, type:a}, c;
-  }
-};
-com.cognitect.transit.impl.writer.maybeQuoted = function(a, b) {
-  var c = a.handler(b) || (a.handlerForForeign ? a.handlerForForeign(b, a.handlers) : null);
-  if (null != c) {
-    return 1 === c.tag(b).length ? com.cognitect.transit.types.quoted(b) : b;
-  }
-  var c = com.cognitect.transit.handlers.constructor(b).name, d = Error("Cannot write " + c);
-  d.data = {obj:b, type:c};
-  throw d;
-};
-com.cognitect.transit.impl.writer.marshalTop = function(a, b, c, d) {
-  return JSON.stringify(com.cognitect.transit.impl.writer.marshal(a, com.cognitect.transit.impl.writer.maybeQuoted(a, b), c, d));
-};
-com.cognitect.transit.impl.writer.Writer = function(a, b) {
-  this._marshaller = a;
-  this.options = b || {};
-  this.cache = !1 === this.options.cache ? null : this.options.cache ? this.options.cache : new com.cognitect.transit.caching.WriteCache;
-};
-com.cognitect.transit.impl.writer.Writer.prototype.marshaller = function() {
-  return this._marshaller;
-};
-com.cognitect.transit.impl.writer.Writer.prototype.marshaller = com.cognitect.transit.impl.writer.Writer.prototype.marshaller;
-com.cognitect.transit.impl.writer.Writer.prototype.write = function(a, b) {
-  var c = null, c = b || {}, d = c.asMapKey || !1, e = this._marshaller.verbose ? !1 : this.cache, c = !1 === c.marshalTop ? com.cognitect.transit.impl.writer.marshal(this._marshaller, a, d, e) : com.cognitect.transit.impl.writer.marshalTop(this._marshaller, a, d, e);
-  null != this.cache && this.cache.clear();
-  return c;
-};
-com.cognitect.transit.impl.writer.Writer.prototype.write = com.cognitect.transit.impl.writer.Writer.prototype.write;
-com.cognitect.transit.impl.writer.Writer.prototype.register = function(a, b) {
-  this._marshaller.registerHandler(a, b);
-};
-com.cognitect.transit.impl.writer.Writer.prototype.register = com.cognitect.transit.impl.writer.Writer.prototype.register;
-var TRANSIT_DEV = !0, TRANSIT_NODE_TARGET = !1, TRANSIT_BROWSER_TARGET = !1, TRANSIT_BROWSER_AMD_TARGET = !1;
-com.cognitect.transit.reader = function(a, b) {
-  if ("json" === a || "json-verbose" === a || null == a) {
-    var c = new com.cognitect.transit.impl.reader.JSONUnmarshaller(b);
-    return new com.cognitect.transit.impl.reader.Reader(c, b);
-  }
-  throw Error("Cannot create reader of type " + a);
-};
-com.cognitect.transit.writer = function(a, b) {
-  if ("json" === a || "json-verbose" === a || null == a) {
-    "json-verbose" === a && (null == b && (b = {}), b.verbose = !0);
-    var c = new com.cognitect.transit.impl.writer.JSONMarshaller(b);
-    return new com.cognitect.transit.impl.writer.Writer(c, b);
-  }
-  c = Error('Type must be "json"');
-  c.data = {type:a};
-  throw c;
-};
-com.cognitect.transit.makeWriteHandler = function(a) {
-  var b = function() {
-  };
-  b.prototype.tag = a.tag;
-  b.prototype.rep = a.rep;
-  b.prototype.stringRep = a.stringRep;
-  b.prototype.getVerboseHandler = a.getVerboseHandler;
-  return new b;
-};
-com.cognitect.transit.makeBuilder = function(a) {
-  var b = function() {
-  };
-  b.prototype.init = a.init;
-  b.prototype.add = a.add;
-  b.prototype.finalize = a.finalize;
-  b.prototype.fromArray = a.fromArray;
-  return new b;
-};
-com.cognitect.transit.date = com.cognitect.transit.types.date;
-com.cognitect.transit.integer = com.cognitect.transit.types.intValue;
-com.cognitect.transit.isInteger = com.cognitect.transit.types.isInteger;
-com.cognitect.transit.uuid = com.cognitect.transit.types.uuid;
-com.cognitect.transit.isUUID = com.cognitect.transit.types.isUUID;
-com.cognitect.transit.bigInt = com.cognitect.transit.types.bigInteger;
-com.cognitect.transit.isBigInt = com.cognitect.transit.types.isBigInteger;
-com.cognitect.transit.bigDec = com.cognitect.transit.types.bigDecimalValue;
-com.cognitect.transit.isBigDec = com.cognitect.transit.types.isBigDecimal;
-com.cognitect.transit.keyword = com.cognitect.transit.types.keyword;
-com.cognitect.transit.isKeyword = com.cognitect.transit.types.isKeyword;
-com.cognitect.transit.symbol = com.cognitect.transit.types.symbol;
-com.cognitect.transit.isSymbol = com.cognitect.transit.types.isSymbol;
-com.cognitect.transit.binary = com.cognitect.transit.types.binary;
-com.cognitect.transit.isBinary = com.cognitect.transit.types.isBinary;
-com.cognitect.transit.uri = com.cognitect.transit.types.uri;
-com.cognitect.transit.isURI = com.cognitect.transit.types.isURI;
-com.cognitect.transit.map = com.cognitect.transit.types.map;
-com.cognitect.transit.isMap = com.cognitect.transit.types.isMap;
-com.cognitect.transit.set = com.cognitect.transit.types.set;
-com.cognitect.transit.isSet = com.cognitect.transit.types.isSet;
-com.cognitect.transit.list = com.cognitect.transit.types.list;
-com.cognitect.transit.isList = com.cognitect.transit.types.isList;
-com.cognitect.transit.quoted = com.cognitect.transit.types.quoted;
-com.cognitect.transit.isQuoted = com.cognitect.transit.types.isQuoted;
-com.cognitect.transit.tagged = com.cognitect.transit.types.taggedValue;
-com.cognitect.transit.isTaggedValue = com.cognitect.transit.types.isTaggedValue;
-com.cognitect.transit.link = com.cognitect.transit.types.link;
-com.cognitect.transit.isLink = com.cognitect.transit.types.isLink;
-com.cognitect.transit.hash = com.cognitect.transit.eq.hashCode;
-com.cognitect.transit.hashMapLike = com.cognitect.transit.eq.hashMapLike;
-com.cognitect.transit.hashMapLike = com.cognitect.transit.eq.hashArrayLike;
-com.cognitect.transit.equals = com.cognitect.transit.eq.equals;
-com.cognitect.transit.extendToEQ = com.cognitect.transit.eq.extendToEQ;
-com.cognitect.transit.mapToObject = function(a) {
-  var b = {};
-  a.forEach(function(a, d) {
-    if ("string" !== typeof d) {
-      throw Error("Cannot convert map with non-string keys");
-    }
-    b[d] = a;
-  });
-  return b;
-};
-com.cognitect.transit.decoder = com.cognitect.transit.impl.decoder.decoder;
-com.cognitect.transit.readCache = com.cognitect.transit.caching.readCache;
-com.cognitect.transit.writeCache = com.cognitect.transit.caching.writeCache;
-com.cognitect.transit.UUIDfromString = com.cognitect.transit.types.UUIDfromString;
-com.cognitect.transit.randomUUID = com.cognitect.transit.types.randomUUID;
-com.cognitect.transit.stringableKeys = com.cognitect.transit.impl.writer.stringableKeys;
-TRANSIT_BROWSER_TARGET && (goog.exportSymbol("transit.reader", com.cognitect.transit.reader), goog.exportSymbol("transit.writer", com.cognitect.transit.writer), goog.exportSymbol("transit.makeBuilder", com.cognitect.transit.makeBuilder), goog.exportSymbol("transit.makeWriteHandler", com.cognitect.transit.makeWriteHandler), goog.exportSymbol("transit.date", com.cognitect.transit.types.date), goog.exportSymbol("transit.integer", com.cognitect.transit.types.intValue), goog.exportSymbol("transit.isInteger", 
-com.cognitect.transit.types.isInteger), goog.exportSymbol("transit.uuid", com.cognitect.transit.types.uuid), goog.exportSymbol("transit.isUUID", com.cognitect.transit.types.isUUID), goog.exportSymbol("transit.bigInt", com.cognitect.transit.types.bigInteger), goog.exportSymbol("transit.isBigInt", com.cognitect.transit.types.isBigInteger), goog.exportSymbol("transit.bigDec", com.cognitect.transit.types.bigDecimalValue), goog.exportSymbol("transit.isBigDec", com.cognitect.transit.types.isBigDecimal), 
-goog.exportSymbol("transit.keyword", com.cognitect.transit.types.keyword), goog.exportSymbol("transit.isKeyword", com.cognitect.transit.types.isKeyword), goog.exportSymbol("transit.symbol", com.cognitect.transit.types.symbol), goog.exportSymbol("transit.isSymbol", com.cognitect.transit.types.isSymbol), goog.exportSymbol("transit.binary", com.cognitect.transit.types.binary), goog.exportSymbol("transit.isBinary", com.cognitect.transit.types.isBinary), goog.exportSymbol("transit.uri", com.cognitect.transit.types.uri), 
-goog.exportSymbol("transit.isURI", com.cognitect.transit.types.isURI), goog.exportSymbol("transit.map", com.cognitect.transit.types.map), goog.exportSymbol("transit.isMap", com.cognitect.transit.types.isMap), goog.exportSymbol("transit.set", com.cognitect.transit.types.set), goog.exportSymbol("transit.isSet", com.cognitect.transit.types.isSet), goog.exportSymbol("transit.list", com.cognitect.transit.types.list), goog.exportSymbol("transit.isList", com.cognitect.transit.types.isList), goog.exportSymbol("transit.quoted", 
-com.cognitect.transit.types.quoted), goog.exportSymbol("transit.isQuoted", com.cognitect.transit.types.isQuoted), goog.exportSymbol("transit.tagged", com.cognitect.transit.types.taggedValue), goog.exportSymbol("transit.isTaggedValue", com.cognitect.transit.types.isTaggedValue), goog.exportSymbol("transit.link", com.cognitect.transit.types.link), goog.exportSymbol("transit.isLink", com.cognitect.transit.types.isLink), goog.exportSymbol("transit.hash", com.cognitect.transit.eq.hashCode), goog.exportSymbol("transit.hashMapLike", 
-com.cognitect.transit.eq.hashMapLike), goog.exportSymbol("transit.hashArrayLike", com.cognitect.transit.eq.hashArrayLike), goog.exportSymbol("transit.equals", com.cognitect.transit.eq.equals), goog.exportSymbol("transit.extendToEQ", com.cognitect.transit.eq.extendToEQ), goog.exportSymbol("transit.mapToObject", com.cognitect.transit.mapToObject), goog.exportSymbol("transit.decoder", com.cognitect.transit.impl.decoder.decoder), goog.exportSymbol("transit.UUIDfromString", com.cognitect.transit.types.UUIDfromString), 
-goog.exportSymbol("transit.randomUUID", com.cognitect.transit.types.randomUUID), goog.exportSymbol("transit.stringableKeys", com.cognitect.transit.impl.writer.stringableKeys), goog.exportSymbol("transit.readCache", com.cognitect.transit.caching.readCache), goog.exportSymbol("transit.writeCache", com.cognitect.transit.caching.writeCache));
-TRANSIT_NODE_TARGET && (module.exports = {reader:com.cognitect.transit.reader, writer:com.cognitect.transit.writer, makeBuilder:com.cognitect.transit.makeBuilder, makeWriteHandler:com.cognitect.transit.makeWriteHandler, date:com.cognitect.transit.types.date, integer:com.cognitect.transit.types.intValue, isInteger:com.cognitect.transit.types.isInteger, uuid:com.cognitect.transit.types.uuid, isUUID:com.cognitect.transit.types.isUUID, bigInt:com.cognitect.transit.types.bigInteger, isBigInt:com.cognitect.transit.types.isBigInteger, 
-bigDec:com.cognitect.transit.types.bigDecimalValue, isBigDec:com.cognitect.transit.types.isBigDecimal, keyword:com.cognitect.transit.types.keyword, isKeyword:com.cognitect.transit.types.isKeyword, symbol:com.cognitect.transit.types.symbol, isSymbol:com.cognitect.transit.types.isSymbol, binary:com.cognitect.transit.types.binary, isBinary:com.cognitect.transit.types.isBinary, uri:com.cognitect.transit.types.uri, isURI:com.cognitect.transit.types.isURI, map:com.cognitect.transit.types.map, isMap:com.cognitect.transit.types.isMap, 
-set:com.cognitect.transit.types.set, isSet:com.cognitect.transit.types.isSet, list:com.cognitect.transit.types.list, isList:com.cognitect.transit.types.isList, quoted:com.cognitect.transit.types.quoted, isQuoted:com.cognitect.transit.types.isQuoted, tagged:com.cognitect.transit.types.taggedValue, isTaggedValue:com.cognitect.transit.types.isTaggedValue, link:com.cognitect.transit.types.link, isLink:com.cognitect.transit.types.isLink, hash:com.cognitect.transit.eq.hashCode, hashArrayLike:com.cognitect.transit.eq.hashArrayLike, 
-hashMapLike:com.cognitect.transit.eq.hashMapLike, equals:com.cognitect.transit.eq.equals, extendToEQ:com.cognitect.transit.eq.extendToEQ, mapToObject:com.cognitect.transit.mapToObject, decoder:com.cognitect.transit.impl.decoder.decoder, UUIDfromString:com.cognitect.transit.types.UUIDfromString, randomUUID:com.cognitect.transit.types.randomUUID, stringableKeys:com.cognitect.transit.impl.writer.stringableKeys, readCache:com.cognitect.transit.caching.readCache, writeCache:com.cognitect.transit.caching.writeCache});
-var cognitect = {transit:{}};
-cljs.core.UUID.prototype.cljs$core$IEquiv$ = !0;
-cljs.core.UUID.prototype.cljs$core$IEquiv$_equiv$arity$2 = function(a, b) {
-  return b instanceof cljs.core.UUID ? this.uuid === b.uuid : b instanceof com.cognitect.transit.types.UUID ? this.uuid === b.toString() : !1;
-};
-cljs.core.UUID.prototype.cljs$core$IComparable$ = !0;
-cljs.core.UUID.prototype.cljs$core$IComparable$_compare$arity$2 = function(a, b) {
-  if (b instanceof cljs.core.UUID || b instanceof com.cognitect.transit.types.UUID) {
-    return cljs.core.compare.call(null, this.toString(), b.toString());
-  }
-  throw Error([cljs.core.str("Cannot compare "), cljs.core.str(this), cljs.core.str(" to "), cljs.core.str(b)].join(""));
-};
-com.cognitect.transit.types.UUID.prototype.cljs$core$IComparable$ = !0;
-com.cognitect.transit.types.UUID.prototype.cljs$core$IComparable$_compare$arity$2 = function(a, b) {
-  if (b instanceof cljs.core.UUID || b instanceof com.cognitect.transit.types.UUID) {
-    return cljs.core.compare.call(null, this.toString(), b.toString());
-  }
-  throw Error([cljs.core.str("Cannot compare "), cljs.core.str(this), cljs.core.str(" to "), cljs.core.str(b)].join(""));
-};
-goog.math.Long.prototype.cljs$core$IEquiv$ = !0;
-goog.math.Long.prototype.cljs$core$IEquiv$_equiv$arity$2 = function(a, b) {
-  return this.equiv(b);
-};
-com.cognitect.transit.types.UUID.prototype.cljs$core$IEquiv$ = !0;
-com.cognitect.transit.types.UUID.prototype.cljs$core$IEquiv$_equiv$arity$2 = function(a, b) {
-  return b instanceof cljs.core.UUID ? cljs.core._equiv.call(null, b, this) : this.equiv(b);
-};
-com.cognitect.transit.types.TaggedValue.prototype.cljs$core$IEquiv$ = !0;
-com.cognitect.transit.types.TaggedValue.prototype.cljs$core$IEquiv$_equiv$arity$2 = function(a, b) {
-  return this.equiv(b);
-};
-goog.math.Long.prototype.cljs$core$IHash$ = !0;
-goog.math.Long.prototype.cljs$core$IHash$_hash$arity$1 = function(a) {
-  return com.cognitect.transit.eq.hashCode.call(null, this);
-};
-com.cognitect.transit.types.UUID.prototype.cljs$core$IHash$ = !0;
-com.cognitect.transit.types.UUID.prototype.cljs$core$IHash$_hash$arity$1 = function(a) {
-  return com.cognitect.transit.eq.hashCode.call(null, this);
-};
-com.cognitect.transit.types.TaggedValue.prototype.cljs$core$IHash$ = !0;
-com.cognitect.transit.types.TaggedValue.prototype.cljs$core$IHash$_hash$arity$1 = function(a) {
-  return com.cognitect.transit.eq.hashCode.call(null, this);
-};
-com.cognitect.transit.types.UUID.prototype.cljs$core$IPrintWithWriter$ = !0;
-com.cognitect.transit.types.UUID.prototype.cljs$core$IPrintWithWriter$_pr_writer$arity$3 = function(a, b, c) {
-  return cljs.core._write.call(null, b, [cljs.core.str('#uuid "'), cljs.core.str(this.toString()), cljs.core.str('"')].join(""));
-};
-cognitect.transit.opts_merge = function(a, b) {
-  for (var c = cljs.core.seq.call(null, cljs.core.js_keys.call(null, b)), d = null, e = 0, f = 0;;) {
-    if (f < e) {
-      var g = cljs.core._nth.call(null, d, f);
-      a[g] = b[g];
-      f += 1;
-    } else {
-      if (c = cljs.core.seq.call(null, c)) {
-        d = c, cljs.core.chunked_seq_QMARK_.call(null, d) ? (c = cljs.core.chunk_first.call(null, d), f = cljs.core.chunk_rest.call(null, d), d = c, e = cljs.core.count.call(null, c), c = f) : (c = cljs.core.first.call(null, d), a[c] = b[c], c = cljs.core.next.call(null, d), d = null, e = 0), f = 0;
-      } else {
-        break;
-      }
-    }
-  }
-  return a;
-};
-cognitect.transit.MapBuilder = function() {
-};
-cognitect.transit.MapBuilder.prototype.init = function(a) {
-  return cljs.core.transient$.call(null, cljs.core.PersistentArrayMap.EMPTY);
-};
-cognitect.transit.MapBuilder.prototype.add = function(a, b, c, d) {
-  return cljs.core.assoc_BANG_.call(null, a, b, c);
-};
-cognitect.transit.MapBuilder.prototype.finalize = function(a, b) {
-  return cljs.core.persistent_BANG_.call(null, a);
-};
-cognitect.transit.MapBuilder.prototype.fromArray = function(a, b) {
-  return cljs.core.PersistentArrayMap.fromArray.call(null, a, !0, !0);
-};
-cognitect.transit.MapBuilder.getBasis = function() {
-  return cljs.core.PersistentVector.EMPTY;
-};
-cognitect.transit.MapBuilder.cljs$lang$type = !0;
-cognitect.transit.MapBuilder.cljs$lang$ctorStr = "cognitect.transit/MapBuilder";
-cognitect.transit.MapBuilder.cljs$lang$ctorPrWriter = function(a, b, c) {
-  return cljs.core._write.call(null, b, "cognitect.transit/MapBuilder");
-};
-cognitect.transit.__GT_MapBuilder = function() {
-  return new cognitect.transit.MapBuilder;
-};
-cognitect.transit.VectorBuilder = function() {
-};
-cognitect.transit.VectorBuilder.prototype.init = function(a) {
-  return cljs.core.transient$.call(null, cljs.core.PersistentVector.EMPTY);
-};
-cognitect.transit.VectorBuilder.prototype.add = function(a, b, c) {
-  return cljs.core.conj_BANG_.call(null, a, b);
-};
-cognitect.transit.VectorBuilder.prototype.finalize = function(a, b) {
-  return cljs.core.persistent_BANG_.call(null, a);
-};
-cognitect.transit.VectorBuilder.prototype.fromArray = function(a, b) {
-  return cljs.core.PersistentVector.fromArray.call(null, a, !0);
-};
-cognitect.transit.VectorBuilder.getBasis = function() {
-  return cljs.core.PersistentVector.EMPTY;
-};
-cognitect.transit.VectorBuilder.cljs$lang$type = !0;
-cognitect.transit.VectorBuilder.cljs$lang$ctorStr = "cognitect.transit/VectorBuilder";
-cognitect.transit.VectorBuilder.cljs$lang$ctorPrWriter = function(a, b, c) {
-  return cljs.core._write.call(null, b, "cognitect.transit/VectorBuilder");
-};
-cognitect.transit.__GT_VectorBuilder = function() {
-  return new cognitect.transit.VectorBuilder;
-};
-cognitect.transit.reader = function() {
-  switch(arguments.length) {
-    case 1:
-      return cognitect.transit.reader.cljs$core$IFn$_invoke$arity$1(arguments[0]);
-    case 2:
-      return cognitect.transit.reader.cljs$core$IFn$_invoke$arity$2(arguments[0], arguments[1]);
-    default:
-      throw Error([cljs.core.str("Invalid arity: "), cljs.core.str(arguments.length)].join(""));;
-  }
-};
-cognitect.transit.reader.cljs$core$IFn$_invoke$arity$1 = function(a) {
-  return cognitect.transit.reader.call(null, a, null);
-};
-cognitect.transit.reader.cljs$core$IFn$_invoke$arity$2 = function(a, b) {
-  return com.cognitect.transit.reader.call(null, cljs.core.name.call(null, a), cognitect.transit.opts_merge.call(null, {handlers:cljs.core.clj__GT_js.call(null, cljs.core.merge.call(null, new cljs.core.PersistentArrayMap(null, 5, ["$", function(a) {
-    return cljs.core.symbol.call(null, a);
-  }, ":", function(a) {
-    return cljs.core.keyword.call(null, a);
-  }, "set", function(a) {
-    return cljs.core.into.call(null, cljs.core.PersistentHashSet.EMPTY, a);
-  }, "list", function(a) {
-    return cljs.core.into.call(null, cljs.core.List.EMPTY, a.reverse());
-  }, "cmap", function(a) {
-    for (var b = 0, e = cljs.core.transient$.call(null, cljs.core.PersistentArrayMap.EMPTY);;) {
-      if (b < a.length) {
-        var f = b + 2, e = cljs.core.assoc_BANG_.call(null, e, a[b], a[b + 1]), b = f
-      } else {
-        return cljs.core.persistent_BANG_.call(null, e);
-      }
-    }
-  }], null), (new cljs.core.Keyword(null, "handlers", "handlers", 79528781)).cljs$core$IFn$_invoke$arity$1(b))), mapBuilder:new cognitect.transit.MapBuilder, arrayBuilder:new cognitect.transit.VectorBuilder, prefersStrings:!1}, cljs.core.clj__GT_js.call(null, cljs.core.dissoc.call(null, b, new cljs.core.Keyword(null, "handlers", "handlers", 79528781)))));
-};
-cognitect.transit.reader.cljs$lang$maxFixedArity = 2;
-cognitect.transit.read = function(a, b) {
-  return a.read(b);
-};
-cognitect.transit.KeywordHandler = function() {
-};
-cognitect.transit.KeywordHandler.prototype.tag = function(a) {
-  return ":";
-};
-cognitect.transit.KeywordHandler.prototype.rep = function(a) {
-  return a.fqn;
-};
-cognitect.transit.KeywordHandler.prototype.stringRep = function(a) {
-  return a.fqn;
-};
-cognitect.transit.KeywordHandler.getBasis = function() {
-  return cljs.core.PersistentVector.EMPTY;
-};
-cognitect.transit.KeywordHandler.cljs$lang$type = !0;
-cognitect.transit.KeywordHandler.cljs$lang$ctorStr = "cognitect.transit/KeywordHandler";
-cognitect.transit.KeywordHandler.cljs$lang$ctorPrWriter = function(a, b, c) {
-  return cljs.core._write.call(null, b, "cognitect.transit/KeywordHandler");
-};
-cognitect.transit.__GT_KeywordHandler = function() {
-  return new cognitect.transit.KeywordHandler;
-};
-cognitect.transit.SymbolHandler = function() {
-};
-cognitect.transit.SymbolHandler.prototype.tag = function(a) {
-  return "$";
-};
-cognitect.transit.SymbolHandler.prototype.rep = function(a) {
-  return a.str;
-};
-cognitect.transit.SymbolHandler.prototype.stringRep = function(a) {
-  return a.str;
-};
-cognitect.transit.SymbolHandler.getBasis = function() {
-  return cljs.core.PersistentVector.EMPTY;
-};
-cognitect.transit.SymbolHandler.cljs$lang$type = !0;
-cognitect.transit.SymbolHandler.cljs$lang$ctorStr = "cognitect.transit/SymbolHandler";
-cognitect.transit.SymbolHandler.cljs$lang$ctorPrWriter = function(a, b, c) {
-  return cljs.core._write.call(null, b, "cognitect.transit/SymbolHandler");
-};
-cognitect.transit.__GT_SymbolHandler = function() {
-  return new cognitect.transit.SymbolHandler;
-};
-cognitect.transit.ListHandler = function() {
-};
-cognitect.transit.ListHandler.prototype.tag = function(a) {
-  return "list";
-};
-cognitect.transit.ListHandler.prototype.rep = function(a) {
-  var b = [];
-  a = cljs.core.seq.call(null, a);
-  for (var c = null, d = 0, e = 0;;) {
-    if (e < d) {
-      var f = cljs.core._nth.call(null, c, e);
-      b.push(f);
-      e += 1;
-    } else {
-      if (a = cljs.core.seq.call(null, a)) {
-        c = a, cljs.core.chunked_seq_QMARK_.call(null, c) ? (a = cljs.core.chunk_first.call(null, c), e = cljs.core.chunk_rest.call(null, c), c = a, d = cljs.core.count.call(null, a), a = e) : (a = cljs.core.first.call(null, c), b.push(a), a = cljs.core.next.call(null, c), c = null, d = 0), e = 0;
-      } else {
-        break;
-      }
-    }
-  }
-  return com.cognitect.transit.tagged.call(null, "array", b);
-};
-cognitect.transit.ListHandler.prototype.stringRep = function(a) {
-  return null;
-};
-cognitect.transit.ListHandler.getBasis = function() {
-  return cljs.core.PersistentVector.EMPTY;
-};
-cognitect.transit.ListHandler.cljs$lang$type = !0;
-cognitect.transit.ListHandler.cljs$lang$ctorStr = "cognitect.transit/ListHandler";
-cognitect.transit.ListHandler.cljs$lang$ctorPrWriter = function(a, b, c) {
-  return cljs.core._write.call(null, b, "cognitect.transit/ListHandler");
-};
-cognitect.transit.__GT_ListHandler = function() {
-  return new cognitect.transit.ListHandler;
-};
-cognitect.transit.MapHandler = function() {
-};
-cognitect.transit.MapHandler.prototype.tag = function(a) {
-  return "map";
-};
-cognitect.transit.MapHandler.prototype.rep = function(a) {
-  return a;
-};
-cognitect.transit.MapHandler.prototype.stringRep = function(a) {
-  return null;
-};
-cognitect.transit.MapHandler.getBasis = function() {
-  return cljs.core.PersistentVector.EMPTY;
-};
-cognitect.transit.MapHandler.cljs$lang$type = !0;
-cognitect.transit.MapHandler.cljs$lang$ctorStr = "cognitect.transit/MapHandler";
-cognitect.transit.MapHandler.cljs$lang$ctorPrWriter = function(a, b, c) {
-  return cljs.core._write.call(null, b, "cognitect.transit/MapHandler");
-};
-cognitect.transit.__GT_MapHandler = function() {
-  return new cognitect.transit.MapHandler;
-};
-cognitect.transit.SetHandler = function() {
-};
-cognitect.transit.SetHandler.prototype.tag = function(a) {
-  return "set";
-};
-cognitect.transit.SetHandler.prototype.rep = function(a) {
-  var b = [];
-  a = cljs.core.seq.call(null, a);
-  for (var c = null, d = 0, e = 0;;) {
-    if (e < d) {
-      var f = cljs.core._nth.call(null, c, e);
-      b.push(f);
-      e += 1;
-    } else {
-      if (a = cljs.core.seq.call(null, a)) {
-        c = a, cljs.core.chunked_seq_QMARK_.call(null, c) ? (a = cljs.core.chunk_first.call(null, c), e = cljs.core.chunk_rest.call(null, c), c = a, d = cljs.core.count.call(null, a), a = e) : (a = cljs.core.first.call(null, c), b.push(a), a = cljs.core.next.call(null, c), c = null, d = 0), e = 0;
-      } else {
-        break;
-      }
-    }
-  }
-  return com.cognitect.transit.tagged.call(null, "array", b);
-};
-cognitect.transit.SetHandler.prototype.stringRep = function() {
-  return null;
-};
-cognitect.transit.SetHandler.getBasis = function() {
-  return cljs.core.PersistentVector.EMPTY;
-};
-cognitect.transit.SetHandler.cljs$lang$type = !0;
-cognitect.transit.SetHandler.cljs$lang$ctorStr = "cognitect.transit/SetHandler";
-cognitect.transit.SetHandler.cljs$lang$ctorPrWriter = function(a, b, c) {
-  return cljs.core._write.call(null, b, "cognitect.transit/SetHandler");
-};
-cognitect.transit.__GT_SetHandler = function() {
-  return new cognitect.transit.SetHandler;
-};
-cognitect.transit.VectorHandler = function() {
-};
-cognitect.transit.VectorHandler.prototype.tag = function(a) {
-  return "array";
-};
-cognitect.transit.VectorHandler.prototype.rep = function(a) {
-  var b = [];
-  a = cljs.core.seq.call(null, a);
-  for (var c = null, d = 0, e = 0;;) {
-    if (e < d) {
-      var f = cljs.core._nth.call(null, c, e);
-      b.push(f);
-      e += 1;
-    } else {
-      if (a = cljs.core.seq.call(null, a)) {
-        c = a, cljs.core.chunked_seq_QMARK_.call(null, c) ? (a = cljs.core.chunk_first.call(null, c), e = cljs.core.chunk_rest.call(null, c), c = a, d = cljs.core.count.call(null, a), a = e) : (a = cljs.core.first.call(null, c), b.push(a), a = cljs.core.next.call(null, c), c = null, d = 0), e = 0;
-      } else {
-        break;
-      }
-    }
-  }
-  return b;
-};
-cognitect.transit.VectorHandler.prototype.stringRep = function(a) {
-  return null;
-};
-cognitect.transit.VectorHandler.getBasis = function() {
-  return cljs.core.PersistentVector.EMPTY;
-};
-cognitect.transit.VectorHandler.cljs$lang$type = !0;
-cognitect.transit.VectorHandler.cljs$lang$ctorStr = "cognitect.transit/VectorHandler";
-cognitect.transit.VectorHandler.cljs$lang$ctorPrWriter = function(a, b, c) {
-  return cljs.core._write.call(null, b, "cognitect.transit/VectorHandler");
-};
-cognitect.transit.__GT_VectorHandler = function() {
-  return new cognitect.transit.VectorHandler;
-};
-cognitect.transit.UUIDHandler = function() {
-};
-cognitect.transit.UUIDHandler.prototype.tag = function(a) {
-  return "u";
-};
-cognitect.transit.UUIDHandler.prototype.rep = function(a) {
-  return a.uuid;
-};
-cognitect.transit.UUIDHandler.prototype.stringRep = function(a) {
-  return this.rep(a);
-};
-cognitect.transit.UUIDHandler.getBasis = function() {
-  return cljs.core.PersistentVector.EMPTY;
-};
-cognitect.transit.UUIDHandler.cljs$lang$type = !0;
-cognitect.transit.UUIDHandler.cljs$lang$ctorStr = "cognitect.transit/UUIDHandler";
-cognitect.transit.UUIDHandler.cljs$lang$ctorPrWriter = function(a, b, c) {
-  return cljs.core._write.call(null, b, "cognitect.transit/UUIDHandler");
-};
-cognitect.transit.__GT_UUIDHandler = function() {
-  return new cognitect.transit.UUIDHandler;
-};
-cognitect.transit.writer = function() {
-  switch(arguments.length) {
-    case 1:
-      return cognitect.transit.writer.cljs$core$IFn$_invoke$arity$1(arguments[0]);
-    case 2:
-      return cognitect.transit.writer.cljs$core$IFn$_invoke$arity$2(arguments[0], arguments[1]);
-    default:
-      throw Error([cljs.core.str("Invalid arity: "), cljs.core.str(arguments.length)].join(""));;
-  }
-};
-cognitect.transit.writer.cljs$core$IFn$_invoke$arity$1 = function(a) {
-  return cognitect.transit.writer.call(null, a, null);
-};
-cognitect.transit.writer.cljs$core$IFn$_invoke$arity$2 = function(a, b) {
-  var c = new cognitect.transit.KeywordHandler, d = new cognitect.transit.SymbolHandler, e = new cognitect.transit.ListHandler, f = new cognitect.transit.MapHandler, g = new cognitect.transit.SetHandler, h = new cognitect.transit.VectorHandler, k = new cognitect.transit.UUIDHandler, m = cljs.core.merge.call(null, cljs.core.PersistentHashMap.fromArrays([cljs.core.PersistentHashMap, cljs.core.Cons, cljs.core.PersistentArrayMap, cljs.core.NodeSeq, cljs.core.PersistentQueue, cljs.core.IndexedSeq, cljs.core.Keyword, 
-  cljs.core.EmptyList, cljs.core.LazySeq, cljs.core.Subvec, cljs.core.PersistentQueueSeq, cljs.core.ArrayNodeSeq, cljs.core.ValSeq, cljs.core.PersistentArrayMapSeq, cljs.core.PersistentVector, cljs.core.List, cljs.core.RSeq, cljs.core.PersistentHashSet, cljs.core.PersistentTreeMap, cljs.core.KeySeq, cljs.core.ChunkedSeq, cljs.core.PersistentTreeSet, cljs.core.ChunkedCons, cljs.core.Symbol, cljs.core.UUID, cljs.core.Range, cljs.core.PersistentTreeMapSeq], [f, e, f, e, e, e, c, e, e, h, e, e, e, e, 
-  h, e, e, g, f, e, e, g, e, d, k, e, e]), (new cljs.core.Keyword(null, "handlers", "handlers", 79528781)).cljs$core$IFn$_invoke$arity$1(b));
-  return com.cognitect.transit.writer.call(null, cljs.core.name.call(null, a), cognitect.transit.opts_merge.call(null, {objectBuilder:function(a, b, c, d, e, f, g, h) {
-    return function(k, m, B) {
-      return cljs.core.reduce_kv.call(null, function(a, b, c, d, e, f, g, h) {
-        return function(a, b, c) {
-          a.push(m.call(null, b), B.call(null, c));
-          return a;
-        };
-      }(a, b, c, d, e, f, g, h), ["^ "], k);
-    };
-  }(c, d, e, f, g, h, k, m), handlers:function() {
-    var a = cljs.core.clone.call(null, m);
-    a.forEach = function(a, b, c, d, e, f, g, h, k) {
-      return function(a) {
-        for (var b = cljs.core.seq.call(null, this), c = null, d = 0, e = 0;;) {
-          if (e < d) {
-            var f = cljs.core._nth.call(null, c, e), g = cljs.core.nth.call(null, f, 0, null), f = cljs.core.nth.call(null, f, 1, null);
-            a.call(null, f, g);
-            e += 1;
-          } else {
-            if (b = cljs.core.seq.call(null, b)) {
-              cljs.core.chunked_seq_QMARK_.call(null, b) ? (c = cljs.core.chunk_first.call(null, b), b = cljs.core.chunk_rest.call(null, b), g = c, d = cljs.core.count.call(null, c), c = g) : (c = cljs.core.first.call(null, b), g = cljs.core.nth.call(null, c, 0, null), f = cljs.core.nth.call(null, c, 1, null), a.call(null, f, g), b = cljs.core.next.call(null, b), c = null, d = 0), e = 0;
-            } else {
-              return null;
-            }
-          }
-        }
-      };
-    }(a, c, d, e, f, g, h, k, m);
-    return a;
-  }(), unpack:function(a, b, c, d, e, f, g, h) {
-    return function(a) {
-      return a instanceof cljs.core.PersistentArrayMap ? a.arr : !1;
-    };
-  }(c, d, e, f, g, h, k, m)}, cljs.core.clj__GT_js.call(null, cljs.core.dissoc.call(null, b, new cljs.core.Keyword(null, "handlers", "handlers", 79528781)))));
-};
-cognitect.transit.writer.cljs$lang$maxFixedArity = 2;
-cognitect.transit.write = function(a, b) {
-  return a.write(b);
-};
-cognitect.transit.read_handler = function(a) {
-  return a;
-};
-cognitect.transit.write_handler = function() {
-  switch(arguments.length) {
-    case 2:
-      return cognitect.transit.write_handler.cljs$core$IFn$_invoke$arity$2(arguments[0], arguments[1]);
-    case 3:
-      return cognitect.transit.write_handler.cljs$core$IFn$_invoke$arity$3(arguments[0], arguments[1], arguments[2]);
-    case 4:
-      return cognitect.transit.write_handler.cljs$core$IFn$_invoke$arity$4(arguments[0], arguments[1], arguments[2], arguments[3]);
-    default:
-      throw Error([cljs.core.str("Invalid arity: "), cljs.core.str(arguments.length)].join(""));;
-  }
-};
-cognitect.transit.write_handler.cljs$core$IFn$_invoke$arity$2 = function(a, b) {
-  return cognitect.transit.write_handler.call(null, a, b, null, null);
-};
-cognitect.transit.write_handler.cljs$core$IFn$_invoke$arity$3 = function(a, b, c) {
-  return cognitect.transit.write_handler.call(null, a, b, c, null);
-};
-cognitect.transit.write_handler.cljs$core$IFn$_invoke$arity$4 = function(a, b, c, d) {
-  "undefined" === typeof cognitect.transit.t16699 && (cognitect.transit.t16699 = function(a, b, c, d, k) {
-    this.tag_fn = a;
-    this.rep_fn = b;
-    this.str_rep_fn = c;
-    this.verbose_handler_fn = d;
-    this.meta16700 = k;
-    this.cljs$lang$protocol_mask$partition0$ = 393216;
-    this.cljs$lang$protocol_mask$partition1$ = 0;
-  }, cognitect.transit.t16699.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(a, b) {
-    return new cognitect.transit.t16699(this.tag_fn, this.rep_fn, this.str_rep_fn, this.verbose_handler_fn, b);
-  }, cognitect.transit.t16699.prototype.cljs$core$IMeta$_meta$arity$1 = function(a) {
-    return this.meta16700;
-  }, cognitect.transit.t16699.prototype.tag = function(a) {
-    return this.tag_fn.call(null, a);
-  }, cognitect.transit.t16699.prototype.rep = function(a) {
-    return this.rep_fn.call(null, a);
-  }, cognitect.transit.t16699.prototype.stringRep = function(a) {
-    return cljs.core.truth_(this.str_rep_fn) ? this.str_rep_fn.call(null, a) : null;
-  }, cognitect.transit.t16699.prototype.getVerboseHandler = function() {
-    return cljs.core.truth_(this.verbose_handler_fn) ? this.verbose_handler_fn.call(null) : null;
-  }, cognitect.transit.t16699.getBasis = function() {
-    return new cljs.core.PersistentVector(null, 5, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Symbol(null, "tag-fn", "tag-fn", 242055482, null), new cljs.core.Symbol(null, "rep-fn", "rep-fn", -1724891035, null), new cljs.core.Symbol(null, "str-rep-fn", "str-rep-fn", -1179615016, null), new cljs.core.Symbol(null, "verbose-handler-fn", "verbose-handler-fn", 547340594, null), new cljs.core.Symbol(null, "meta16700", "meta16700", 2071190036, null)], null);
-  }, cognitect.transit.t16699.cljs$lang$type = !0, cognitect.transit.t16699.cljs$lang$ctorStr = "cognitect.transit/t16699", cognitect.transit.t16699.cljs$lang$ctorPrWriter = function(a, b, c) {
-    return cljs.core._write.call(null, b, "cognitect.transit/t16699");
-  }, cognitect.transit.__GT_t16699 = function(a, b, c, d, k) {
-    return new cognitect.transit.t16699(a, b, c, d, k);
-  });
-  return new cognitect.transit.t16699(a, b, c, d, cljs.core.PersistentArrayMap.EMPTY);
-};
-cognitect.transit.write_handler.cljs$lang$maxFixedArity = 4;
-cognitect.transit.tagged_value = function(a, b) {
-  return com.cognitect.transit.types.taggedValue.call(null, a, b);
-};
-cognitect.transit.tagged_value_QMARK_ = function(a) {
-  return com.cognitect.transit.types.isTaggedValue.call(null, a);
-};
-cognitect.transit.integer = function(a) {
-  return com.cognitect.transit.types.intValue.call(null, a);
-};
-cognitect.transit.integer_QMARK_ = function(a) {
-  return com.cognitect.transit.types.isInteger.call(null, a);
-};
-cognitect.transit.bigint = function(a) {
-  return com.cognitect.transit.types.bigInteger.call(null, a);
-};
-cognitect.transit.bigint_QMARK_ = function(a) {
-  return com.cognitect.transit.types.isBigInteger.call(null, a);
-};
-cognitect.transit.bigdec = function(a) {
-  return com.cognitect.transit.types.bigDecimalValue.call(null, a);
-};
-cognitect.transit.bigdec_QMARK_ = function(a) {
-  return com.cognitect.transit.types.isBigDecimal.call(null, a);
-};
-cognitect.transit.uri = function(a) {
-  return com.cognitect.transit.types.uri.call(null, a);
-};
-cognitect.transit.uri_QMARK_ = function(a) {
-  return com.cognitect.transit.types.isURI.call(null, a);
-};
-cognitect.transit.uuid = function(a) {
-  return com.cognitect.transit.types.uuid.call(null, a);
-};
-cognitect.transit.uuid_QMARK_ = function(a) {
-  return com.cognitect.transit.types.isUUID.call(null, a);
-};
-cognitect.transit.binary = function(a) {
-  return com.cognitect.transit.types.binary.call(null, a);
-};
-cognitect.transit.binary_QMARK_ = function(a) {
-  return com.cognitect.transit.types.isBinary.call(null, a);
-};
-cognitect.transit.quoted = function(a) {
-  return com.cognitect.transit.types.quoted.call(null, a);
-};
-cognitect.transit.quoted_QMARK_ = function(a) {
-  return com.cognitect.transit.types.isQuoted.call(null, a);
-};
-cognitect.transit.link = function(a) {
-  return com.cognitect.transit.types.link.call(null, a);
-};
-cognitect.transit.link_QMARK_ = function(a) {
-  return com.cognitect.transit.types.isLink.call(null, a);
-};
-com.firstlinq.ssr.state = {};
-"undefined" === typeof com.firstlinq.ssr.state.get_state && (com.firstlinq.ssr.state.get_state = function() {
-  var a = cljs.core.atom.call(null, cljs.core.PersistentArrayMap.EMPTY), b = cljs.core.atom.call(null, cljs.core.PersistentArrayMap.EMPTY), c = cljs.core.atom.call(null, cljs.core.PersistentArrayMap.EMPTY), d = cljs.core.atom.call(null, cljs.core.PersistentArrayMap.EMPTY), e = cljs.core.get.call(null, cljs.core.PersistentArrayMap.EMPTY, new cljs.core.Keyword(null, "hierarchy", "hierarchy", -1053470341), cljs.core.get_global_hierarchy.call(null));
-  return new cljs.core.MultiFn(cljs.core.symbol.call(null, "com.firstlinq.ssr.state", "get-state"), function(a, b, c, d, e) {
-    return function(a, b, c, d) {
-      return b;
-    };
-  }(a, b, c, d, e), new cljs.core.Keyword(null, "default", "default", -1987822328), e, a, b, c, d);
-}());
-com.firstlinq.ssr.state.Serialiser = function() {
-  return {};
-}();
-com.firstlinq.ssr.state.__GT_string = function(a, b) {
-  if (a ? a.com$firstlinq$ssr$state$Serialiser$__GT_string$arity$2 : a) {
-    return a.com$firstlinq$ssr$state$Serialiser$__GT_string$arity$2(a, b);
-  }
-  var c;
-  c = com.firstlinq.ssr.state.__GT_string[goog.typeOf(null == a ? null : a)];
-  if (!c && (c = com.firstlinq.ssr.state.__GT_string._, !c)) {
-    throw cljs.core.missing_protocol.call(null, "Serialiser.-\x3estring", a);
-  }
-  return c.call(null, a, b);
-};
-com.firstlinq.ssr.state.__GT_state = function(a, b) {
-  if (a ? a.com$firstlinq$ssr$state$Serialiser$__GT_state$arity$2 : a) {
-    return a.com$firstlinq$ssr$state$Serialiser$__GT_state$arity$2(a, b);
-  }
-  var c;
-  c = com.firstlinq.ssr.state.__GT_state[goog.typeOf(null == a ? null : a)];
-  if (!c && (c = com.firstlinq.ssr.state.__GT_state._, !c)) {
-    throw cljs.core.missing_protocol.call(null, "Serialiser.-\x3estate", a);
-  }
-  return c.call(null, a, b);
-};
-com.firstlinq.ssr.state.transit_serialiser = function com$firstlinq$ssr$state$transit_serialiser() {
-  "undefined" === typeof com.firstlinq.ssr.state.t16558 && (com.firstlinq.ssr.state.t16558 = function(b, c) {
-    this.transit_serialiser = b;
-    this.meta16559 = c;
-    this.cljs$lang$protocol_mask$partition0$ = 393216;
-    this.cljs$lang$protocol_mask$partition1$ = 0;
-  }, com.firstlinq.ssr.state.t16558.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, c) {
-    return new com.firstlinq.ssr.state.t16558(this.transit_serialiser, c);
-  }, com.firstlinq.ssr.state.t16558.prototype.cljs$core$IMeta$_meta$arity$1 = function(b) {
-    return this.meta16559;
-  }, com.firstlinq.ssr.state.t16558.prototype.com$firstlinq$ssr$state$Serialiser$ = !0, com.firstlinq.ssr.state.t16558.prototype.com$firstlinq$ssr$state$Serialiser$__GT_string$arity$2 = function(b, c) {
-    var d = cognitect.transit.writer.call(null, new cljs.core.Keyword(null, "json", "json", 1279968570));
-    return cognitect.transit.write.call(null, d, c);
-  }, com.firstlinq.ssr.state.t16558.prototype.com$firstlinq$ssr$state$Serialiser$__GT_state$arity$2 = function(b, c) {
-    var d = cognitect.transit.reader.call(null, new cljs.core.Keyword(null, "json", "json", 1279968570));
-    return cognitect.transit.read.call(null, d, c);
-  }, com.firstlinq.ssr.state.t16558.getBasis = function() {
-    return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Symbol(null, "transit-serialiser", "transit-serialiser", 1144217568, null), new cljs.core.Symbol(null, "meta16559", "meta16559", -586435446, null)], null);
-  }, com.firstlinq.ssr.state.t16558.cljs$lang$type = !0, com.firstlinq.ssr.state.t16558.cljs$lang$ctorStr = "com.firstlinq.ssr.state/t16558", com.firstlinq.ssr.state.t16558.cljs$lang$ctorPrWriter = function(b, c, d) {
-    return cljs.core._write.call(null, c, "com.firstlinq.ssr.state/t16558");
-  }, com.firstlinq.ssr.state.__GT_t16558 = function(b, c) {
-    return new com.firstlinq.ssr.state.t16558(b, c);
-  });
-  return new com.firstlinq.ssr.state.t16558(com$firstlinq$ssr$state$transit_serialiser, cljs.core.PersistentArrayMap.EMPTY);
-};
-com.firstlinq.ssr.state.hydrate = function(a, b, c) {
-  return cljs.core.empty_QMARK_.call(null, cljs.core.deref.call(null, b)) ? cljs.core.reset_BANG_.call(null, b, com.firstlinq.ssr.state.__GT_state.call(null, a, c.textContent)) : null;
-};
 com.firstlinq.ssr.server = {};
 com.firstlinq.ssr.server.make_plates_template = function(a, b) {
   var c = cljs.nodejs.require.call(null, "fs"), d = cljs.nodejs.require.call(null, "plates"), e = c.readFileSync(b, "utf-8");
@@ -53624,202 +53820,6 @@ com.firstlinq.ssr.router.silk.create_request__GT_state.cljs$lang$applyTo = funct
   a = cljs.core.next.call(null, a);
   return com.firstlinq.ssr.router.silk.create_request__GT_state.cljs$core$IFn$_invoke$arity$variadic(b, a);
 };
-com.firstlinq.ssr.redirect_key = new cljs.core.Keyword("com.firstlinq.ssr", "redirect-uri", "com.firstlinq.ssr/redirect-uri", -1843196769);
-com.firstlinq.ssr.routes = {};
-com.firstlinq.ssr.routes.append_return_uri = function(a, b) {
-  if (cljs.core.truth_(a)) {
-    var c = encodeURIComponent(b);
-    return cljs.core.not_EQ_.call(null, -1, a.indexOf("?")) ? [cljs.core.str(a), cljs.core.str("\x26redirect\x3d"), cljs.core.str(c)].join("") : [cljs.core.str(a), cljs.core.str("?redirect\x3d"), cljs.core.str(c)].join("");
-  }
-  return null;
-};
-com.firstlinq.ssr.routes.add_title_to_state = function(a, b) {
-  var c = cljs.core.fn_QMARK_.call(null, a) ? cljs.core.assoc_in.call(null, b, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "route", "route", 329891309), new cljs.core.Keyword(null, "title", "title", 636505583)], null), a.call(null, b)) : b;
-  return "string" === typeof a ? cljs.core.assoc_in.call(null, c, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "route", "route", 329891309), new cljs.core.Keyword(null, "title", "title", 636505583)], null), a) : c;
-};
-com.firstlinq.ssr.routes.create_route_handler = function(a) {
-  return function(b, c) {
-    var d = cljs.core.assoc.call(null, c, new cljs.core.Keyword(null, "query", "query", -1288509510), cljs.core.get_in.call(null, c, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword("domkm.silk", "url", "domkm.silk/url", 1456306613), new cljs.core.Keyword(null, "query", "query", -1288509510)], null))), e = "" + cljs.core.str((new cljs.core.Keyword("domkm.silk", "url", "domkm.silk/url", 1456306613)).cljs$core$IFn$_invoke$arity$1(d)), f = cljs.core.async.chan.call(null, 
-    1);
-    cljs.core.async.impl.dispatch.run.call(null, function(c, d, e) {
-      return function() {
-        var f = function() {
-          return function(a, b, c, d) {
-            return function() {
-              var b = null, c = function() {
-                var a = [null, null, null, null, null, null, null, null, null, null, null, null];
-                a[0] = b;
-                a[1] = 1;
-                return a;
-              }, d = function(b) {
-                for (;;) {
-                  var c;
-                  a: {
-                    try {
-                      for (;;) {
-                        var d = a.call(null, b);
-                        if (!cljs.core.keyword_identical_QMARK_.call(null, d, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
-                          c = d;
-                          break a;
-                        }
-                      }
-                    } catch (e) {
-                      if (e instanceof Object) {
-                        b[5] = e, cljs.core.async.impl.ioc_helpers.process_exception.call(null, b), c = new cljs.core.Keyword(null, "recur", "recur", -437573268);
-                      } else {
-                        throw e;
-                      }
-                    }
-                  }
-                  if (!cljs.core.keyword_identical_QMARK_.call(null, c, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
-                    return c;
-                  }
-                }
-              }, b = function(a) {
-                switch(arguments.length) {
-                  case 0:
-                    return c.call(this);
-                  case 1:
-                    return d.call(this, a);
-                }
-                throw Error("Invalid arity: " + arguments.length);
-              };
-              b.cljs$core$IFn$_invoke$arity$0 = c;
-              b.cljs$core$IFn$_invoke$arity$1 = d;
-              return b;
-            }();
-          }(function(c, d, e) {
-            return function(c) {
-              var f = c[1];
-              if (7 === f) {
-                var f = c[7], g = c[8], f = cljs.core.swap_BANG_.call(null, a, cljs.core.merge, g), h = cljs.core.PersistentVector.EMPTY_NODE, k = [new cljs.core.Keyword(null, "route", "route", 329891309), new cljs.core.Keyword(null, "title", "title", 636505583)], h = new cljs.core.PersistentVector(null, 2, 5, h, k, null), g = cljs.core.get_in.call(null, g, h);
-                c[7] = g;
-                c[9] = f;
-                cljs.core.truth_(g) ? c[1] = 9 : c[1] = 10;
-                return new cljs.core.Keyword(null, "recur", "recur", -437573268);
-              }
-              return 1 === f ? (f = c[10], f = cljs.core.deref.call(null, a), f = com.firstlinq.ssr.state.get_state.call(null, f, b, d, cljs.core.PersistentHashMap.EMPTY), c[10] = f, cljs.core.truth_(f) ? c[1] = 2 : c[1] = 3, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 4 === f ? (f = c[2], cljs.core.async.impl.ioc_helpers.return_chan.call(null, c, f)) : 6 === f ? (f = com.firstlinq.ssr.routes.append_return_uri.call(null, c[11], e), f = window.location = f, c[2] = f, c[1] = 8, new cljs.core.Keyword(null, 
-              "recur", "recur", -437573268)) : 3 === f ? (c[2] = null, c[1] = 4, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 2 === f ? (f = c[10], cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, c, 5, f)) : 11 === f ? (f = c[2], c[2] = f, c[1] = 8, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 9 === f ? (f = c[7], f = document.title = f, c[2] = f, c[1] = 11, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 5 === f ? (g = c[2], f = com.firstlinq.ssr.redirect_key.call(null, 
-              g), c[8] = g, c[11] = f, cljs.core.truth_(f) ? c[1] = 6 : c[1] = 7, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 10 === f ? (c[2] = null, c[1] = 11, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 8 === f ? (f = c[2], c[2] = f, c[1] = 4, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : null;
-            };
-          }(c, d, e), c, d, e);
-        }(), l = function() {
-          var a = f.call(null);
-          a[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c;
-          return a;
-        }();
-        return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, l);
-      };
-    }(f, d, e));
-    return f;
-  };
-};
-com.firstlinq.ssr.routes.reify_map = function(a, b, c, d, e) {
-  e = cljs.core.async.chan.call(null);
-  var f = cljs.core.async.chan.call(null, 1);
-  cljs.core.async.impl.dispatch.run.call(null, function(e, f) {
-    return function() {
-      var k = function() {
-        return function(a, b, c) {
-          return function() {
-            var b = null, c = function() {
-              var a = [null, null, null, null, null, null, null, null, null, null, null, null, null];
-              a[0] = b;
-              a[1] = 1;
-              return a;
-            }, d = function(b) {
-              for (;;) {
-                var c;
-                a: {
-                  try {
-                    for (;;) {
-                      var d = a.call(null, b);
-                      if (!cljs.core.keyword_identical_QMARK_.call(null, d, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
-                        c = d;
-                        break a;
-                      }
-                    }
-                  } catch (e) {
-                    if (e instanceof Object) {
-                      b[5] = e, cljs.core.async.impl.ioc_helpers.process_exception.call(null, b), c = new cljs.core.Keyword(null, "recur", "recur", -437573268);
-                    } else {
-                      throw e;
-                    }
-                  }
-                }
-                if (!cljs.core.keyword_identical_QMARK_.call(null, c, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
-                  return c;
-                }
-              }
-            }, b = function(a) {
-              switch(arguments.length) {
-                case 0:
-                  return c.call(this);
-                case 1:
-                  return d.call(this, a);
-              }
-              throw Error("Invalid arity: " + arguments.length);
-            };
-            b.cljs$core$IFn$_invoke$arity$0 = c;
-            b.cljs$core$IFn$_invoke$arity$1 = d;
-            return b;
-          }();
-        }(function(e, f) {
-          return function(e) {
-            var g = e[1];
-            if (7 === g) {
-              var h = e[7], g = e[2];
-              e[8] = g;
-              cljs.core.truth_(h) ? e[1] = 8 : e[1] = 9;
-              return new cljs.core.Keyword(null, "recur", "recur", -437573268);
-            }
-            if (1 === g) {
-              var g = [new cljs.core.Keyword(null, "route", "route", 329891309)], g = cljs.core.PersistentHashMap.fromArrays(g, [c]), k = cljs.core.merge.call(null, a, g), h = b;
-              e[9] = h;
-              e[10] = k;
-              e[2] = null;
-              e[1] = 2;
-              return new cljs.core.Keyword(null, "recur", "recur", -437573268);
-            }
-            return 4 === g ? (h = e[11], g = cljs.core.nth.call(null, h, 0, null), h = cljs.core.nth.call(null, h, 1, null), k = cljs.core.nth.call(null, h, 0, null), h = cljs.core.nth.call(null, h, 1, null), e[7] = h, e[12] = g, cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, e, 7, k)) : 6 === g ? (g = e[2], e[2] = g, e[1] = 3, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 3 === g ? (g = e[2], cljs.core.async.impl.ioc_helpers.return_chan.call(null, e, g)) : 2 === g ? (h = e[9], 
-            g = cljs.core.first.call(null, h), e[11] = g, cljs.core.truth_(g) ? e[1] = 4 : e[1] = 5, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 9 === g ? (g = e[8], g = (new cljs.core.Keyword(null, "body", "body", -2049205669)).cljs$core$IFn$_invoke$arity$1(g), e[2] = g, e[1] = 10, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 5 === g ? (k = e[10], g = com.firstlinq.ssr.routes.add_title_to_state.call(null, d, k), g = cljs.core.async.put_BANG_.call(null, f, g), e[2] = 
-            g, e[1] = 6, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 10 === g ? (h = e[9], k = e[10], g = e[12], g = cljs.core.assoc.call(null, k, g, e[2]), h = cljs.core.rest.call(null, h), e[9] = h, e[10] = g, e[2] = null, e[1] = 2, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 8 === g ? (h = e[7], g = e[8], g = (new cljs.core.Keyword(null, "body", "body", -2049205669)).cljs$core$IFn$_invoke$arity$1(g), g = h.call(null, g), e[2] = g, e[1] = 10, new cljs.core.Keyword(null, 
-            "recur", "recur", -437573268)) : null;
-          };
-        }(e, f), e, f);
-      }(), m = function() {
-        var a = k.call(null);
-        a[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = e;
-        return a;
-      }();
-      return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, m);
-    };
-  }(f, e));
-  return e;
-};
-hello.app.routes = {};
-hello.app.routes.app_routes = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "home", "home", -74557309), new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.PersistentVector.EMPTY], null)], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "hello", 
-"hello", -245025397), new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, ["greeting", new cljs.core.Keyword(null, "username", "username", 1605666410)], null)], null)], null)], null);
-cljs.core._add_method.call(null, com.firstlinq.ssr.state.get_state, new cljs.core.Keyword(null, "home", "home", -74557309), function(a, b, c, d) {
-  cljs.core.seq_QMARK_.call(null, c) && cljs.core.apply.call(null, cljs.core.hash_map, c);
-  b = (new cljs.core.Keyword(null, "redirect?", "redirect?", -1229259098)).cljs$core$IFn$_invoke$arity$1(null);
-  b = cljs.core.truth_(b) ? b.call(null, a) : null;
-  a = cljs.core.truth_(b) ? cljs.core.assoc.call(null, a, com.firstlinq.ssr.redirect_key, b) : a;
-  b = (cljs.core.not.call(null, b), cljs.core.PersistentArrayMap.EMPTY);
-  c = new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "params", "params", 710516235), c, new cljs.core.Keyword(null, "id", "id", -1388402092), new cljs.core.Keyword(null, "home", "home", -74557309)], null);
-  return com.firstlinq.ssr.routes.reify_map.call(null, a, b, c, "Home Page", null);
-});
-cljs.core._add_method.call(null, com.firstlinq.ssr.state.get_state, new cljs.core.Keyword(null, "hello", "hello", -245025397), function(a, b, c, d) {
-  b = cljs.core.seq_QMARK_.call(null, c) ? cljs.core.apply.call(null, cljs.core.hash_map, c) : c;
-  d = cljs.core.get.call(null, b, new cljs.core.Keyword(null, "username", "username", 1605666410));
-  var e;
-  b = (new cljs.core.Keyword(null, "redirect?", "redirect?", -1229259098)).cljs$core$IFn$_invoke$arity$1(null);
-  e = cljs.core.truth_(b) ? b.call(null, a) : null;
-  b = cljs.core.truth_(e) ? cljs.core.assoc.call(null, a, com.firstlinq.ssr.redirect_key, e) : a;
-  a = cljs.core.not.call(null, e) ? new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "greeting", "greeting", 462222107), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [com.firstlinq.ssr.api.handle_request.call(null, a, new cljs.core.Keyword(null, "say-hello", "say-hello", -1427060073), d), null], null)], null) : cljs.core.PersistentArrayMap.EMPTY;
-  c = new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "params", "params", 710516235), c, new cljs.core.Keyword(null, "id", "id", -1388402092), new cljs.core.Keyword(null, "hello", "hello", -245025397)], null);
-  return com.firstlinq.ssr.routes.reify_map.call(null, b, a, c, "Greeting Page", null);
-});
 hello.server = {};
 hello.server.core = {};
 cljs.nodejs.enable_util_print_BANG_.call(null);

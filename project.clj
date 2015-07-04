@@ -4,7 +4,7 @@
 
   :clean-targets ^{:protect false}
 ["resources/public/js/app.js" "resources/public/js/out" "target" "resources/server"
- "resources/index.js" "resources/index.js.map"]
+ "resources/index.js" "resources/index.js.map" "package.json"]
 
   :dependencies [[org.clojure/clojure "1.7.0"]
                  [org.clojure/clojurescript "0.0-3269"]
@@ -20,7 +20,7 @@
             [lein-less "1.7.2"]
             [lein-npm "0.4.0"]]
 
-  :template-additions [".gitignore" "README.md" "Procfile"]
+  :template-additions [".gitignore" "README.md" "Procfile" "tasks" ".lein-classpath" "app.json"]
 
   :source-paths ["src"]
   :less {:source-paths ["src/less"]
@@ -44,6 +44,11 @@
                             :optimizations :simple
                             :pretty-print  true
                             :source-map    "resources/index.js.map"}}}}
+  :aliases {"build" ["do"
+                         ["clean"]
+                         "packagejson"
+                         ["cljsbuild" "once" "app" "server"]
+                         ]}
   :profiles
   {:dev  {:cljsbuild {:builds
                       {:app {:compiler {:source-map true}}}}}
