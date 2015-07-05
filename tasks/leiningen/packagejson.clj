@@ -4,6 +4,9 @@
             [clojure.java.io :as io]
             [leiningen.npm.deps :refer [resolve-node-deps]]))
 
+;; inlined these bits from lein-npm as it keeps deleting the package.json after each action
+;; this makes it difficult to deploy to heroku as a nodejs project.
+
 (defn- root [project]
   (if-let [root (project :npm-root)]
     (if (keyword? root)
